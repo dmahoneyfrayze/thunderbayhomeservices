@@ -67,10 +67,10 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Company</h4>
                         <ul style={{ listStyle: 'none', display: 'grid', gap: '0.75rem' }}>
-                            <li><Link to="/" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>About Us</Link></li>
-                            <li><Link to="/" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>For Contractors</Link></li>
-                            <li><Link to="/" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Privacy Policy</Link></li>
-                            <li><Link to="/" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Terms of Service</Link></li>
+                            <li><Link to="/about" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>About Us</Link></li>
+                            <li><Link to="/pro" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>For Contractors</Link></li>
+                            <li><Link to="/privacy" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Privacy Policy</Link></li>
+                            <li><Link to="/terms" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Terms of Service</Link></li>
                         </ul>
                     </div>
                 </div>

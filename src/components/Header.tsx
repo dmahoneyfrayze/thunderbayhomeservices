@@ -28,6 +28,7 @@ const Header: React.FC = () => {
                 <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                     <Link to="/#services" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Find a Pro</Link>
                     <Link to="/#how-it-works" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>How it Works</Link>
+                    <Link to="/pro" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>For Contractors</Link>
                 </nav>
 
                 <div className="hidden-mobile">
