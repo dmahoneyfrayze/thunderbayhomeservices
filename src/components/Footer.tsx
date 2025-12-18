@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             paddingTop: '4rem',
             paddingBottom: '2rem'
         }}>
-            <div className="container" style={{ padding: '0 2rem' }}>
+            <div style={{ width: '100%', maxWidth: '100%', padding: '0 5%', margin: '0 auto' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
 
                     {/* Brand Column */}
