@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { ShieldCheck, CheckCircle, ArrowRight, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { servicesConfig, type ServiceConfig } from '../config/servicesConfig';
 import { useSchema } from '../hooks/useSchema';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const ServiceLandingPage: React.FC = () => {
     const { serviceSlug } = useParams<{ serviceSlug: string }>();
@@ -59,7 +62,16 @@ const ServiceLandingPage: React.FC = () => {
     if (submitted) {
         return (
             <div className="container" style={{ textAlign: 'center', padding: '10rem 0' }}>
-                <div className="card" style={{ maxWidth: '500px', margin: '0 auto', padding: '4rem 2rem' }}>
+                <SEO
+                    title="Request Received | Thunder Bay Home Services"
+                    description="Thank you for your request. We are matching you with local pros."
+                />
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="card"
+                    style={{ maxWidth: '500px', margin: '0 auto', padding: '4rem 2rem' }}
+                >
                     <CheckCircle size={48} className="text-accent" style={{ margin: '0 auto 1.5rem' }} />
                     <h2 style={{ marginBottom: '1rem' }}>Thanks — your request has been received.</h2>
                     <p style={{ color: 'var(--color-text-dim)', fontSize: '1.1rem' }}>
@@ -69,13 +81,19 @@ const ServiceLandingPage: React.FC = () => {
                     <div style={{ marginTop: '2.5rem' }}>
                         <Link to="/" className="btn-outline">Back to home</Link>
                     </div>
-                </div>
+                </motion.div>
             </div>
         );
     }
 
     return (
         <div className="service-page" style={{ paddingBottom: '5rem' }}>
+            <SEO
+                title={`${service.name} Thunder Bay | Verified Local Pros`}
+                description={`Get quotes for ${service.name} in Thunder Bay. ${service.subheadline}. Verified experts, fast response.`}
+                canonical={`https://thunderbayhomeservices.com/${service.slug}`}
+            />
+
             {/* 1. New Premium Hero with Image & Overlay */}
             <section style={{
                 position: 'relative',
@@ -99,34 +117,52 @@ const ServiceLandingPage: React.FC = () => {
                 <div className="container" style={{ position: 'relative', zIndex: 2, padding: 0, textAlign: 'center' }}>
 
                     {/* Live Availability Badge */}
-                    <div style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        background: 'rgba(255, 255, 255, 0.1)',
-                        backdropFilter: 'blur(4px)',
-                        border: '1px solid rgba(255, 255, 255, 0.2)',
-                        padding: '8px 16px',
-                        borderRadius: '50px',
-                        marginBottom: '2rem',
-                        fontSize: '0.85rem',
-                        fontWeight: 600,
-                        color: '#4ade80' // Light green
-                    }}>
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            backdropFilter: 'blur(4px)',
+                            border: '1px solid rgba(255, 255, 255, 0.2)',
+                            padding: '8px 16px',
+                            borderRadius: '50px',
+                            marginBottom: '2rem',
+                            fontSize: '0.85rem',
+                            fontWeight: 600,
+                            color: '#4ade80' // Light green
+                        }}
+                    >
                         <span className="animate-pulse-green" style={{ width: '8px', height: '8px', display: 'block' }}></span>
                         3 Providers Available in Thunder Bay Today
-                    </div>
+                    </motion.div>
 
-                    <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', color: 'white', textShadow: '0 4px 10px rgba(0,0,0,0.3)' }}>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3, duration: 0.7 }}
+                        style={{ fontSize: '3.5rem', marginBottom: '1.5rem', color: 'white', textShadow: '0 4px 10px rgba(0,0,0,0.3)' }}
+                    >
                         {service.name} Services in Thunder Bay
-                    </h1>
-                    <p style={{ fontSize: '1.4rem', color: '#E2E8F0', marginBottom: 0, fontWeight: 400, maxWidth: '700px', margin: '0 auto' }}>
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5, duration: 0.7 }}
+                        style={{ fontSize: '1.4rem', color: '#E2E8F0', marginBottom: 0, fontWeight: 400, maxWidth: '700px', margin: '0 auto' }}
+                    >
                         The Gold Standard for Local {service.name} Quotes
-                    </p>
+                    </motion.p>
                 </div>
             </section>
 
-            <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 400px', gap: '4rem', alignItems: 'start', padding: '4rem 0' }}>
+            <Breadcrumbs />
+
+            <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 400px', gap: '4rem', alignItems: 'start', padding: '2rem 0 4rem 0' }}>
 
                 {/* Authority Content Column */}
                 <div>
@@ -138,42 +174,55 @@ const ServiceLandingPage: React.FC = () => {
                     </div>
 
                     {/* 3. H2: Sub-Intent Coverage */}
-                    <div style={{ marginBottom: '4rem' }}>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        style={{ marginBottom: '4rem' }}
+                    >
                         <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>Specialized {service.name} Solutions</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                             {service.subServices.map((sub: string, idx: number) => (
-                                <div key={idx} className="flex gap-2" style={{ fontWeight: 600, padding: '0.75rem', background: '#F8FAFC', borderRadius: '8px' }}>
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: idx * 0.1 }}
+                                    viewport={{ once: true }}
+                                    className="flex gap-2"
+                                    style={{ fontWeight: 600, padding: '0.75rem', background: '#F8FAFC', borderRadius: '8px' }}
+                                >
                                     <CheckCircle size={18} className="text-accent" /> {sub}
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* 4. H2: How It Works (Platform Authority) */}
                     <div style={{ marginBottom: '4rem' }}>
                         <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>How Thunder Bay Home Services Works</h2>
                         <div style={{ display: 'grid', gap: '1.5rem' }}>
-                            <div className="flex gap-2" style={{ alignItems: 'flex-start' }}>
-                                <div style={{ background: 'var(--color-brand-primary)', color: 'white', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 700, fontSize: '0.8rem' }}>1</div>
-                                <div>
-                                    <h4 style={{ fontSize: '1rem', marginBottom: '0.25rem' }}>Submit Your Request</h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Tell us about your project or urgency. It takes less than 60 seconds.</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-2" style={{ alignItems: 'flex-start' }}>
-                                <div style={{ background: 'var(--color-brand-primary)', color: 'white', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 700, fontSize: '0.8rem' }}>2</div>
-                                <div>
-                                    <h4 style={{ fontSize: '1rem', marginBottom: '0.25rem' }}>Get Matched with available Pros</h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>We route your request to local providers who are currently taking new jobs.</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-2" style={{ alignItems: 'flex-start' }}>
-                                <div style={{ background: 'var(--color-brand-primary)', color: 'white', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 700, fontSize: '0.8rem' }}>3</div>
-                                <div>
-                                    <h4 style={{ fontSize: '1rem', marginBottom: '0.25rem' }}>Compare & Choose</h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Receive up to 3 quotes. You decide which professional fits your needs.</p>
-                                </div>
-                            </div>
+                            {[
+                                { title: "Submit Your Request", desc: "Tell us about your project or urgency. It takes less than 60 seconds." },
+                                { title: "Get Matched with available Pros", desc: "We route your request to local providers who are currently taking new jobs." },
+                                { title: "Compare & Choose", desc: "Receive up to 3 quotes. You decide which professional fits your needs." }
+                            ].map((step, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: idx * 0.2 }}
+                                    viewport={{ once: true }}
+                                    className="flex gap-2"
+                                    style={{ alignItems: 'flex-start' }}
+                                >
+                                    <div style={{ background: 'var(--color-brand-primary)', color: 'white', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 700, fontSize: '0.8rem' }}>{idx + 1}</div>
+                                    <div>
+                                        <h4 style={{ fontSize: '1rem', marginBottom: '0.25rem' }}>{step.title}</h4>
+                                        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>{step.desc}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
 
@@ -189,11 +238,18 @@ const ServiceLandingPage: React.FC = () => {
                                         </div>
                                         {expandedFaq === idx ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                                     </div>
-                                    {expandedFaq === idx && (
-                                        <p style={{ marginTop: '1rem', color: 'var(--color-text-dim)', fontSize: '0.95rem', lineHeight: 1.6, paddingLeft: '1.75rem' }}>
-                                            {faq.answer}
-                                        </p>
-                                    )}
+                                    <AnimatePresence>
+                                        {expandedFaq === idx && (
+                                            <motion.p
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: 'auto', opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                style={{ marginTop: '1rem', color: 'var(--color-text-dim)', fontSize: '0.95rem', lineHeight: 1.6, paddingLeft: '1.75rem', overflow: 'hidden' }}
+                                            >
+                                                {faq.answer}
+                                            </motion.p>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
                             ))}
                         </div>
@@ -229,7 +285,12 @@ const ServiceLandingPage: React.FC = () => {
                 </div>
 
                 {/* Quote Form Sticky Box - Lifted up to overlap Hero slightly for depth */}
-                <div style={{ position: 'sticky', top: '20px', marginTop: '-6rem', zIndex: 10 }}>
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    style={{ position: 'sticky', top: '20px', marginTop: '-6rem', zIndex: 10 }}
+                >
                     <div className="card" style={{ padding: '2rem', boxShadow: '0 20px 40px -5px rgba(0, 0, 0, 0.15)', borderTop: '4px solid var(--color-accent)' }}>
                         <h2 style={{ fontSize: '1.25rem', marginBottom: '1.5rem' }}>Get {service.name} Quotes</h2>
                         <form
@@ -277,9 +338,15 @@ const ServiceLandingPage: React.FC = () => {
                                 </label>
                             </div>
 
-                            <button type="submit" className="btn-solid" style={{ width: '100%', marginTop: '0.5rem' }}>
+                            <motion.button
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                type="submit"
+                                className="btn-solid"
+                                style={{ width: '100%', marginTop: '0.5rem' }}
+                            >
                                 Send My Request
-                            </button>
+                            </motion.button>
 
                             <p style={{ textAlign: 'center', fontSize: '0.7rem', color: 'var(--color-text-dim)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
                                 <ShieldCheck size={12} /> Secure data transfer. No spam.
@@ -292,7 +359,7 @@ const ServiceLandingPage: React.FC = () => {
                             <ArrowRight size={14} style={{ transform: 'rotate(180deg)' }} /> Browse other city services
                         </Link>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

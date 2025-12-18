@@ -26,13 +26,12 @@ const Header: React.FC = () => {
                 </Link>
 
                 <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                    <Link to="/" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Find a Pro</Link>
-                    <Link to="/" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>How it Works</Link>
-                    <Link to="/" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>For Contractors</Link>
+                    <Link to="/#services" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Find a Pro</Link>
+                    <Link to="/#how-it-works" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>How it Works</Link>
                 </nav>
 
                 <div className="hidden-mobile">
-                    <Link to="/" className="btn-solid" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
+                    <Link to="/snow-removal" className="btn-solid" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
                         Get Quotes
                     </Link>
                 </div>
