@@ -1,7 +1,14 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Header: React.FC = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const closeMenu = () => setIsMenuOpen(false);
+
     return (
         <header style={{
             padding: '1rem 0',
@@ -12,8 +19,8 @@ const Header: React.FC = () => {
             top: 0,
             zIndex: 100
         }}>
-            <div className="container" style={{ padding: '0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div className="container" style={{ padding: '0 1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Link to="/" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <ShieldCheck size={28} className="text-accent" />
                     <span style={{
                         fontFamily: 'var(--font-heading)',
@@ -25,11 +32,12 @@ const Header: React.FC = () => {
                     </span>
                 </Link>
 
-                <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+                {/* DESKTOP NAV */}
+                <nav className="hidden-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                     <Link to="/#services" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Find a Pro</Link>
                     <Link to="/blog" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Expert Guides</Link>
                     <Link to="/#how-it-works" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>How it Works</Link>
-                    <Link to="/pro" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>For Contractors</Link>
+                    <Link to="/for-contractors" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>For Contractors</Link>
                 </nav>
 
                 <div className="hidden-mobile">
@@ -37,7 +45,39 @@ const Header: React.FC = () => {
                         Get Quotes
                     </Link>
                 </div>
+
+                {/* MOBILE MENU TOGGLE */}
+                <button
+                    className="hidden-desktop"
+                    onClick={toggleMenu}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-brand-primary)' }}
+                >
+                    {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                </button>
             </div>
+
+            {/* MOBILE MENU OVERLAY */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="mobile-nav-overlay hidden-desktop"
+                    >
+                        <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center', fontSize: '1.25rem', fontWeight: 600 }}>
+                            <Link to="/#services" onClick={closeMenu}>Find a Pro</Link>
+                            <Link to="/blog" onClick={closeMenu}>Expert Guides</Link>
+                            <Link to="/#how-it-works" onClick={closeMenu}>How it Works</Link>
+                            <Link to="/for-contractors" onClick={closeMenu}>For Contractors</Link>
+                            <hr style={{ borderColor: '#E2E8F0', margin: '0.5rem 0' }} />
+                            <Link to="/snow-removal" onClick={closeMenu} className="btn-solid" style={{ width: '100%' }}>
+                                Get Quotes
+                            </Link>
+                        </nav>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
     );
 };

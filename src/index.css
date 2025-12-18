@@ -229,4 +229,60 @@ a {
   .hidden-mobile {
     display: none !important;
   }
+
+  /* Mobile Nav Overlay */
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 60px;
+    /* Below header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: white;
+    z-index: 99;
+    padding: 2rem;
+    overflow-y: auto;
+    border-top: 1px solid #E2E8F0;
+  }
+}
+
+@media (min-width: 769px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* Service Page Grid - Responsive */
+.service-page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Mobile default */
+  gap: 3rem;
+  align-items: start;
+  padding: 2rem 0 4rem 0;
+}
+
+@media (min-width: 1024px) {
+  .service-page-grid {
+    grid-template-columns: minmax(0, 1fr) 400px;
+    /* Desktop split */
+    gap: 4rem;
+  }
+}
+
+/* Sticky Sidebar Logic */
+.sticky-sidebar-wrapper {
+  position: relative;
+  /* Default static for mobile */
+  margin-top: 0;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .sticky-sidebar-wrapper {
+    position: sticky;
+    top: 20px;
+    margin-top: -6rem;
+    /* Overlap hero only on desktop */
+  }
 }

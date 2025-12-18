@@ -130,7 +130,7 @@ const ServiceLandingPage: React.FC = () => {
 
             <Breadcrumbs />
 
-            <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 400px', gap: '4rem', alignItems: 'start', padding: '2rem 0 4rem 0' }}>
+            <div className="container service-page-grid">
 
                 {/* Left Column: Authority Content */}
                 <div>
@@ -251,12 +251,11 @@ const ServiceLandingPage: React.FC = () => {
                     )}
                 </div>
 
-                {/* Right Column: Sticky Form */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    style={{ position: 'sticky', top: '20px', marginTop: '-6rem', zIndex: 10 }}
+                    className="sticky-sidebar-wrapper"
                 >
                     <div className="card" style={{ padding: '2rem', boxShadow: '0 20px 40px -5px rgba(0, 0, 0, 0.15)', borderTop: '4px solid var(--color-accent)' }}>
                         <h2 style={{ fontSize: '1.25rem', marginBottom: '1.5rem' }}>Get {service.name} Quotes</h2>
