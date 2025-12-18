@@ -92,7 +92,17 @@ const LeadMagnet: React.FC<LeadMagnetProps> = ({ title, description, type, butto
 
             {/* Mobile Action (Overlay Link) */}
             <a href="#" style={{ position: 'absolute', inset: 0, zIndex: 10 }}>
-                <span className="sr-only">{buttonText}</span>
+                <span style={{
+                    position: 'absolute',
+                    width: '1px',
+                    height: '1px',
+                    padding: 0,
+                    margin: '-1px',
+                    overflow: 'hidden',
+                    clip: 'rect(0, 0, 0, 0)',
+                    whiteSpace: 'nowrap',
+                    borderWidth: 0
+                }}>{buttonText}</span>
             </a>
         </motion.div>
     );
