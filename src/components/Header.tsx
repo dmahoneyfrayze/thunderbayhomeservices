@@ -34,7 +34,7 @@ const Header: React.FC = () => {
                 </nav>
 
                 <div className="hidden-mobile">
-                    <Link to="/snow-removal" className="btn-solid" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
+                    <Link to="/get-quote" className="btn-solid" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
                         Get Quotes
                     </Link>
                 </div>
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
                             <Link to="/#how-it-works" onClick={closeMenu}>How it Works</Link>
                             <Link to="/for-contractors" onClick={closeMenu}>For Contractors</Link>
                             <hr style={{ borderColor: '#E2E8F0', margin: '0.5rem 0' }} />
-                            <Link to="/snow-removal" onClick={closeMenu} className="btn-solid" style={{ width: '100%' }}>
+                            <Link to="/get-quote" onClick={closeMenu} className="btn-solid" style={{ width: '100%' }}>
                                 Get Quotes
                             </Link>
                         </nav>

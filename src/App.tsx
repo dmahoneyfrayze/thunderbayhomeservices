@@ -12,6 +12,8 @@ import BlogIndex from './pages/BlogIndex.tsx';
 import BlogPost from './pages/BlogPost.tsx';
 import NotFound from './pages/NotFound.tsx';
 
+import GetQuote from './pages/GetQuote.tsx';
+
 import ScrollToTop from './components/ScrollToTop.tsx';
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/for-contractors" element={<ForContractors />} />
+            <Route path="/get-quote" element={<GetQuote />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacy" element={<Privacy />} />

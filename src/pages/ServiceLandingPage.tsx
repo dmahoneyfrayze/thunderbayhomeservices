@@ -266,23 +266,23 @@ const ServiceLandingPage: React.FC = () => {
                         >
                             <div>
                                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Full Name</label>
-                                <input required type="text" placeholder="Your Name" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px' }} />
+                                <input required type="text" placeholder="Your Name" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }} />
                             </div>
 
                             <div>
                                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Phone Number</label>
-                                <input required type="tel" placeholder="807-555-0123" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px' }} />
+                                <input required type="tel" placeholder="807-555-0123" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }} />
                             </div>
 
                             <div>
                                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Property Address</label>
-                                <input required type="text" placeholder="Address, Thunder Bay" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px' }} />
+                                <input required type="text" placeholder="Address, Thunder Bay" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }} />
                             </div>
 
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                                 <div>
                                     <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Service Type</label>
-                                    <select style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', background: 'white' }}>
+                                    <select style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', background: 'white', fontSize: '16px' }}>
                                         {service.serviceTypes.map((type: string, idx: number) => (
                                             <option key={idx}>{type}</option>
                                         ))}
@@ -290,7 +290,7 @@ const ServiceLandingPage: React.FC = () => {
                                 </div>
                                 <div>
                                     <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Urgency</label>
-                                    <select style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', background: 'white' }}>
+                                    <select style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', background: 'white', fontSize: '16px' }}>
                                         {service.urgencyOptions.map((opt: string, idx: number) => (
                                             <option key={idx}>{opt}</option>
                                         ))}
