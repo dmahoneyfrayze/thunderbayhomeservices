@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import logo from '../assets/images/logo.png';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,16 +21,8 @@ const Header: React.FC = () => {
             zIndex: 100
         }}>
             <div className="container" style={{ padding: '0 1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Link to="/" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <ShieldCheck size={28} className="text-accent" />
-                    <span style={{
-                        fontFamily: 'var(--font-heading)',
-                        fontWeight: 800,
-                        fontSize: '1.25rem',
-                        color: 'var(--color-brand-primary)'
-                    }}>
-                        TBAY<span className="text-accent">HOME</span>
-                    </span>
+                <Link to="/" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center' }}>
+                    <img src={logo} alt="Thunder Bay Home Services" style={{ height: '48px', width: 'auto' }} />
                 </Link>
 
                 {/* DESKTOP NAV */}
