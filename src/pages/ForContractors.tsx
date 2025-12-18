@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle, ShieldCheck, DollarSign, Users, ArrowRight, LayoutDashboard } from 'lucide-react';
 import { motion } from 'framer-motion';
+import contractorsHero from '../assets/images/For_Contractors_Background_Thunder_Bay.png';
 
 const ForContractors: React.FC = () => {
     return (
@@ -13,7 +14,10 @@ const ForContractors: React.FC = () => {
 
             {/* HERO SECTION */}
             <section style={{
-                background: 'linear-gradient(to bottom, #1e293b, #0f172a)',
+                backgroundImage: `linear-gradient(to bottom, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95)), url(${contractorsHero})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
                 color: 'white',
                 padding: '8rem 0 6rem 0',
                 textAlign: 'center'
