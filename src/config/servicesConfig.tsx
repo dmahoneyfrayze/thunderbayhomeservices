@@ -1,17 +1,17 @@
 import React from 'react';
 import { Snowflake, Droplets, Thermometer, Trash2, Truck, Leaf, Zap, Paintbrush, Home, Sparkles } from 'lucide-react';
 // Import hero images
-import snowHero from '../assets/images/Snow_Removal_Page_Header.jpg';
+import snowHero from '../assets/images/Snow_Removal_Page_Header.webp';
 
-import plumbingHero from '../assets/images/Plumbing_Page_Header.jpg';
-import hvacHero from '../assets/images/HVAC_Heating_Page_Header.jpg';
-import electricalHero from '../assets/images/Electrical_Page_Header.jpg';
-import cleaningHero from '../assets/images/Cleaning_Page_Header.jpg';
-import junkHero from '../assets/images/Junk_Removal_Page_Header.jpg';
-import landscapingHero from '../assets/images/Landscaping_Page_Header.jpg';
-import movingHero from '../assets/images/Moving_Services_Page_Header.jpg';
-import paintingHero from '../assets/images/Painting_Page_Header.jpg';
-import roofingHero from '../assets/images/Roofing_Page_Header.jpg';
+import plumbingHero from '../assets/images/Plumbing_Page_Header.webp';
+import hvacHero from '../assets/images/HVAC_Heating_Page_Header.webp';
+import electricalHero from '../assets/images/Electrical_Page_Header.webp';
+import cleaningHero from '../assets/images/Cleaning_Page_Header.webp';
+import junkHero from '../assets/images/Junk_Removal_Page_Header.webp';
+import landscapingHero from '../assets/images/Landscaping_Page_Header.webp';
+import movingHero from '../assets/images/Moving_Services_Page_Header.webp';
+import paintingHero from '../assets/images/Painting_Page_Header.webp';
+import roofingHero from '../assets/images/Roofing_Page_Header.webp';
 
 // Fallback for missing images removed as all services have specific images
 

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { servicesConfig } from '../config/servicesConfig';
 import { useSchema } from '../hooks/useSchema';
 import SEO from '../components/SEO';
-import heroBg from '../assets/images/thunder-bay-hero.jpg';
+import heroBg from '../assets/images/thunder-bay-hero.webp';
 import LeadMagnet from '../components/LeadMagnet';
 
 const Home: React.FC = () => {
@@ -55,7 +55,9 @@ const Home: React.FC = () => {
                 title="Thunder Bay Home Services | Local Quotes"
                 description="Find vetted local professionals for snow removal, plumbing, HVAC, and electrical work in Thunder Bay. Get 3 free quotes instantly."
                 canonical="https://thunderbayhomeservices.com"
-            />
+            >
+                <link rel="preload" as="image" href={heroBg} />
+            </SEO>
 
             {/* Hero Section */}
             <section style={{

@@ -5,11 +5,13 @@ interface SEOProps {
     description: string;
     canonical?: string;
     type?: string;
+    children?: React.ReactNode;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, canonical, type = 'website' }) => {
+const SEO: React.FC<SEOProps> = ({ title, description, canonical, type = 'website', children }) => {
     return (
         <Helmet>
+            {children}
             <title>{title}</title>
             <meta name="description" content={description} />
             {canonical && <link rel="canonical" href={canonical} />}

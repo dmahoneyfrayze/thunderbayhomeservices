@@ -11,7 +11,8 @@
   --color-accent-hover: #1D4ED8;
 
   --color-text-main: #1E293B;
-  --color-text-dim: #64748B;
+  --color-text-dim: #475569;
+  /* Darkened from #64748B for AA compliance */
   --color-bg-main: #FFFFFF;
   --color-bg-secondary: #F8FAFC;
 

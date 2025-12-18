@@ -144,7 +144,9 @@ const ServiceLandingPage: React.FC = () => {
                 title={`${service.name} Services in Thunder Bay | Compare Local Providers`}
                 description={`Compare local ${service.name.toLowerCase()} providers in Thunder Bay. Explore service types, read expert guidance, and request up to 3 quotes from available professionals.`}
                 canonical={`https://thunderbayhomeservices.com/${service.slug}`}
-            />
+            >
+                <link rel="preload" as="image" href={service.heroImage} />
+            </SEO>
 
             {/* H1 - Primary Entity - Locked Structure */}
             <section style={{
@@ -442,7 +444,7 @@ const ServiceLandingPage: React.FC = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CheckCircle, ShieldCheck, DollarSign, Users, ArrowRight, LayoutDashboard, Star, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
-import contractorsHero from '../assets/images/For_Contractors_Background_Thunder_Bay.jpg';
+import contractorsHero from '../assets/images/For_Contractors_Background_Thunder_Bay.webp';
 
 import SEO from '../components/SEO';
 import { trackApplication, getUTMParams } from '../utils/analytics';
