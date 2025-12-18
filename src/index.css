@@ -157,6 +157,49 @@ a {
   text-transform: uppercase;
 }
 
+/* Blog / Prose Typography */
+.prose h2 {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-brand-primary);
+}
+
+.prose h3 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-brand-primary);
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+  color: var(--color-text-main);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  color: var(--color-text-main);
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--color-accent-hover);
+}
+
 /* Animations */
 @keyframes pulse-green {
   0% {
@@ -180,6 +223,7 @@ a {
   background-color: #22c55e;
   border-radius: 50%;
 }
+
 /* Mobile Responsive Utilities */
 @media (max-width: 768px) {
   .hidden-mobile {

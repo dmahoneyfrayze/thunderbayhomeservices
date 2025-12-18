@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ShieldCheck, CheckCircle, ArrowRight, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { ShieldCheck, CheckCircle, ArrowRight, HelpCircle, ChevronDown, ChevronUp, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { servicesConfig, type ServiceConfig } from '../config/servicesConfig';
 import { useSchema } from '../hooks/useSchema';
@@ -17,12 +17,12 @@ const ServiceLandingPage: React.FC = () => {
     // Topic Clustering: Find related services
     const relatedServices = service ? servicesConfig.filter(s => service.relatedSlugs.includes(s.slug)) : [];
 
-    // Structured Data (Schema.org) - Safely constructed
+    // Structured Data (Schema.org)
     const schemas = service ? [
         {
             '@context': 'https://schema.org',
             '@type': 'Service',
-            'name': `${service.name} in Thunder Bay`,
+            'name': service.name,
             'description': service.subheadline,
             'provider': {
                 '@type': 'LocalBusiness',
@@ -89,12 +89,12 @@ const ServiceLandingPage: React.FC = () => {
     return (
         <div className="service-page" style={{ paddingBottom: '5rem' }}>
             <SEO
-                title={`${service.name} Thunder Bay | Verified Local Pros`}
-                description={`Get quotes for ${service.name} in Thunder Bay. ${service.subheadline}. Verified experts, fast response.`}
+                title={`${service.name} Services in Thunder Bay | Compare Local Providers`}
+                description={`Compare local ${service.name.toLowerCase()} providers in Thunder Bay. Explore service types, read expert guidance, and request up to 3 quotes from available professionals.`}
                 canonical={`https://thunderbayhomeservices.com/${service.slug}`}
             />
 
-            {/* 1. New Premium Hero with Image & Overlay */}
+            {/* H1 - Primary Entity - Locked Structure */}
             <section style={{
                 position: 'relative',
                 color: 'white',
@@ -103,7 +103,6 @@ const ServiceLandingPage: React.FC = () => {
                 backgroundPosition: 'center',
                 padding: '8rem 0 6rem 0'
             }}>
-                {/* Dark Overlay for Readability */}
                 <div style={{
                     position: 'absolute',
                     top: 0,
@@ -115,48 +114,17 @@ const ServiceLandingPage: React.FC = () => {
                 }}></div>
 
                 <div className="container" style={{ position: 'relative', zIndex: 2, padding: 0, textAlign: 'center' }}>
-
-                    {/* Live Availability Badge */}
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                            background: 'rgba(255, 255, 255, 0.1)',
-                            backdropFilter: 'blur(4px)',
-                            border: '1px solid rgba(255, 255, 255, 0.2)',
-                            padding: '8px 16px',
-                            borderRadius: '50px',
-                            marginBottom: '2rem',
-                            fontSize: '0.85rem',
-                            fontWeight: 600,
-                            color: '#4ade80' // Light green
-                        }}
-                    >
-                        <span className="animate-pulse-green" style={{ width: '8px', height: '8px', display: 'block' }}></span>
-                        3 Providers Available in Thunder Bay Today
-                    </motion.div>
-
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.7 }}
-                        style={{ fontSize: '3.5rem', marginBottom: '1.5rem', color: 'white', textShadow: '0 4px 10px rgba(0,0,0,0.3)' }}
+                        style={{ fontSize: '3.5rem', marginBottom: '1.5rem', color: 'white', textShadow: '0 4px 10px rgba(0,0,0,0.3)', lineHeight: 1.2 }}
                     >
-                        {service.name} Services in Thunder Bay
+                        {service.name} Services<br />in Thunder Bay
                     </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.5, duration: 0.7 }}
-                        style={{ fontSize: '1.4rem', color: '#E2E8F0', marginBottom: 0, fontWeight: 400, maxWidth: '700px', margin: '0 auto' }}
-                    >
-                        The Gold Standard for Local {service.name} Quotes
-                    </motion.p>
+                    <p style={{ fontSize: '1.4rem', color: '#E2E8F0', marginBottom: 0, fontWeight: 400, maxWidth: '700px', margin: '0 auto' }}>
+                        {service.subheadline}
+                    </p>
                 </div>
             </section>
 
@@ -164,69 +132,79 @@ const ServiceLandingPage: React.FC = () => {
 
             <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 400px', gap: '4rem', alignItems: 'start', padding: '2rem 0 4rem 0' }}>
 
-                {/* Authority Content Column */}
+                {/* Left Column: Authority Content */}
                 <div>
-                    {/* 2. Intro: Neutral & Informational */}
-                    <div style={{ marginBottom: '3rem' }}>
-                        <p style={{ fontSize: '1.125rem', color: 'var(--color-text-dim)', lineHeight: 1.8 }}>
+
+                    {/* SECTION 1: NEUTRAL INTRO */}
+                    <div style={{ marginBottom: '4rem' }}>
+                        <p style={{ fontSize: '1.125rem', color: 'var(--color-text-main)', lineHeight: 1.8 }}>
                             {service.intro}
                         </p>
                     </div>
 
-                    {/* 3. H2: Sub-Intent Coverage */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        style={{ marginBottom: '4rem' }}
-                    >
-                        <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>Specialized {service.name} Solutions</h2>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                            {service.subServices.map((sub: string, idx: number) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: idx * 0.1 }}
-                                    viewport={{ once: true }}
-                                    className="flex gap-2"
-                                    style={{ fontWeight: 600, padding: '0.75rem', background: '#F8FAFC', borderRadius: '8px' }}
-                                >
-                                    <CheckCircle size={18} className="text-accent" /> {sub}
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
-
-                    {/* 4. H2: How It Works (Platform Authority) */}
+                    {/* SECTION 2: SERVICE TYPES */}
                     <div style={{ marginBottom: '4rem' }}>
-                        <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>How Thunder Bay Home Services Works</h2>
-                        <div style={{ display: 'grid', gap: '1.5rem' }}>
-                            {[
-                                { title: "Submit Your Request", desc: "Tell us about your project or urgency. It takes less than 60 seconds." },
-                                { title: "Get Matched with available Pros", desc: "We route your request to local providers who are currently taking new jobs." },
-                                { title: "Compare & Choose", desc: "Receive up to 3 quotes. You decide which professional fits your needs." }
-                            ].map((step, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: idx * 0.2 }}
-                                    viewport={{ once: true }}
-                                    className="flex gap-2"
-                                    style={{ alignItems: 'flex-start' }}
-                                >
-                                    <div style={{ background: 'var(--color-brand-primary)', color: 'white', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 700, fontSize: '0.8rem' }}>{idx + 1}</div>
-                                    <div>
-                                        <h4 style={{ fontSize: '1rem', marginBottom: '0.25rem' }}>{step.title}</h4>
-                                        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>{step.desc}</p>
-                                    </div>
-                                </motion.div>
+                        <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem', color: 'var(--color-brand-primary)' }}>Types of {service.name} Available in Thunder Bay</h2>
+                        <div style={{ display: 'grid', gap: '2rem' }}>
+                            {service.typesData.map((type, idx) => (
+                                <div key={idx}>
+                                    <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 700 }}>{type.title}</h3>
+                                    <p style={{ color: 'var(--color-text-dim)', lineHeight: 1.6 }}>{type.description}</p>
+                                </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* 7. H2: FAQs (Topical Authority) */}
+                    {/* SECTION 3: WHEN TO REQUEST */}
+                    <div style={{ marginBottom: '4rem', background: '#F8FAFC', padding: '2rem', borderRadius: '12px' }}>
+                        <h2 style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>{service.whenToRequest.title}</h2>
+                        <p style={{ marginBottom: '1.5rem', fontSize: '1.05rem', lineHeight: 1.7 }}>{service.whenToRequest.description}</p>
+                        <ul style={{ display: 'grid', gap: '0.75rem', paddingLeft: '1.5rem' }}>
+                            {service.whenToRequest.bullets?.map((bullet, idx) => (
+                                <li key={idx} style={{ color: 'var(--color-text-dim)', fontSize: '1rem' }}>{bullet}</li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* SECTION 4: HOW THE PLATFORM WORKS */}
+                    <div style={{ marginBottom: '4rem' }}>
+                        <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>How Thunder Bay Home Services Works</h2>
+                        <div style={{ display: 'grid', gap: '1.5rem' }}>
+                            {[
+                                "Submit a request based on your service needs",
+                                "We match your request with available local providers",
+                                "Compare quotes or availability and choose how to proceed"
+                            ].map((step, idx) => (
+                                <div key={idx} className="flex gap-3">
+                                    <div style={{ background: 'var(--color-brand-primary)', color: 'white', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 700 }}>{idx + 1}</div>
+                                    <span style={{ fontSize: '1.1rem', fontWeight: 500 }}>{step}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <p style={{ marginTop: '1.5rem', color: 'var(--color-text-dim)', fontStyle: 'italic' }}>
+                            Our platform is designed to give homeowners clarity and choice without requiring phone calls or repeated outreach.
+                        </p>
+                    </div>
+
+                    {/* SECTION 5: WHY COMPARE */}
+                    <div style={{ marginBottom: '4rem' }}>
+                        <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>Why Compare {service.name} Providers?</h2>
+                        <ul style={{ display: 'grid', gap: '0.75rem', paddingLeft: '1.5rem' }}>
+                            {service.whyCompare.map((item, idx) => (
+                                <li key={idx} style={{ color: 'var(--color-text-dim)', fontSize: '1.05rem' }}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* SECTION 6: LOCAL SIGNALS */}
+                    <div style={{ marginBottom: '4rem' }}>
+                        <h2 style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>{service.name} Across Thunder Bay Neighborhoods</h2>
+                        <p style={{ fontSize: '1.05rem', lineHeight: 1.6, color: 'var(--color-text-dim)' }}>
+                            Local providers on our platform serve neighborhoods across Thunder Bay, including <strong>{service.neighborhoods.join(', ')},</strong> and surrounding areas.
+                        </p>
+                    </div>
+
+                    {/* FAQs */}
                     <div style={{ marginBottom: '4rem' }}>
                         <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>Frequently Asked Questions</h2>
                         <div style={{ display: 'grid', gap: '1rem' }}>
@@ -255,28 +233,17 @@ const ServiceLandingPage: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* 6. H2: Local Proof (Neighborhood Signals) */}
-                    <div style={{ marginBottom: '4rem', padding: '2rem', background: '#F8FAFC', borderRadius: '12px' }}>
-                        <h2 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Serving All Communities in Thunder Bay</h2>
-                        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '1rem' }}>
-                            We have authorized providers across the entire city and surrounding areas:
-                        </p>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                            {service.neighborhoods.map((n: string) => (
-                                <span key={n} className="badge" style={{ background: 'white', border: '1px solid #E2E8F0' }}>{n}</span>
-                            ))}
-                            <span className="badge" style={{ background: 'white', border: '1px solid #E2E8F0' }}>& surrounding areas</span>
-                        </div>
-                    </div>
-
-                    {/* Internal Section Linking (Topic Clustering) */}
+                    {/* SECTION 7: RELATED SERVICES */}
                     {relatedServices.length > 0 && (
                         <div style={{ paddingTop: '2rem', borderTop: '1px solid #E2E8F0' }}>
-                            <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--color-text-dim)', marginBottom: '1rem' }}>Related Local Services:</p>
-                            <div style={{ display: 'flex', gap: '1.5rem' }}>
+                            <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Related Home Services</h2>
+                            <p style={{ marginBottom: '1.5rem', color: 'var(--color-text-dim)' }}>
+                                Homeowners often request {service.name.toLowerCase()} alongside other services such as:
+                            </p>
+                            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                                 {relatedServices.map((rs) => (
-                                    <Link key={rs.slug} to={`/${rs.slug}`} style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--color-brand-primary)', textDecoration: 'underline' }}>
-                                        {rs.name} in Thunder Bay
+                                    <Link key={rs.slug} to={`/${rs.slug}`} style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-brand-primary)', textDecoration: 'underline' }}>
+                                        {rs.name} Services
                                     </Link>
                                 ))}
                             </div>
@@ -284,7 +251,7 @@ const ServiceLandingPage: React.FC = () => {
                     )}
                 </div>
 
-                {/* Quote Form Sticky Box - Lifted up to overlap Hero slightly for depth */}
+                {/* Right Column: Sticky Form */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -345,7 +312,7 @@ const ServiceLandingPage: React.FC = () => {
                                 className="btn-solid"
                                 style={{ width: '100%', marginTop: '0.5rem' }}
                             >
-                                Send My Request
+                                Get {service.name} Quotes
                             </motion.button>
 
                             <p style={{ textAlign: 'center', fontSize: '0.7rem', color: 'var(--color-text-dim)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
@@ -354,10 +321,10 @@ const ServiceLandingPage: React.FC = () => {
                         </form>
                     </div>
 
-                    <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-                        <Link to="/" style={{ fontSize: '0.875rem', color: 'var(--color-text-dim)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                            <ArrowRight size={14} style={{ transform: 'rotate(180deg)' }} /> Browse other city services
-                        </Link>
+                    {/* SECTION 8: CTA (Small Mobile / Desktop) */}
+                    <div className="hidden-desktop" style={{ marginTop: '2rem', textAlign: 'center' }}>
+                        <p style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Ready to get started?</p>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Submit a single request to compare available {service.name} providers in Thunder Bay.</p>
                     </div>
                 </motion.div>
             </div>

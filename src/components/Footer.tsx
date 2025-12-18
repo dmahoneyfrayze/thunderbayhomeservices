@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                             </span>
                         </div>
                         <p style={{ color: 'var(--color-text-dim)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                            Thunder Bay’s trusted directory for local home services. We verify insurance, check reviews, and connect you with the best pros in the city.
+                            Thunder Bay Home Services is a local platform offering service comparisons, expert guides, and homeowner resources across Thunder Bay. Our mission is to help residents make informed decisions when hiring home service professionals.
                         </p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <div className="flex gap-2" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>

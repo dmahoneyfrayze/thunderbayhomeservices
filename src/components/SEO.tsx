@@ -4,9 +4,10 @@ interface SEOProps {
     title: string;
     description: string;
     canonical?: string;
+    type?: string;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, canonical }) => {
+const SEO: React.FC<SEOProps> = ({ title, description, canonical, type = 'website' }) => {
     return (
         <Helmet>
             <title>{title}</title>
@@ -16,7 +17,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, canonical }) => {
             {/* Open Graph / Social */}
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
-            <meta property="og:type" content="website" />
+            <meta property="og:type" content={type} />
         </Helmet>
     );
 };
