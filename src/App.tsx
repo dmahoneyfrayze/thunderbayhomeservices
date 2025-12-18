@@ -13,6 +13,7 @@ import BlogPost from './pages/BlogPost.tsx';
 import NotFound from './pages/NotFound.tsx';
 
 import GetQuote from './pages/GetQuote.tsx';
+import CostGuidePage from './pages/CostGuidePage.tsx';
 
 import ScrollToTop from './components/ScrollToTop.tsx';
 
@@ -32,6 +33,7 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/cost/:serviceSlug" element={<CostGuidePage />} />
             <Route path="/:serviceSlug" element={<ServiceLandingPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

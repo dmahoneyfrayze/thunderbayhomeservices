@@ -3,6 +3,7 @@ import { CheckCircle, ShieldCheck, DollarSign, Users, ArrowRight, LayoutDashboar
 import { motion } from 'framer-motion';
 import contractorsHero from '../assets/images/For_Contractors_Background_Thunder_Bay.jpg';
 import SEO from '../components/SEO';
+import { trackApplication } from '../utils/analytics';
 
 const ForContractors: React.FC = () => {
     const [loading, setLoading] = useState(false);
@@ -39,6 +40,7 @@ const ForContractors: React.FC = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
+            trackApplication(formData.businessName, formData.service);
             setSubmitted(true);
         } catch (error) {
             console.error('Error submitting application:', error);

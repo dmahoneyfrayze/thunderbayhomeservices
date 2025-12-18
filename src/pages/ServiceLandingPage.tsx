@@ -6,6 +6,7 @@ import { servicesConfig, type ServiceConfig } from '../config/servicesConfig';
 import { useSchema } from '../hooks/useSchema';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
+import { trackLead } from '../utils/analytics';
 
 const ServiceLandingPage: React.FC = () => {
     const { serviceSlug } = useParams<{ serviceSlug: string }>();
@@ -52,6 +53,7 @@ const ServiceLandingPage: React.FC = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
+            trackLead(service?.name || 'Unknown', formData.serviceType, 'thunderbayhomeservices.com');
             setSubmitted(true);
         } catch (error) {
             console.error('Error submitting form:', error);

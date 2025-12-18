@@ -31,6 +31,13 @@ export interface SectionData {
     bullets?: string[];
 }
 
+export interface CostInfo {
+    averageCost: string;
+    factors: string[];
+    priceTable: { label: string; price: string }[];
+    disclaimer: string;
+}
+
 export interface ServiceConfig {
     id: string;
     slug: string;
@@ -54,6 +61,7 @@ export interface ServiceConfig {
     active: boolean;
     serviceTypes: string[];
     urgencyOptions: string[];
+    costInfo: CostInfo;
 }
 
 export const servicesConfig: ServiceConfig[] = [
@@ -116,7 +124,18 @@ export const servicesConfig: ServiceConfig[] = [
         leadValue: 25,
         active: true,
         serviceTypes: ['One-time', 'Seasonal', 'Commercial'],
-        urgencyOptions: ['ASAP', 'Within 24 hours', 'This week']
+        urgencyOptions: ['ASAP', 'Within 24 hours', 'This week'],
+        costInfo: {
+            averageCost: "$40 – $75 per visit",
+            factors: ["Driveway Size (Single vs Double)", "Snowfall Accumulation", "Frequency of Service", "Salting/Sanding Requirements"],
+            priceTable: [
+                { label: "Single Visit (Standard Driveway)", price: "$40 - $75" },
+                { label: "Seasonal Contract (Nov-Apr)", price: "$600 - $1,200" },
+                { label: "Emergency / Holiday Service", price: "$100 - $150+" },
+                { label: "Walkway Shoveling Add-on", price: "$15 - $30" }
+            ],
+            disclaimer: "Prices vary based on accumulated snow depth and specific property conditions. Seasonal contracts typically cover unlimited snowfall up to a daily limit."
+        }
     },
     {
         id: 'plumbing',
@@ -153,7 +172,18 @@ export const servicesConfig: ServiceConfig[] = [
         leadValue: 50,
         active: true,
         serviceTypes: ['Emergency Repair', 'Standard Maintenance', 'Installation'],
-        urgencyOptions: ['ASAP', 'Within 24 hours', 'Next few days']
+        urgencyOptions: ['ASAP', 'Within 24 hours', 'Next few days'],
+        costInfo: {
+            averageCost: "$100 – $200 Service Call",
+            factors: ["Time of Day (Emergency vs Standard)", "Material Costs", "Access Difficulty", "Complexity of Diagnostics"],
+            priceTable: [
+                { label: "Standard Service Call / Diagnosis", price: "$100 - $180" },
+                { label: "Drain Cleaning (Snaking)", price: "$150 - $300" },
+                { label: "Faucet Replacement (Labor)", price: "$120 - $250" },
+                { label: "Toilet Installation", price: "$150 - $350" }
+            ],
+            disclaimer: "Final pricing depends on parts required and extent of damage found during diagnosis. Emergency after-hours calls typically incur a premium."
+        }
     },
     {
         id: 'hvac',
@@ -183,7 +213,18 @@ export const servicesConfig: ServiceConfig[] = [
         leadValue: 75,
         active: true,
         serviceTypes: ['Furnace Repair', 'AC Service', 'Full Installation'],
-        urgencyOptions: ['Emergency (No Heat)', 'Within 24 hours', 'Scheduling Quote']
+        urgencyOptions: ['Emergency (No Heat)', 'Within 24 hours', 'Scheduling Quote'],
+        costInfo: {
+            averageCost: "$120 – $250 Maintenance",
+            factors: ["System Age & Type", "Parts Required (Motors, Boards)", "Warranty Status", "Accessibility"],
+            priceTable: [
+                { label: "Furnace Maintenance / Tune-up", price: "$120 - $180" },
+                { label: "Diagnostic Visit", price: "$100 - $160" },
+                { label: "Thermostat Installation", price: "$100 - $200" },
+                { label: "Emergency No-Heat Call", price: "$200 - $350" }
+            ],
+            disclaimer: "Diagnostic fees are often waived if major repairs are authorized. Costs for parts vary significantly by brand and model."
+        }
     },
     {
         id: 'junk',
@@ -211,7 +252,18 @@ export const servicesConfig: ServiceConfig[] = [
         leadValue: 30,
         active: true,
         serviceTypes: ['Residential Haul', 'Commercial Cleanout', 'Appliance Removal'],
-        urgencyOptions: ['ASAP', 'This week', 'Planning ahead']
+        urgencyOptions: ['ASAP', 'This week', 'Planning ahead'],
+        costInfo: {
+            averageCost: "$100 – $600 per load",
+            factors: ["Volume (Truck Space Used)", "Weight of Debris", "Type of Items (Hazardous/Electronics)", "Location & Access"],
+            priceTable: [
+                { label: "Minimum Charge (Single Item)", price: "$80 - $120" },
+                { label: "1/4 Truck Load", price: "$150 - $250" },
+                { label: "1/2 Truck Load", price: "$300 - $450" },
+                { label: "Full Truck Load", price: "$500 - $800" }
+            ],
+            disclaimer: "Heavy materials like concrete or shingles may have surcharges due to weight limits. Hazardous waste handling requires special quoting."
+        }
     },
     {
         id: 'moving',
@@ -238,7 +290,18 @@ export const servicesConfig: ServiceConfig[] = [
         leadValue: 50,
         active: true,
         serviceTypes: ['Local Move', 'Long Distance', 'Packing Services'],
-        urgencyOptions: ['Specific Date', 'Flexible within 14 days', 'Planning (1 month+)']
+        urgencyOptions: ['Specific Date', 'Flexible within 14 days', 'Planning (1 month+)'],
+        costInfo: {
+            averageCost: "$130 – $180 per hour",
+            factors: ["Number of Movers (2 vs 3)", "Distance of Move", "Stairs/Elevators", "Packing Services Info"],
+            priceTable: [
+                { label: "2 Movers + Truck (Hourly)", price: "$130 - $160/hr" },
+                { label: "3 Movers + Truck (Hourly)", price: "$180 - $220/hr" },
+                { label: "Travel Time Fee", price: "+1 Hour Labor" },
+                { label: "Piano Moving Surcharge", price: "$200 - $500" }
+            ],
+            disclaimer: "Most local moves have a minimum charge (e.g., 3-4 hours). Packing materials are typically billed separately."
+        }
     },
     {
         id: 'landscaping',
@@ -265,7 +328,18 @@ export const servicesConfig: ServiceConfig[] = [
         leadValue: 30,
         active: true,
         serviceTypes: ['Lawn Maintenance', 'Landscape Design', 'Sod/Soil/Mulch'],
-        urgencyOptions: ['This week', 'This month', 'Getting a Quote']
+        urgencyOptions: ['This week', 'This month', 'Getting a Quote'],
+        costInfo: {
+            averageCost: "$50 – $100 per visit",
+            factors: ["Lot Size", "Frequency (Weekly vs Bi-Weekly)", "Detailing Required (Trimming/Edging)", "Waste Removal"],
+            priceTable: [
+                { label: "Weekly Lawn Mowing (Std. Lot)", price: "$50 - $80" },
+                { label: "Spring/Fall Cleanup", price: "$250 - $500" },
+                { label: "Garden Bed Weeding (Hourly)", price: "$50 - $80/hr" },
+                { label: "Sod Installation (per sqft)", price: "$1.50 - $3.00" }
+            ],
+            disclaimer: "Landscaping quotes are highly dependent on the specific terrain and current condition of the property. Contracts often offer discounted per-visit rates."
+        }
     },
     {
         id: 'electrical',
@@ -293,7 +367,18 @@ export const servicesConfig: ServiceConfig[] = [
         leadValue: 60,
         active: true,
         serviceTypes: ['Repair/Troubleshooting', 'Panel Upgrade', 'Lighting/Installs'],
-        urgencyOptions: ['Emergency/Sparking', 'Within 24 hours', 'Standard Quote']
+        urgencyOptions: ['Emergency/Sparking', 'Within 24 hours', 'Standard Quote'],
+        costInfo: {
+            averageCost: "$110 – $180 per hour",
+            factors: ["Complexity of Diagnostics", "ESA Permit Fees", "Material Costs (Wire/Breakers)", "Emergency Timing"],
+            priceTable: [
+                { label: "Service Call / Troubleshooting", price: "$120 - $200" },
+                { label: "Outlet / Switch Install", price: "$150 - $250" },
+                { label: "Panel Upgrade (100 to 200A)", price: "$2,500 - $4,000" },
+                { label: "EV Charger Installation", price: "$800 - $1,500" }
+            ],
+            disclaimer: "All electrical work includes safety inspections. ESA permits (if required) are an additional cost handled by the contractor."
+        }
     },
     {
         id: 'painting',
@@ -320,7 +405,18 @@ export const servicesConfig: ServiceConfig[] = [
         leadValue: 40,
         active: true,
         serviceTypes: ['Interior Painting', 'Exterior Painting', 'Cabinet/Trim'],
-        urgencyOptions: ['Ready to start', 'Within 2 weeks', 'Getting a Quote']
+        urgencyOptions: ['Ready to start', 'Within 2 weeks', 'Getting a Quote'],
+        costInfo: {
+            averageCost: "$1.50 – $3.50 per sqft",
+            factors: ["Surface Condition (Prep needed)", "Ceiling Height", "Number of Colors", "Paint Grade Selection"],
+            priceTable: [
+                { label: "Average Bedroom (Walls)", price: "$300 - $500" },
+                { label: "Interior Trim / Doors (per opening)", price: "$50 - $100" },
+                { label: "Kitchen Cabinet Refinishing", price: "$2,500 - $5,000" },
+                { label: "Whole Home Interior (2000 sqft)", price: "$4,000 - $8,000" }
+            ],
+            disclaimer: "Prices assume standard prep. Extensive drywall repair or wallpaper removal will increase labor hours significantly."
+        }
     },
     {
         id: 'roofing',
@@ -348,7 +444,18 @@ export const servicesConfig: ServiceConfig[] = [
         leadValue: 90,
         active: true,
         serviceTypes: ['Leak Repair', 'New Roof/Reshingle', 'Gutter/Soffit'],
-        urgencyOptions: ['Active Leak', 'This Season', 'Planning Quote']
+        urgencyOptions: ['Active Leak', 'This Season', 'Planning Quote'],
+        costInfo: {
+            averageCost: "$5,000 – $12,000 (New Roof)",
+            factors: ["Roof Pitch & Complexity", "Layers to Remove", "Shingle Quality (3-tab vs Architectural)", "Venting Upgrades"],
+            priceTable: [
+                { label: "Minor Leak Repair", price: "$300 - $600" },
+                { label: "Asphalt Shingle Replacement (per sqft)", price: "$4.50 - $7.00" },
+                { label: "Roof Vent / Flashing Repair", price: "$250 - $500" },
+                { label: "Average Bungalow Re-roof", price: "$5,000 - $8,000" }
+            ],
+            disclaimer: "Roofing estimates require an on-site inspection to determine the number of layers and structural integrity of decking."
+        }
     },
     {
         id: 'cleaning',
@@ -375,6 +482,17 @@ export const servicesConfig: ServiceConfig[] = [
         leadValue: 20,
         active: true,
         serviceTypes: ['Deep Clean', 'Move-out Clean', 'Recurring Service'],
-        urgencyOptions: ['ASAP', 'Specific Date', 'Flexible']
+        urgencyOptions: ['ASAP', 'Specific Date', 'Flexible'],
+        costInfo: {
+            averageCost: "$45 – $65 per hour",
+            factors: ["Home Size (Labor Hours)", "Pets / Soil Level", "Deep Clean vs Maintenance", "Supplies Provided"],
+            priceTable: [
+                { label: "Standard Cleaning (3 Bed, 2 Bath)", price: "$140 - $200" },
+                { label: "Deep / Move-out Clean", price: "$300 - $500" },
+                { label: "Carpet Steam Cleaning (per room)", price: "$40 - $70" },
+                { label: "Bi-Weekly Maintenance", price: "$120 - $160" }
+            ],
+            disclaimer: "First-time cleans are often billed as a deep clean to establish a baseline. Recurring services are typically flat-rated after the initial visit."
+        }
     }
 ];

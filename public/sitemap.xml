@@ -106,6 +106,68 @@
         <priority>0.9</priority>
     </url>
 
+    <!-- Cost Guides -->
+    <url>
+        <loc>https://thunderbayhomeservices.com/cost/snow-removal</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/cost/plumbing</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/cost/hvac</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/cost/electrical</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/cost/roofing</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/cost/landscaping</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/cost/painting</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/cost/cleaning</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/cost/moving</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/cost/junk-removal</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Blog Posts -->
     <url>
         <loc>https://thunderbayhomeservices.com/blog/snow-removal-one-time-vs-seasonal</loc>
