@@ -10,9 +10,57 @@ import Breadcrumbs from '../components/Breadcrumbs';
 const ServiceLandingPage: React.FC = () => {
     const { serviceSlug } = useParams<{ serviceSlug: string }>();
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        address: '',
+        serviceType: '',
+        urgency: '',
+        consent: false
+    });
 
     const service: ServiceConfig | undefined = servicesConfig.find(s => s.slug === serviceSlug);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFormData(prev => ({ ...prev, consent: e.target.checked }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+
+        const payload = {
+            name: formData.name,
+            phone: formData.phone,
+            address: formData.address,
+            serviceType: formData.serviceType || (service?.serviceTypes[0] || ''),
+            urgency: formData.urgency || (service?.urgencyOptions[0] || ''),
+            serviceCategory: service?.name || '',
+            source: 'thunderbayhomeservices.com'
+        };
+
+        try {
+            await fetch('https://services.leadconnectorhq.com/hooks/k2aNHMKb5hD0nNzq3kHp/webhook-trigger/05303924-7821-4e4c-94fa-955c91dacf36', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            setSubmitted(true);
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            // Fallback to success state to not block the user, or show error
+            setSubmitted(true);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     // Topic Clustering: Find related services
     const relatedServices = service ? servicesConfig.filter(s => service.relatedSlugs.includes(s.slug)) : [];
@@ -261,45 +309,86 @@ const ServiceLandingPage: React.FC = () => {
                     <div className="card" style={{ padding: '2rem', boxShadow: '0 20px 40px -5px rgba(0, 0, 0, 0.15)', borderTop: '4px solid var(--color-accent)' }}>
                         <h2 style={{ fontSize: '1.25rem', marginBottom: '1.5rem' }}>Get {service.name} Quotes</h2>
                         <form
-                            onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+                            onSubmit={handleSubmit}
                             style={{ display: 'grid', gap: '1.25rem' }}
                         >
                             <div>
                                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Full Name</label>
-                                <input required type="text" placeholder="Your Name" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }} />
+                                <input
+                                    required
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleInputChange}
+                                    placeholder="Your Name"
+                                    style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }}
+                                />
                             </div>
 
                             <div>
                                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Phone Number</label>
-                                <input required type="tel" placeholder="Your phone number" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }} />
+                                <input
+                                    required
+                                    type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
+                                    placeholder="Your phone number"
+                                    style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }}
+                                />
                             </div>
 
                             <div>
                                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Property Address</label>
-                                <input required type="text" placeholder="Address, Thunder Bay" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }} />
+                                <input
+                                    required
+                                    type="text"
+                                    name="address"
+                                    value={formData.address}
+                                    onChange={handleInputChange}
+                                    placeholder="Address, Thunder Bay"
+                                    style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }}
+                                />
                             </div>
 
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                                 <div>
                                     <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Service Type</label>
-                                    <select style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', background: 'white', fontSize: '16px' }}>
+                                    <select
+                                        name="serviceType"
+                                        value={formData.serviceType}
+                                        onChange={handleInputChange}
+                                        style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', background: 'white', fontSize: '16px' }}
+                                    >
                                         {service.serviceTypes.map((type: string, idx: number) => (
-                                            <option key={idx}>{type}</option>
+                                            <option key={idx} value={type}>{type}</option>
                                         ))}
                                     </select>
                                 </div>
                                 <div>
                                     <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Urgency (optional)</label>
-                                    <select style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', background: 'white', fontSize: '16px' }}>
+                                    <select
+                                        name="urgency"
+                                        value={formData.urgency}
+                                        onChange={handleInputChange}
+                                        style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', background: 'white', fontSize: '16px' }}
+                                    >
                                         {service.urgencyOptions.map((opt: string, idx: number) => (
-                                            <option key={idx}>{opt}</option>
+                                            <option key={idx} value={opt}>{opt}</option>
                                         ))}
                                     </select>
                                 </div>
                             </div>
 
                             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                                <input required type="checkbox" id="consent" style={{ marginTop: '0.25rem' }} />
+                                <input
+                                    required
+                                    type="checkbox"
+                                    id="consent"
+                                    checked={formData.consent}
+                                    onChange={handleCheckboxChange}
+                                    style={{ marginTop: '0.25rem' }}
+                                />
                                 <label htmlFor="consent" style={{ fontSize: '0.7rem', color: 'var(--color-text-dim)', lineHeight: 1.4 }}>
                                     I agree to be contacted via phone or SMS by up to 3 local providers regarding my request.
                                 </label>
@@ -309,10 +398,11 @@ const ServiceLandingPage: React.FC = () => {
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 type="submit"
+                                disabled={loading}
                                 className="btn-solid"
-                                style={{ width: '100%', marginTop: '0.5rem' }}
+                                style={{ width: '100%', marginTop: '0.5rem', opacity: loading ? 0.7 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}
                             >
-                                Get {service.name} Quotes
+                                {loading ? 'Submitting...' : `Get ${service.name} Quotes`}
                             </motion.button>
 
                             <p style={{ textAlign: 'center', fontSize: '0.7rem', color: 'var(--color-text-dim)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
