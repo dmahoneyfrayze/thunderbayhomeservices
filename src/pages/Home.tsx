@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { servicesConfig } from '../config/servicesConfig';
 import { useSchema } from '../hooks/useSchema';
 import SEO from '../components/SEO';
+import heroBg from '../assets/images/thunder-bay-hero.jpg';
 
 const Home: React.FC = () => {
     const location = useLocation();
@@ -42,7 +43,14 @@ const Home: React.FC = () => {
             />
 
             {/* Hero Section */}
-            <section style={{ padding: '6rem 0 4rem 0', textAlign: 'center' }}>
+            <section style={{
+                padding: '8rem 0 6rem 0',
+                textAlign: 'center',
+                backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.95)), url(${heroBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed'
+            }}>
                 <div className="container">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}

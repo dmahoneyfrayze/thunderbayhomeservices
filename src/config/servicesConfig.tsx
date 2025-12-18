@@ -1,10 +1,16 @@
 import React from 'react';
 import { Snowflake, Droplets, Thermometer, Trash2, Truck, Leaf, Zap, Paintbrush, Home, Sparkles } from 'lucide-react';
 // Import hero images
-import snowHero from '../assets/images/snow-hero.png';
-import plumbingHero from '../assets/images/plumbing-hero.png';
-import hvacHero from '../assets/images/hvac-hero.png';
-import electricalHero from '../assets/images/electrical-hero.png';
+import snowHero from '../assets/images/Snow_Removal_Page_Header.png';
+import plumbingHero from '../assets/images/Plumbing_Page_Header.png';
+import hvacHero from '../assets/images/HVAC_Heating_Page_Header.png';
+import electricalHero from '../assets/images/Electrical_Page_Header.png';
+import cleaningHero from '../assets/images/Cleaning_Page_Header.jpg';
+import junkHero from '../assets/images/Junk_Removal_Page_Header.png';
+import landscapingHero from '../assets/images/Landscaping_Page_Header.png';
+import movingHero from '../assets/images/Moving_Services_Page_Header.png';
+import paintingHero from '../assets/images/Painting_Page_Header.png';
+import roofingHero from '../assets/images/Roofing_Page_Header.png';
 
 // Fallback for missing images
 const defaultHero = snowHero;
@@ -181,7 +187,7 @@ export const servicesConfig: ServiceConfig[] = [
         slug: 'junk-removal',
         name: 'Junk Removal',
         icon: <Trash2 size={24} />,
-        heroImage: defaultHero,
+        heroImage: junkHero,
         headline: 'Junk Removal & Hauling in Thunder Bay',
         subheadline: 'Professional property clearing. Efficient, local, and reliable.',
         intro: 'Managing property clutter and debris is much easier with professional help. Thunder Bay junk removal services handle everything from residential cleanouts to commercial construction debris hauling.',
@@ -208,7 +214,7 @@ export const servicesConfig: ServiceConfig[] = [
         slug: 'moving',
         name: 'Moving Services',
         icon: <Truck size={24} />,
-        heroImage: defaultHero,
+        heroImage: movingHero,
         headline: 'Moving & Transport Services in Thunder Bay',
         subheadline: 'Local and long-distance moving. Specialized transport experts.',
         intro: 'A successful move requires careful planning and reliable hands. We connect you with vetted moving companies in Thunder Bay who understand the logistics of Northern Ontario relocation.',
@@ -235,7 +241,7 @@ export const servicesConfig: ServiceConfig[] = [
         slug: 'landscaping',
         name: 'Landscaping',
         icon: <Leaf size={24} />,
-        heroImage: defaultHero,
+        heroImage: landscapingHero,
         headline: 'Landscaping Services in Thunder Bay',
         subheadline: 'Estate maintenance, garden design, and lawn care authority.',
         intro: 'Your property\'s exterior is the first thing people see. Thunder Bay\'s landscaping experts provide seasonal care, structural design, and routine maintenance to keep your property beautiful.',
@@ -289,7 +295,7 @@ export const servicesConfig: ServiceConfig[] = [
         slug: 'painting',
         name: 'Painting',
         icon: <Paintbrush size={24} />,
-        heroImage: defaultHero,
+        heroImage: paintingHero,
         headline: 'Professional Painting in Thunder Bay',
         subheadline: 'Interior and exterior specialists. Quality finishes for home and office.',
         intro: 'A fresh coat of paint can transform any space. Working with professional painters in Thunder Bay ensures a clean finish, proper surface prep, and long-lasting durability.',
@@ -316,7 +322,7 @@ export const servicesConfig: ServiceConfig[] = [
         slug: 'roofing',
         name: 'Roofing',
         icon: <Home size={24} />,
-        heroImage: defaultHero,
+        heroImage: roofingHero,
         headline: 'Roofing & Shingles in Thunder Bay',
         subheadline: 'Expert roofing repairs and full replacements. Storm damage authority.',
         intro: 'Northern Ontario weather is tough on roofs. Whether you need a quick patch or a full shingle replacement, we connect you with specialized roofing contractors who know the local climate.',
@@ -343,7 +349,7 @@ export const servicesConfig: ServiceConfig[] = [
         slug: 'cleaning',
         name: 'Cleaning',
         icon: <Sparkles size={24} />,
-        heroImage: defaultHero,
+        heroImage: cleaningHero,
         headline: 'Deep Cleaning Services in Thunder Bay',
         subheadline: 'Professional house cleaners. Deep scrubs and move-out specialists.',
         intro: 'Maintaining a pristine home doesn\'t have to be a chore. We connect you with available cleaning professionals in Thunder Bay who manage everything from routine visits to deep move-out cleans.',
