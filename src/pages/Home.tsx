@@ -6,6 +6,7 @@ import { servicesConfig } from '../config/servicesConfig';
 import { useSchema } from '../hooks/useSchema';
 import SEO from '../components/SEO';
 import heroBg from '../assets/images/thunder-bay-hero.jpg';
+import LeadMagnet from '../components/LeadMagnet';
 
 const Home: React.FC = () => {
     const location = useLocation();
@@ -149,6 +150,16 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
+            {/* Lead Magnet: Checklist */}
+            <section className="container" style={{ paddingBottom: '4rem' }}>
+                <LeadMagnet
+                    title="2025 Thunder Bay Home Maintenance Checklist"
+                    description="Don't get caught off guard by our northern winters. Download the essential seasonal checklist for protecting your home."
+                    type="checklist"
+                    buttonText="Download Free Checklist"
+                />
+            </section>
+
             {/* Expert Guides Section */}
             <section style={{ padding: '4rem 0', background: '#F8FAFC' }}>
                 <div className="container">
@@ -175,10 +186,10 @@ const Home: React.FC = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* How It Works (Marketplace Clarity) */}
-            <section id="how-it-works" style={{ padding: '6rem 0' }}>
+            < section id="how-it-works" style={{ padding: '6rem 0' }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                         <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>How Thunder Bay Home Services Works</h2>
@@ -201,10 +212,10 @@ const Home: React.FC = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Trust & Local Authority Layer */}
-            <section style={{ background: 'var(--color-brand-primary)', color: 'white', padding: '6rem 0' }}>
+            < section style={{ background: 'var(--color-brand-primary)', color: 'white', padding: '6rem 0' }}>
                 <div className="container" style={{ textAlign: 'center' }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                         <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: 'white' }}>Built for Thunder Bay</h2>
@@ -225,10 +236,10 @@ const Home: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Conversion Reinforcement */}
-            <section style={{ padding: '6rem 0', textAlign: 'center' }}>
+            < section style={{ padding: '6rem 0', textAlign: 'center' }}>
                 <div className="container">
                     <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Need help now?</h2>
                     <p style={{ fontSize: '1.1rem', color: 'var(--color-text-dim)', marginBottom: '2rem' }}>
@@ -238,10 +249,10 @@ const Home: React.FC = () => {
                         Get Instant Quotes
                     </Link>
                 </div>
-            </section>
+            </section >
 
             {/* For Contractors */}
-            <section style={{ background: '#F8FAFC', padding: '5rem 0', borderTop: '1px solid #E2E8F0' }}>
+            < section style={{ background: '#F8FAFC', padding: '5rem 0', borderTop: '1px solid #E2E8F0' }}>
                 <div className="container" style={{ textAlign: 'center' }}>
                     <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>For Service Providers</h2>
                     <p style={{ color: 'var(--color-text-dim)', maxWidth: '700px', margin: '0 auto 2rem', fontSize: '1.1rem' }}>
@@ -251,8 +262,8 @@ const Home: React.FC = () => {
                         Learn More for Contractors
                     </Link>
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 };
 

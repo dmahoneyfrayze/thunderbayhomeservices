@@ -5,6 +5,7 @@ import { Clock, Tag, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import { blogPosts } from '../config/blogConfig';
 import guidesHero from '../assets/images/guides_hero.png';
+import LeadMagnet from '../components/LeadMagnet';
 
 const BlogIndex: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -81,6 +82,16 @@ const BlogIndex: React.FC = () => {
                         </button>
                     ))}
                 </div>
+            </section>
+
+            {/* Lead Magnet: Cost Guide */}
+            <section className="container" style={{ marginTop: '3rem' }}>
+                <LeadMagnet
+                    title="2025 Thunder Bay Winter Service Cost Guide"
+                    description="Planning your budget? Get our detailed report on local pricing for snow removal, heating repairs, and emergency plumbing."
+                    type="report"
+                    buttonText="Get the Cost Guide"
+                />
             </section>
 
             {/* Content Grid */}

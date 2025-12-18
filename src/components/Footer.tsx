@@ -17,8 +17,8 @@ const Footer: React.FC = () => {
 
                     {/* Brand Column */}
                     <div>
-                        <Link to="/" style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                            <img src={logo} alt="Thunder Bay Home Services" style={{ height: '40px', width: 'auto' }} />
+                        <Link to="/" style={{ display: 'flex', alignItems: 'center', marginBottom: '1.5rem' }}>
+                            <img src={logo} alt="Thunder Bay Home Services" style={{ height: '120px', width: 'auto' }} />
                         </Link>
                         <p style={{ color: 'var(--color-text-dim)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                             Thunder Bay Home Services is a local platform offering service comparisons, expert guides, and homeowner resources across Thunder Bay. Our mission is to help residents make informed decisions when hiring home service professionals.

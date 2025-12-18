@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         }}>
             <div className="container" style={{ padding: '0 1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Link to="/" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={logo} alt="Thunder Bay Home Services" style={{ height: '48px', width: 'auto' }} />
+                    <img src={logo} alt="Thunder Bay Home Services" style={{ height: '64px', width: 'auto' }} />
                 </Link>
 
                 {/* DESKTOP NAV */}
