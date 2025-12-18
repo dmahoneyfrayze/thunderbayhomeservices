@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                         <h4 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Company</h4>
                         <ul style={{ listStyle: 'none', display: 'grid', gap: '0.75rem' }}>
                             <li><Link to="/about" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>About Us</Link></li>
-                            <li><Link to="/pro" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>For Contractors</Link></li>
+                            <li><Link to="/for-contractors" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>For Contractors</Link></li>
                             <li><Link to="/privacy" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Privacy Policy</Link></li>
                             <li><Link to="/terms" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Terms of Service</Link></li>
                         </ul>
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
 
                 <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem', textAlign: 'center' }}>
                     <p style={{ color: 'var(--color-text-dim)', fontSize: '0.875rem' }}>
-                        © {new Date().getFullYear()} Thunder Bay Home Services. Proudly Local.
+                        © {new Date().getFullYear()} Thunder Bay Home Services. <span style={{ opacity: 0.7 }}>Operated by <a href="https://frayze.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Frayze Technologies Inc.</a></span>
                     </p>
                 </div>
             </div>

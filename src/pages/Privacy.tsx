@@ -8,7 +8,9 @@ const Privacy: React.FC = () => {
             <div style={{ color: 'var(--color-text-dim)', lineHeight: 1.8 }}>
                 <p style={{ marginBottom: '1rem' }}>Last Updated: December 2024</p>
                 <p style={{ marginBottom: '1.5rem' }}>
-                    At Thunder Bay Home Services ("we", "our", "us"), we respect your privacy. This policy explains how we collect and use your information when you use our website to request service quotes.
+                    <p style={{ marginBottom: '1.5rem' }}>
+                        Thunder Bay Home Services is a local service comparison platform operated by <strong>Frayze Technologies Inc.</strong>, based in Ontario, Canada. This policy explains how we collect and use your information when you use our website to request service quotes.
+                    </p>
                 </p>
 
                 <h2 style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem', color: 'var(--color-text-main)' }}>1. Information We Collect</h2>

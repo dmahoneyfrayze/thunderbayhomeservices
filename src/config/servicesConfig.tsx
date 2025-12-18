@@ -34,20 +34,20 @@ export interface ServiceConfig {
     headline: string;
     subheadline: string;
     intro: string;
-    subServices: string[]; // Keeping for legacy/related logic or can deprecate
-    typesData: ServiceTypeData[]; // New Section 2
-    whenToRequest: SectionData; // New Section 3
-    whyCompare: string[]; // New Section 5 bullets
+    subServices: string[];
+    typesData: ServiceTypeData[];
+    whenToRequest: SectionData;
+    whyCompare: string[];
     neighborhoods: string[];
     relatedSlugs: string[];
-    relatedIntro?: string; // New Contextual Intro
+    relatedIntro?: string;
     faqs: FAQ[];
     painTitle: string;
     painText: string;
     leadValue: number;
     active: boolean;
-    serviceTypes: string[]; // For Form
-    urgencyOptions: string[]; // For Form
+    serviceTypes: string[];
+    urgencyOptions: string[];
 }
 
 export const servicesConfig: ServiceConfig[] = [
@@ -99,9 +99,10 @@ export const servicesConfig: ServiceConfig[] = [
         relatedSlugs: ['landscaping', 'junk-removal', 'moving'],
         relatedIntro: 'Homeowners often schedule snow removal alongside landscaping services and junk removal during seasonal transitions.',
         faqs: [
-            { question: 'How much does seasonal snow removal cost in Thunder Bay?', answer: 'Seasonal contracts in Thunder Bay typically range from $400 to $900 depending on driveway size and service frequency. Most providers offer unlimited clearing for snowfalls over 5cm.' },
-            { question: 'Do pros offer emergency snow plowing?', answer: 'Yes, many local contractors provide "ASAP" or emergency one-time plowing, especially during heavy Northern Ontario storm events.' },
-            { question: 'Are contractors in your network insured?', answer: 'We prioritize connecting you with providers who carry full liability insurance to protect your property during clearing operations.' }
+            { question: 'How much does snow removal cost in Thunder Bay?', answer: 'Snow removal costs vary based on property size, service type, and frequency. One-time services, emergency plowing, and seasonal contracts are typically priced differently. Comparing local providers helps clarify available options.' },
+            { question: 'Is emergency snow removal available in Thunder Bay?', answer: 'Many providers offer emergency or same-day snow removal during heavy snowfall, though availability may be limited during peak weather events.' },
+            { question: 'What types of snow removal services are offered?', answer: 'Snow removal services may include driveway clearing, walkway shoveling, parking lot plowing, and seasonal snow management contracts.' },
+            { question: 'What information should I provide when requesting snow removal?', answer: 'Homeowners are typically asked to provide their address, property type, service urgency, and whether the request is one-time or seasonal.' }
         ],
         painTitle: 'Snow piling up? Driveway blocked?',
         painText: 'We connect you with available snow removal providers in Thunder Bay so you can get service fast—without calling around.',
@@ -122,20 +123,22 @@ export const servicesConfig: ServiceConfig[] = [
         subServices: ['Emergency Leak Repair', 'Drain Cleaning', 'Fixture Installation', 'Sump Pump Service'],
         neighborhoods: ['Northwood', 'McKellar Park', 'Sherwood Estates', 'River Terrace'],
         relatedSlugs: ['electrical', 'cleaning', 'roofing'],
+        relatedIntro: 'Plumbing projects often require coordination with other trades. Homeowners frequently request electrician services for water heater installs or cleaning services after major repairs.',
         typesData: [
-            { title: 'Emergency Plumbing', description: '24/7 response for bursts, leaks, and critical failures.' },
-            { title: 'Residential Repair', description: 'Standard maintenance for faucets, toilets, and drains.' }
+            { title: 'Emergency Plumbing', description: 'Immediate response for active leaks, burst pipes, and sewer backups.' },
+            { title: 'Fixture Installation', description: 'Professional installation of toilets, sinks, faucets, and showers.' }
         ],
         whenToRequest: {
-            title: 'When to Call a Plumber',
-            description: 'Typically needed for emergency leaks or planned renovations.',
-            bullets: ['Leaking pipes', 'Clogged drains', 'New installations']
+            title: 'Common Plumbing Requests',
+            description: 'Professional assistance is recommended for both urgent failures and planned upgrades.',
+            bullets: ['Active water leaks', 'Clogged or slow drains', 'Bathroom renovations', 'Appliance hookups']
         },
-        whyCompare: ['Verify license status', 'Compare hourly rates', 'Check availability'],
+        whyCompare: ['Verify licensing and insurance', 'Compare hourly labour rates', 'Check emergency availability'],
         faqs: [
-            { question: 'Who is the best plumber for emergencies in Thunder Bay?', answer: 'Emergency availability changes daily. Our platform matches you instantly with plumbers who are currently on-call and ready to respond to leaks or bursts in the T-Bay area.' },
-            { question: 'Do I need a licensed plumber for fixture installation?', answer: 'Yes, hiring a licensed professional ensures your work meets Ontario Building Code standards and protects your home insurance validity.' },
-            { question: 'What is the standard hourly rate for plumbers in T-Bay?', answer: 'Standard rates typically fall between $80 and $130 per hour, though emergency after-hours calls may incur a premium.' }
+            { question: 'How are plumbing costs determined in Thunder Bay?', answer: 'Plumbing costs typically depend on the complexity of the job, materials required, and timing. Emergency after-hours calls often incur a premium compared to scheduled Maintenance.' },
+            { question: 'Is emergency plumbing available in Thunder Bay?', answer: 'Yes, many local plumbers offer 24/7 response for critical issues like burst pipes or sewage backups that threaten property safety.' },
+            { question: 'What are common plumbing services offered?', answer: 'Services range from leak detection and drain cleaning to full bathroom renovations and water heater installations.' },
+            { question: 'What details should I provide to get a plumbing quote?', answer: 'It is helpful to provide a description of the issue, photos if possible, the age of your plumbing system, and your preferred timeline.' }
         ],
         painTitle: 'Leaking pipe or clogged drain?',
         painText: 'Don\'t wait for water damage. Connect with available Thunder Bay plumbers who can fix the problem fast.',
@@ -154,13 +157,17 @@ export const servicesConfig: ServiceConfig[] = [
         subheadline: 'Furnace repairs, AC service, and climate control engineering.',
         intro: 'With Thunder Bay\'s extreme temperature swings, a functional HVAC system is critical. Our network includes specialized heating and cooling technicians who ensure your home stays comfortable year-round.',
         subServices: ['Furnace Repair & Install', 'Air Conditioning Service', 'Smart Thermostat Setup', 'Ventilation Cleaning'],
-        typesData: [], whenToRequest: { title: 'Needs', description: 'Heating' }, whyCompare: [],
+        typesData: [],
+        whenToRequest: { title: 'Needs', description: 'Heating' },
+        whyCompare: [],
         neighborhoods: ['Hillcrest', 'Grandview', 'Mariday Park', 'Westfort Village'],
         relatedSlugs: ['electrical', 'plumbing', 'roofing'],
+        relatedIntro: 'HVAC systems involve complex electrical components. Homeowners often inquire about electrical services alongside furnace or AC installations.',
         faqs: [
-            { question: 'My furnace stopped working in the middle of a cold snap. What should I do?', answer: 'Request an emergency HVAC quote immediately. We prioritize "No Heat" calls by matching you with technicians who offer 24/7 furnace repair in Thunder Bay.' },
-            { question: 'How often should I service my AC in Thunder Bay?', answer: 'We recommend an annual tune-up in early spring to ensure your system handles the summer humidity efficiently.' },
-            { question: 'Are there rebates for new high-efficiency furnaces in Ontario?', answer: 'Many local HVAC installers can help you navigate provincial and federal energy efficiency rebates for new equipment.' }
+            { question: 'What is the difference between HVAC repair and maintenance?', answer: 'Repair focuses on fixing a broken system, while maintenance involves routine inspections and cleaning to prevent future breakdowns.' },
+            { question: 'Are emergency heating services available in winter?', answer: 'Yes, during cold snaps, many Thunder Bay HVAC providers prioritize "no heat" calls to ensure homeowner safety.' },
+            { question: 'When is the best time to schedule HVAC service?', answer: 'It is best to schedule furnace maintenance in early fall and AC maintenance in spring to beat the seasonal rush.' },
+            { question: 'What information is needed for an HVAC quote?', answer: 'Providers typically need to know the age of your system, the fuel type (gas/electric), and a description of the problem.' }
         ],
         painTitle: 'Furnace failing in the cold?',
         painText: 'Keep your home safe and warm. We match you with available heating experts in Thunder Bay immediately.',
@@ -182,10 +189,12 @@ export const servicesConfig: ServiceConfig[] = [
         typesData: [], whenToRequest: { title: 'Needs', description: 'Hauling' }, whyCompare: [],
         neighborhoods: ['Lakeside', 'Bay & Algoma', 'Downtown Port Arthur', 'Rosslyn'],
         relatedSlugs: ['moving', 'cleaning', 'landscaping'],
+        relatedIntro: 'Junk removal is frequently paired with moving services or deep cleaning when preparing a home for sale or clearing out a rental unit.',
         faqs: [
-            { question: 'Do junk removal pros in T-Bay take hazardous materials?', answer: 'Most standard haulers cannot take chemicals, paint, or batteries. We recommend checking with individual providers at the time of your quote.' },
-            { question: 'How much does it cost to haul a single appliance?', answer: 'One-item pickups in Thunder Bay typically range from $60 to $120 depending on weight and accessibility.' },
-            { question: 'Will haulers do all the heavy lifting?', answer: 'Yes, professional junk removal services include labor—they will take items from wherever they are located on your property.' }
+            { question: 'How is junk removal pricing calculated?', answer: 'Pricing is generally based on the volume of space your items take up in the truck, as well as the time and labor required to load them.' },
+            { question: 'What items can be taken by junk removal services?', answer: 'Most providers accept furniture, appliances, yard waste, and general household debris. Hazardous materials typically require special handling.' },
+            { question: 'Is same-day junk removal available?', answer: 'Availability varies, but many local providers strive to accommodate same-day or next-day requests for urgent cleanouts.' },
+            { question: 'What should I do to prepare for junk removal?', answer: 'Consolidating items into one area can speed up the process, but professional crews can also remove items from where they sit in your home.' }
         ],
         painTitle: 'Too much clutter?',
         painText: 'From old furniture to construction debris, get it hauled away by local pros who do the heavy lifting.',
@@ -207,10 +216,12 @@ export const servicesConfig: ServiceConfig[] = [
         typesData: [], whenToRequest: { title: 'Needs', description: 'Moving' }, whyCompare: [],
         neighborhoods: ['Kakabeka Falls', 'Oliver Paipoonge', 'Shuniah', 'Neebing'],
         relatedSlugs: ['junk-removal', 'cleaning', 'painting'],
+        relatedIntro: 'Moving usually triggers other home services. Residents often schedule junk removal before a move and cleaning or painting services before moving into a new space.',
         faqs: [
-            { question: 'Are moving companies in Thunder Bay licensed and bonded?', answer: 'We feature reputable moving services that carry the necessary cargo and liability insurance for professional transport.' },
-            { question: 'How early should I book a mover in T-Bay?', answer: 'For summer moves, we recommend booking at least 4-6 weeks in advance. For mid-winter moves, 2 weeks is often sufficient.' },
-            { question: 'Do local movers provide packing supplies?', answer: 'Most providers offer optional packing services and can supply boxes, tape, and padding for an additional fee.' }
+            { question: 'What factors affect the cost of moving services?', answer: 'Costs are influenced by the distance of the move, the weight/volume of items, and additional services like packing or assembly.' },
+            { question: 'How far in advance should I book a mover in Thunder Bay?', answer: 'Ideally, booking 4-6 weeks in advance ensures availability, especially during the busy summer moving season.' },
+            { question: 'Do movers offer packing services?', answer: 'Yes, many moving companies offer full or partial packing services to ensure your belongings are professionally secured.' },
+            { question: 'What information do movers need for an accurate quote?', answer: 'You should provide a detailed inventory list, access details (stairs/elevators), and both pick-up and drop-off addresses.' }
         ],
         painTitle: 'Moving soon?',
         painText: 'Get the help you need for a stress-free move. Connect with vetted movers who respect your belongings.',
@@ -232,10 +243,12 @@ export const servicesConfig: ServiceConfig[] = [
         typesData: [], whenToRequest: { title: 'Needs', description: 'Landscaping' }, whyCompare: [],
         neighborhoods: ['River Terrace', 'Mount Forest', 'Parkdale', 'Northwood'],
         relatedSlugs: ['snow-removal', 'roofing', 'junk-removal'],
+        relatedIntro: 'Landscaping providers often offer year-round property care. Many homeowners bundle summer lawn care with winter snow removal contracts for consistency.',
         faqs: [
-            { question: 'When should I start spring lawn cleanup in Thunder Bay?', answer: 'Typically late April to early May, once the ground has thawed and dried sufficiently to avoid soil compaction.' },
-            { question: 'Do landscapers offer weekly lawn mowing packages?', answer: 'Yes, most local providers offer seasonal maintenance contracts that include weekly or bi-weekly mowing and trimming.' },
-            { question: 'Can you match me with hardscaping specialists for a patio?', answer: 'Yes, we have specialists in our network who focus on interlock, retaining walls, and structural landscape design.' }
+            { question: 'When is landscaping service typically available in Thunder Bay?', answer: 'The landscaping season generally runs from May to October, weather permitting. Spring cleanup starts once the ground thaws.' },
+            { question: 'Do I need a contract for lawn maintenance?', answer: 'While one-time cuts are available, most providers prioritize seasonal contracts that guarantee weekly or bi-weekly visits.' },
+            { question: 'How does weather affect landscaping schedules?', answer: 'Rain or severe weather can delay service. Providers typically reschedule for the next dry day to ensure quality results.' },
+            { question: 'What details help with a landscaping request?', answer: 'Providing your lot size, specific service needs (mowing vs design), and any access restrictions helps providers quote accurately.' }
         ],
         painTitle: 'Property need an upgrade?',
         painText: 'Ensure your yard looks its best. From weekly mowing to full landscape design, find your pro here.',
@@ -257,10 +270,12 @@ export const servicesConfig: ServiceConfig[] = [
         typesData: [], whenToRequest: { title: 'Needs', description: 'Wiring' }, whyCompare: [],
         neighborhoods: ['Fort William First Nation', 'Westfort', 'Current River', 'Sherwood Estates'],
         relatedSlugs: ['plumbing', 'hvac', 'painting'],
+        relatedIntro: 'Electrical work is fundamental to many renovations. It is common to coordinate electricians with plumbers for bathroom renos or painters for post-wiring drywall repairs.',
         faqs: [
-            { question: 'Do I need a permit for electrical panel upgrades in Ontario?', answer: 'Yes, all panel upgrades require an ESA permit and inspection. Licensed electricians in our network manage this process for you.' },
-            { question: 'What are the signs of faulty electrical wiring in an older T-Bay home?', answer: 'Flickering lights, tripping breakers, and warm outlet plates are critical warning signs that require professional inspection immediately.' },
-            { question: 'Can an electrician help with a smart home car charger installation?', answer: 'Yes, we feature licensed professionals who specialize in EV charger installs and smart home integration.' }
+            { question: 'Do I need a permit for electrical work in Thunder Bay?', answer: 'Most electrical alterations require an ESA permit. Licensed electricians will handle the permitting and inspection process for you.' },
+            { question: 'what qualifies as an electrical emergency?', answer: 'Sparks, burning smells, smoking outlets, or complete power loss are emergencies that require immediate professional attention.' },
+            { question: 'Can electricians help with smart home installations?', answer: 'Yes, many electricians specialize in installing smart thermostats, video doorbells, and EV charging stations.' },
+            { question: 'What should I verify before hiring an electrician?', answer: 'Always verify that the electrician is ECRA/ESA licensed to ensure the work is safe, legal, and insurable.' }
         ],
         painTitle: 'Electrical issues or new install?',
         painText: 'Don\'t risk DIY with electricity. Connect with licensed local electricians for a safe, professional job.',
@@ -282,10 +297,12 @@ export const servicesConfig: ServiceConfig[] = [
         typesData: [], whenToRequest: { title: 'Needs', description: 'Painting' }, whyCompare: [],
         neighborhoods: ['Mariday Park', 'Hillcrest', 'Grandview', 'Victoriaville'],
         relatedSlugs: ['cleaning', 'moving', 'electrical'],
+        relatedIntro: 'Painting is the finishing touch on many projects. Homeowners often schedule painters after electrical upgrades or prior to moving in.',
         faqs: [
-            { question: 'What is the best time of year for exterior painting in Northern Ontario?', answer: 'Late May through September is the ideal window, when temperatures stay consistently above 10°C overnight for proper drying.' },
-            { question: 'Do I need to buy the paint myself?', answer: 'Most pros offer "turnkey" quotes that include high-quality commercial paint. You can also specify a brand if you have a preference.' },
-            { question: 'How long does it take to paint a standard 3-bedroom house?', answer: 'A professional crew typically completes a full interior painting project in 3-5 days, depending on trim and ceiling work.' }
+            { question: 'When is the best time for exterior painting in Thunder Bay?', answer: 'Exterior painting is best done between late spring and early fall when temperatures and humidity levels ensure proper curing.' },
+            { question: 'Do painters provide the paint?', answer: 'Many professional painters include high-quality paint in their quote, but you can often supply your own specific brand if preferred.' },
+            { question: 'How much prep work is required only my end?', answer: 'Painters usually handle masking and drop cloths, but you may need to move small breakables and clear wall hangings.' },
+            { question: 'How is painting cost estimated?', answer: 'Costs are typically based on the square footage of wall/ceiling surface, ceiling height, and the amount of trim or detail work.' }
         ],
         painTitle: 'Ready for a fresh look?',
         painText: 'Transform your home with a professional paint job. Done fast, done right, with local quality.',
@@ -307,10 +324,12 @@ export const servicesConfig: ServiceConfig[] = [
         typesData: [], whenToRequest: { title: 'Needs', description: 'Roofing' }, whyCompare: [],
         neighborhoods: ['Current River', 'Port Arthur', 'Rosslyn', 'Kakabeka'],
         relatedSlugs: ['plumbing', 'hvac', 'landscaping'],
+        relatedIntro: 'Roofing protects everything below it. Leaks often require follow-up work from plumbers (vents/stacks) or HVAC technicians.',
         faqs: [
-            { question: 'How do I know if I need a new roof or just a repair?', answer: 'Missing shingles or active ceiling leaks are major red flags. A professional inspection can determine if a localized repair or a full replacement is safer.' },
-            { question: 'Can roofing be done in the winter in Thunder Bay?', answer: 'While possible for emergencies, most contractors prefer to wait for temperatures above freezing to ensure proper shingle sealing.' },
-            { question: 'Does a new roof increase home value in T-Bay?', answer: 'Yes, a new roof is one of the highest-ROI home improvements, especially for resale in our northern climate.' }
+            { question: 'How do I know if I need a repair or a full replacement?', answer: 'A widespread loss of granules, curling shingles, or multiple leaks usually indicate replacement is needed, while isolated damage may only need repair.' },
+            { question: 'Can roofing work be done in the winter?', answer: 'Emergency repairs are possible, but full replacements are best scheduled for warmer months to ensure shingles seal properly.' },
+            { question: 'How long does a roofing project take?', answer: 'Most residential roof replacements in Thunder Bay are completed within 1-2 days, weather permitting.' },
+            { question: 'What signs indicate I need a roof inspection?', answer: 'Missing shingles, daylight in the attic, or water stains on your ceiling are clear signs you should request a professional inspection.' }
         ],
         painTitle: 'Roof leaking or old shingles?',
         painText: 'Protect your biggest investment. Get your roof inspected and quoted by Thunder Bay\'s best.',
@@ -332,10 +351,12 @@ export const servicesConfig: ServiceConfig[] = [
         typesData: [], whenToRequest: { title: 'Needs', description: 'Clean' }, whyCompare: [],
         neighborhoods: ['Sherwood Estates', 'River Terrace', 'McKellar Park', 'Sherbrooke'],
         relatedSlugs: ['moving', 'junk-removal', 'painting'],
+        relatedIntro: 'Cleaning often signals a transition. It is the final step in moving or renovations, often following junk removal or painting.',
         faqs: [
-            { question: 'Do local cleaners bring their own supplies?', answer: 'Most professional services are fully equipped with their own vacuums and eco-friendly cleaning solutions.' },
-            { question: 'How much does a deep move-out clean cost in Thunder Bay?', answer: 'Prices generally range from $200 to $500 depending on home size and the level of "detailing" required.' },
-            { question: 'Can I book a recurring weekly cleaning service?', answer: 'Yes, we match you with reliable cleaners who specialize in scheduled maintenance to keep your home consistently clean.' }
+            { question: 'What is included in a deep clean?', answer: 'Deep cleaning goes beyond surface wipe-downs, often including baseboards, inside appliances, and hard-to-reach areas.' },
+            { question: 'How long does a standard house cleaning take?', answer: 'Timing depends on the size of your home and its condition, but a standard visit often takes 2-4 hours.' },
+            { question: 'Do I need to be home during the cleaning?', answer: 'No, many homeowners arrange entry via key or lockbox. Professionals are insured and vetted for your peace of mind.' },
+            { question: 'What information helps provide an accurate cleaning quote?', answer: 'The number of bedrooms/bathrooms, total square footage, and specific focus areas determine the scope and cost.' }
         ],
         painTitle: 'Need a professional deep clean?',
         painText: 'Save time and get a sparkling home. We match you with reliable cleaners who do the hard work.',

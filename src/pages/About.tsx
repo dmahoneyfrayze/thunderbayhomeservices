@@ -67,6 +67,17 @@ const About: React.FC = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Operator Section */}
+            <section style={{ padding: '4rem 0', textAlign: 'center', borderTop: '1px solid #E2E8F0' }}>
+                <div className="container" style={{ maxWidth: '800px' }}>
+                    <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#64748B' }}>About the Operator</h3>
+                    <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>
+                        Thunder Bay Home Services is a city-focused platform designed to help homeowners research and compare local home service providers.
+                        The platform is operated by <strong>Frayze Technologies Inc.</strong>, a Canadian company that builds and manages digital infrastructure for local service marketplaces.
+                    </p>
+                </div>
+            </section>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ShieldCheck, CheckCircle, ArrowRight, HelpCircle, ChevronDown, ChevronUp, MapPin } from 'lucide-react';
+import { ShieldCheck, CheckCircle, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { servicesConfig, type ServiceConfig } from '../config/servicesConfig';
 import { useSchema } from '../hooks/useSchema';
