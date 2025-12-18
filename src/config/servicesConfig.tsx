@@ -64,8 +64,8 @@ export const servicesConfig: ServiceConfig[] = [
         icon: <Snowflake size={24} />,
         heroImage: snowHero,
         headline: 'Snow Removal Services in Thunder Bay',
-        subheadline: 'Compare local providers. Get up to 3 quotes. Professional property clearing.',
-        intro: 'Snow removal is an essential home service for many Thunder Bay homeowners. Whether you’re dealing with emergency situations, routine maintenance, or seasonal needs, working with a qualified local provider helps ensure the job is handled safely and efficiently. Thunder Bay Home Services allows homeowners to explore service options, understand what’s involved, and compare available local providers in one place.',
+        subheadline: 'Compare local providers. Request up to 3 quotes for residential or commercial snow removal.',
+        intro: 'Snow removal is an essential home service for many Thunder Bay homeowners. In a city with frequent snowfall like Thunder Bay, timely snow removal helps maintain safe access to homes, driveways, and walkways throughout the winter season. Whether you’re dealing with emergency situations, routine maintenance, or seasonal needs, working with a qualified local provider helps ensure the job is handled safely and efficiently. Thunder Bay Home Services allows homeowners to explore service options, understand what’s involved, and compare available local providers in one place.',
         subServices: ['Residential Snow Removal', 'Commercial Snow Removal', 'Emergency Snow Plowing', 'Seasonal Snow Clearing'],
         typesData: [
             {
@@ -82,7 +82,7 @@ export const servicesConfig: ServiceConfig[] = [
             },
             {
                 title: 'Seasonal Snow Clearing Contracts',
-                description: 'Flat-rate seasonal agreements that guarantee service after every snowfall over 5cm. This is the most popular option for worry-free winter maintenance.'
+                description: 'Flat-rate seasonal agreements that guarantee service after each qualifying snowfall based on the provider’s service agreement. This is the most popular option for worry-free winter maintenance.'
             }
         ],
         whenToRequest: {
@@ -108,7 +108,8 @@ export const servicesConfig: ServiceConfig[] = [
             { question: 'How much does snow removal cost in Thunder Bay?', answer: 'Snow removal costs vary based on property size, service type, and frequency. One-time services, emergency plowing, and seasonal contracts are typically priced differently. Comparing local providers helps clarify available options.' },
             { question: 'Is emergency snow removal available in Thunder Bay?', answer: 'Many providers offer emergency or same-day snow removal during heavy snowfall, though availability may be limited during peak weather events.' },
             { question: 'What types of snow removal services are offered?', answer: 'Snow removal services may include driveway clearing, walkway shoveling, parking lot plowing, and seasonal snow management contracts.' },
-            { question: 'What information should I provide when requesting snow removal?', answer: 'Homeowners are typically asked to provide their address, property type, service urgency, and whether the request is one-time or seasonal.' }
+            { question: 'What information should I provide when requesting snow removal?', answer: 'Homeowners are typically asked to provide their address, property type, service urgency, and whether the request is one-time or seasonal.' },
+            { question: 'How quickly can snow removal be scheduled during heavy snowfall?', answer: 'Response times depend on weather conditions and provider availability. During major storms, providers may prioritize contracted clients, but emergency or same-day service may still be available depending on demand.' }
         ],
         painTitle: 'Snow piling up? Driveway blocked?',
         painText: 'We connect you with available snow removal providers in Thunder Bay so you can get service fast—without calling around.',

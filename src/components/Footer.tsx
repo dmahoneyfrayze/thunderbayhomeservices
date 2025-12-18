@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { servicesConfig } from '../config/servicesConfig';
-import { Mail, Phone, Facebook } from 'lucide-react';
+import { Mail, Facebook } from 'lucide-react';
 import logo from '../assets/images/logo.png';
 
 const Footer: React.FC = () => {
@@ -24,8 +24,8 @@ const Footer: React.FC = () => {
                             Thunder Bay Home Services is a local platform offering service comparisons, expert guides, and homeowner resources across Thunder Bay. Our mission is to help residents make informed decisions when hiring home service professionals.
                         </p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                            <div className="flex gap-2" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>
-                                <Phone size={16} /> <span>(807) 555-0123</span>
+                            <div style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '0.25rem' }}>
+                                Questions? Contact us online.
                             </div>
                             <div className="flex gap-2" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>
                                 <Mail size={16} /> <span>hello@thunderbayhomeservices.com</span>

@@ -182,7 +182,7 @@ const ServiceLandingPage: React.FC = () => {
                             ))}
                         </div>
                         <p style={{ marginTop: '1.5rem', color: 'var(--color-text-dim)', fontStyle: 'italic' }}>
-                            Our platform is designed to give homeowners clarity and choice without requiring phone calls or repeated outreach.
+                            Our platform is designed to give homeowners clarity and choice without requiring phone calls or repeated outreach. <br /><strong>Requests are shared only with providers who service your area and availability window.</strong>
                         </p>
                     </div>
 
@@ -200,7 +200,7 @@ const ServiceLandingPage: React.FC = () => {
                     <div style={{ marginBottom: '4rem' }}>
                         <h2 style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>{service.name} Across Thunder Bay Neighborhoods</h2>
                         <p style={{ fontSize: '1.05rem', lineHeight: 1.6, color: 'var(--color-text-dim)' }}>
-                            Local providers on our platform serve neighborhoods across Thunder Bay, including <strong>{service.neighborhoods.join(', ')},</strong> and surrounding areas.
+                            Local providers on our platform serve neighborhoods across Thunder Bay, including <strong>{service.neighborhoods.join(', ')},</strong> and surrounding areas, including residential and commercial properties across the city.
                         </p>
                     </div>
 
@@ -243,7 +243,7 @@ const ServiceLandingPage: React.FC = () => {
                             <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                                 {relatedServices.map((rs) => (
                                     <Link key={rs.slug} to={`/${rs.slug}`} style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-brand-primary)', textDecoration: 'underline' }}>
-                                        {rs.name} Services
+                                        {rs.name}
                                     </Link>
                                 ))}
                             </div>
@@ -271,7 +271,7 @@ const ServiceLandingPage: React.FC = () => {
 
                             <div>
                                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Phone Number</label>
-                                <input required type="tel" placeholder="807-555-0123" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }} />
+                                <input required type="tel" placeholder="Your phone number" style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', fontSize: '16px' }} />
                             </div>
 
                             <div>
@@ -289,7 +289,7 @@ const ServiceLandingPage: React.FC = () => {
                                     </select>
                                 </div>
                                 <div>
-                                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Urgency</label>
+                                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Urgency (optional)</label>
                                     <select style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', background: 'white', fontSize: '16px' }}>
                                         {service.urgencyOptions.map((opt: string, idx: number) => (
                                             <option key={idx}>{opt}</option>
