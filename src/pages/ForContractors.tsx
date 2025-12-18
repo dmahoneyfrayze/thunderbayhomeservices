@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { CheckCircle, ShieldCheck, DollarSign, Users, ArrowRight, LayoutDashboard, Star, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import contractorsHero from '../assets/images/For_Contractors_Background_Thunder_Bay.jpg';
+
 import SEO from '../components/SEO';
-import { trackApplication } from '../utils/analytics';
+import { trackApplication, getUTMParams } from '../utils/analytics';
 
 const ForContractors: React.FC = () => {
     const [loading, setLoading] = useState(false);
@@ -31,7 +32,8 @@ const ForContractors: React.FC = () => {
             email: formData.email,
             phone: formData.phone,
             service: formData.service,
-            source: 'thunderbayhomeservices.com'
+            source: 'thunderbayhomeservices.com',
+            ...getUTMParams()
         };
 
         try {

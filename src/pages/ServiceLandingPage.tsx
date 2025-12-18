@@ -5,8 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { servicesConfig, type ServiceConfig } from '../config/servicesConfig';
 import { useSchema } from '../hooks/useSchema';
 import SEO from '../components/SEO';
+
 import Breadcrumbs from '../components/Breadcrumbs';
-import { trackLead } from '../utils/analytics';
+import { trackLead, getUTMParams } from '../utils/analytics';
 
 const ServiceLandingPage: React.FC = () => {
     const { serviceSlug } = useParams<{ serviceSlug: string }>();
@@ -44,7 +45,8 @@ const ServiceLandingPage: React.FC = () => {
             serviceType: formData.serviceType || (service?.serviceTypes[0] || ''),
             urgency: formData.urgency || (service?.urgencyOptions[0] || ''),
             serviceCategory: service?.name || '',
-            source: 'thunderbayhomeservices.com'
+            source: 'thunderbayhomeservices.com',
+            ...getUTMParams()
         };
 
         try {

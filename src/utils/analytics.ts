@@ -7,6 +7,24 @@ export const pushToDataLayer = (event: string, data: Record<string, any>) => {
         });
         (window as any).dataLayer = dataLayer;
     }
+}
+
+
+export const getUTMParams = () => {
+    if (typeof window === 'undefined') return {};
+
+    const params = new URLSearchParams(window.location.search);
+    const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid'];
+
+    const utmData: Record<string, string> = {};
+    utmFields.forEach(field => {
+        const value = params.get(field);
+        if (value) {
+            utmData[field] = value;
+        }
+    });
+
+    return utmData;
 };
 
 export const trackLead = (serviceCategory: string, serviceType: string, source: string) => {
