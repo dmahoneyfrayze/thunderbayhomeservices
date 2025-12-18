@@ -1,10 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckCircle, ShieldCheck, DollarSign, Users, ArrowRight, LayoutDashboard, Star, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import contractorsHero from '../assets/images/For_Contractors_Background_Thunder_Bay.jpg';
 import SEO from '../components/SEO';
 
 const ForContractors: React.FC = () => {
+    const [loading, setLoading] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [formData, setFormData] = useState({
+        businessName: '',
+        contactName: '',
+        email: '',
+        phone: '',
+        service: ''
+    });
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+
+        const payload = {
+            businessName: formData.businessName,
+            contactName: formData.contactName,
+            email: formData.email,
+            phone: formData.phone,
+            service: formData.service,
+            source: 'thunderbayhomeservices.com'
+        };
+
+        try {
+            await fetch('https://services.leadconnectorhq.com/hooks/k2aNHMKb5hD0nNzq3kHp/webhook-trigger/53TOzPTXWd9a7QWCJ5iU', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            setSubmitted(true);
+        } catch (error) {
+            console.error('Error submitting application:', error);
+            setSubmitted(true);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    if (submitted) {
+        return (
+            <div className="container" style={{ textAlign: 'center', padding: '10rem 0', minHeight: '80vh' }}>
+                <SEO
+                    title="Application Received | Thunder Bay Home Services"
+                    description="Thank you for applying to join our partner network."
+                />
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="card"
+                    style={{ maxWidth: '500px', margin: '0 auto', padding: '4rem 2rem' }}
+                >
+                    <CheckCircle size={48} className="text-accent" style={{ margin: '0 auto 1.5rem' }} />
+                    <h2 style={{ marginBottom: '1rem' }}>Application Received</h2>
+                    <p style={{ color: 'var(--color-text-dim)', fontSize: '1.1rem' }}>
+                        Thank you for your interest in joining Thunder Bay Home Services. Our team will review your details and contact you within 48 hours.
+                    </p>
+                    <div style={{ marginTop: '2.5rem' }}>
+                        <a href="/" className="btn-outline">Return Home</a>
+                    </div>
+                </motion.div>
+            </div>
+        );
+    }
+
     return (
         <div className="for-contractors-page overflow-hidden">
             <SEO
@@ -275,45 +344,83 @@ const ForContractors: React.FC = () => {
 
                         {/* Right Form Card */}
                         <div style={{ background: 'white', borderRadius: '1rem', padding: '2.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
-                            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                            <form className="space-y-5" onSubmit={handleSubmit}>
                                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0F172A', marginBottom: '1.5rem' }}>Partner Application</h3>
 
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
                                     <div>
                                         <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>Business Name</label>
-                                        <input type="text" style={{ width: '100%', padding: '1rem', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '0.75rem', outline: 'none', fontSize: '1rem' }} placeholder="e.g. Superior Plumbing" />
+                                        <input
+                                            required
+                                            type="text"
+                                            name="businessName"
+                                            value={formData.businessName}
+                                            onChange={handleInputChange}
+                                            style={{ width: '100%', padding: '1rem', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '0.75rem', outline: 'none', fontSize: '1rem' }}
+                                            placeholder="e.g. Superior Plumbing"
+                                        />
                                     </div>
                                     <div>
                                         <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>Contact Name</label>
-                                        <input type="text" style={{ width: '100%', padding: '1rem', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '0.75rem', outline: 'none', fontSize: '1rem' }} placeholder="Your Name" />
+                                        <input
+                                            required
+                                            type="text"
+                                            name="contactName"
+                                            value={formData.contactName}
+                                            onChange={handleInputChange}
+                                            style={{ width: '100%', padding: '1rem', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '0.75rem', outline: 'none', fontSize: '1rem' }}
+                                            placeholder="Your Name"
+                                        />
                                     </div>
                                 </div>
 
                                 <div style={{ marginBottom: '1.25rem' }}>
                                     <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>Email Address</label>
-                                    <input type="email" style={{ width: '100%', padding: '1rem', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '0.75rem', outline: 'none', fontSize: '1rem' }} placeholder="name@company.com" />
+                                    <input
+                                        required
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        style={{ width: '100%', padding: '1rem', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '0.75rem', outline: 'none', fontSize: '1rem' }}
+                                        placeholder="name@company.com"
+                                    />
                                 </div>
 
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '2rem' }}>
                                     <div>
                                         <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>Phone Number</label>
-                                        <input type="tel" style={{ width: '100%', padding: '1rem', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '0.75rem', outline: 'none', fontSize: '1rem' }} placeholder="(807) 555-0123" />
+                                        <input
+                                            required
+                                            type="tel"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleInputChange}
+                                            style={{ width: '100%', padding: '1rem', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '0.75rem', outline: 'none', fontSize: '1rem' }}
+                                            placeholder="(807) 555-0123"
+                                        />
                                     </div>
                                     <div>
                                         <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>Primary Service</label>
                                         <div style={{ position: 'relative' }}>
-                                            <select style={{ width: '100%', padding: '1rem', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '0.75rem', outline: 'none', fontSize: '1rem', appearance: 'none', cursor: 'pointer', color: '#334155', fontWeight: 500 }}>
-                                                <option>Select a service...</option>
-                                                <option>Snow Removal</option>
-                                                <option>Plumbing</option>
-                                                <option>HVAC / Heating</option>
-                                                <option>Electrical</option>
-                                                <option>Cleaning</option>
-                                                <option>Landscaping</option>
-                                                <option>Moving</option>
-                                                <option>Painting</option>
-                                                <option>Roofing</option>
-                                                <option>Junk Removal</option>
+                                            <select
+                                                required
+                                                name="service"
+                                                value={formData.service}
+                                                onChange={handleInputChange}
+                                                style={{ width: '100%', padding: '1rem', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '0.75rem', outline: 'none', fontSize: '1rem', appearance: 'none', cursor: 'pointer', color: '#334155', fontWeight: 500 }}
+                                            >
+                                                <option value="">Select a service...</option>
+                                                <option value="Snow Removal">Snow Removal</option>
+                                                <option value="Plumbing">Plumbing</option>
+                                                <option value="HVAC / Heating">HVAC / Heating</option>
+                                                <option value="Electrical">Electrical</option>
+                                                <option value="Cleaning">Cleaning</option>
+                                                <option value="Landscaping">Landscaping</option>
+                                                <option value="Moving">Moving</option>
+                                                <option value="Painting">Painting</option>
+                                                <option value="Roofing">Roofing</option>
+                                                <option value="Junk Removal">Junk Removal</option>
                                             </select>
                                             <ChevronDown style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', color: '#94A3B8', pointerEvents: 'none' }} size={20} />
                                         </div>
@@ -321,8 +428,12 @@ const ForContractors: React.FC = () => {
                                 </div>
 
                                 <div>
-                                    <button style={{ width: '100%', background: 'linear-gradient(to right, #2563EB, #3B82F6)', color: 'white', fontWeight: 700, padding: '1.25rem', borderRadius: '0.75rem', fontSize: '1.125rem', border: 'none', cursor: 'pointer', boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.3)' }}>
-                                        Submit Application
+                                    <button
+                                        type="submit"
+                                        disabled={loading}
+                                        style={{ width: '100%', background: 'linear-gradient(to right, #2563EB, #3B82F6)', color: 'white', fontWeight: 700, padding: '1.25rem', borderRadius: '0.75rem', fontSize: '1.125rem', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.3)' }}
+                                    >
+                                        {loading ? 'Submitting...' : 'Submit Application'}
                                     </button>
                                     <p style={{ textAlign: 'center', fontSize: '0.75rem', color: '#94A3B8', marginTop: '1rem' }}>
                                         By submitting, you agree to our partner terms. Applications are reviewed manually within 24-48 hours.
