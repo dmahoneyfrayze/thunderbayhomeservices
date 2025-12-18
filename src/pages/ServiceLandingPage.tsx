@@ -252,6 +252,7 @@ const ServiceLandingPage: React.FC = () => {
                 </div>
 
                 <motion.div
+                    id="request-quote"
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
@@ -326,6 +327,26 @@ const ServiceLandingPage: React.FC = () => {
                         <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Submit a single request to compare available {service.name} providers in Thunder Bay.</p>
                     </div>
                 </motion.div>
+                {/* Mobile Sticky CTA */}
+                <div className="hidden-desktop" style={{
+                    position: 'fixed',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: '1rem',
+                    background: 'white',
+                    borderTop: '1px solid #E2E8F0',
+                    zIndex: 50,
+                    boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.05)'
+                }}>
+                    <button
+                        onClick={() => document.getElementById('request-quote')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="btn-solid"
+                        style={{ width: '100%', borderRadius: '12px', padding: '1rem', fontSize: '1.1rem', boxShadow: '0 4px 14px 0 rgba(37, 99, 235, 0.39)' }}
+                    >
+                        Request {service.name} Quote
+                    </button>
+                </div>
             </div>
         </div>
     );
