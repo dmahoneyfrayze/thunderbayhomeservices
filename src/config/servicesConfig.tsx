@@ -12,8 +12,7 @@ import movingHero from '../assets/images/Moving_Services_Page_Header.png';
 import paintingHero from '../assets/images/Painting_Page_Header.png';
 import roofingHero from '../assets/images/Roofing_Page_Header.png';
 
-// Fallback for missing images
-const defaultHero = snowHero;
+// Fallback for missing images removed as all services have specific images
 
 export interface FAQ {
     question: string;

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { servicesConfig } from '../config/servicesConfig';
-import { ShieldCheck, Mail, Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import logo from '../assets/images/logo.png';
 
 const Footer: React.FC = () => {
