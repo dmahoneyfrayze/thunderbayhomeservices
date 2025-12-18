@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle, ShieldCheck, DollarSign, Users, ArrowRight, LayoutDashboard } from 'lucide-react';
 import { motion } from 'framer-motion';
-import contractorsHero from '../assets/images/For_Contractors_Background_Thunder_Bay.png';
+import contractorsHero from '../assets/images/For_Contractors_Background_Thunder_Bay.jpg';
 
 const ForContractors: React.FC = () => {
     return (
