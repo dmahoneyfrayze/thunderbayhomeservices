@@ -3,33 +3,44 @@
     <!-- Static Pages -->
     <url>
         <loc>https://thunderbayhomeservices.com/</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://thunderbayhomeservices.com/get-quote</loc>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://thunderbayhomeservices.com/about</loc>
-        <lastmod>2025-12-17</lastmod>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/for-contractors</loc>
-        <lastmod>2025-12-17</lastmod>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/blog</loc>
-        <lastmod>2025-12-17</lastmod>
+        <lastmod>2025-12-18</lastmod>
+        <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/privacy</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/terms</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
 
@@ -37,51 +48,61 @@
     <url>
         <loc>https://thunderbayhomeservices.com/snow-removal</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/plumbing</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/hvac</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/electrical</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/roofing</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/landscaping</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/painting</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/cleaning</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/moving</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/junk-removal</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
@@ -89,51 +110,61 @@
     <url>
         <loc>https://thunderbayhomeservices.com/blog/snow-removal-one-time-vs-seasonal</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/blog/emergency-plumbing-issue-guide</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/blog/prepare-home-thunder-bay-winter</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/blog/junk-removal-vs-dumpster-rental</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/blog/hiring-providers-thunder-bay-guide</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/blog/hvac-vs-heating-repair</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/blog/hiring-electrician-expectations</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/blog/interior-vs-exterior-painting-timing</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/blog/roof-repairs-vs-replacement</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://thunderbayhomeservices.com/blog/move-in-move-out-cleaning-guide</loc>
         <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 </urlset>
