@@ -1,7 +1,7 @@
-import snowHero from '../assets/images/snow-hero.png';
-import plumbingHero from '../assets/images/plumbing-hero.png';
-import hvacHero from '../assets/images/hvac-hero.png';
-import electricalHero from '../assets/images/electrical-hero.png';
+import snowHero from '../assets/images/Snow_Removal_Page_Header.jpg';
+import plumbingHero from '../assets/images/Plumbing_Page_Header.jpg';
+import hvacHero from '../assets/images/HVAC_Heating_Page_Header.jpg';
+import electricalHero from '../assets/images/Electrical_Page_Header.jpg';
 
 // Fallback or specific images
 const defaultHero = snowHero;
