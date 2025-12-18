@@ -22,15 +22,29 @@ const Home: React.FC = () => {
 
     useSchema({
         '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
+        '@type': 'Organization',
         'name': 'Thunder Bay Home Services',
-        'description': 'Trusted directory for home services in Thunder Bay. Compare local providers for snow removal, plumbing, HVAC, and more.',
         'url': 'https://thunderbayhomeservices.com',
-        'address': {
-            '@type': 'PostalAddress',
-            'addressLocality': 'Thunder Bay',
-            'addressRegion': 'ON',
-            'addressCountry': 'CA'
+        'logo': 'https://thunderbayhomeservices.com/assets/images/logo.png',
+        'description': 'Thunder Bay Home Services is a local platform that helps homeowners research, compare, and request home services across Thunder Bay.',
+        'email': 'hello@thunderbayhomeservices.com',
+        'sameAs': [
+            'https://www.facebook.com/tbayhomeservices/'
+        ],
+        'parentOrganization': {
+            '@type': 'Organization',
+            'name': 'Frayze Technologies Inc.',
+            'url': 'https://frayze.ca'
+        },
+        'areaServed': {
+            '@type': 'City',
+            'name': 'Thunder Bay',
+            'address': {
+                '@type': 'PostalAddress',
+                'addressLocality': 'Thunder Bay',
+                'addressRegion': 'ON',
+                'addressCountry': 'CA'
+            }
         }
     });
 

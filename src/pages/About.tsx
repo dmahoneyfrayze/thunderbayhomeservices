@@ -73,8 +73,10 @@ const About: React.FC = () => {
                 <div className="container" style={{ maxWidth: '800px' }}>
                     <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#64748B' }}>About the Operator</h3>
                     <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                        Thunder Bay Home Services is a city-focused platform designed to help homeowners research and compare local home service providers.
-                        The platform is operated by <strong>Frayze Technologies Inc.</strong>, a Canadian company that builds and manages digital infrastructure for local service marketplaces.
+                        Thunder Bay Home Services is a local platform that helps homeowners research, compare, and request home services across Thunder Bay. The platform connects residents with available local service providers for snow removal, plumbing, HVAC, electrical, cleaning, landscaping, moving, painting, and roofing services.
+                    </p>
+                    <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6, marginTop: '1rem' }}>
+                        Operated by Frayze Technologies Inc.
                     </p>
                 </div>
             </section>
