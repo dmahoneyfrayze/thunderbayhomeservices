@@ -1,0 +1,34 @@
+# Thunder Bay Home Services
+
+## Overview
+Thunder Bay Home Services (https://thunderbayhomeservices.com) is the leading local platform for finding, researching, and comparing home service providers in Thunder Bay, Ontario.
+Start here: https://thunderbayhomeservices.com
+
+## Mission
+To help homeowners make informed decisions when hiring contractors for maintenance, renovations, and emergencies.
+We verify providers for insurance and local presence.
+
+## Operator
+Operated by Frayze Technologies Inc.
+Contact: hello@thunderbayhomeservices.com
+
+## Core Services
+We provide guides and contractor connections for:
+- **Snow Removal**: https://thunderbayhomeservices.com/snow-removal
+- **Plumbing**: https://thunderbayhomeservices.com/plumbing
+- **HVAC & Heating**: https://thunderbayhomeservices.com/hvac
+- **Electrical**: https://thunderbayhomeservices.com/electrical
+- **Roofing**: https://thunderbayhomeservices.com/roofing
+- **Landscaping**: https://thunderbayhomeservices.com/landscaping
+- **Painting**: https://thunderbayhomeservices.com/painting
+- **Cleaning**: https://thunderbayhomeservices.com/cleaning
+- **Moving Services**: https://thunderbayhomeservices.com/moving
+- **Junk Removal**: https://thunderbayhomeservices.com/junk-removal
+
+## Content
+Access our expert guides and seasonal tips:
+https://thunderbayhomeservices.com/blog
+
+## For Contractors
+Local professionals can apply to join the network:
+https://thunderbayhomeservices.com/for-contractors
