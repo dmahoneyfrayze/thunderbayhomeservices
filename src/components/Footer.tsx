@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { servicesConfig } from '../config/servicesConfig';
 import { ShieldCheck, Mail, Phone } from 'lucide-react';
+import logo from '../assets/images/logo.png';
 
 const Footer: React.FC = () => {
     return (
@@ -16,12 +17,9 @@ const Footer: React.FC = () => {
 
                     {/* Brand Column */}
                     <div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-                            <ShieldCheck size={24} className="text-accent" />
-                            <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.25rem', color: 'var(--color-brand-primary)' }}>
-                                TBAY<span className="text-accent">HOME</span>
-                            </span>
-                        </div>
+                        <Link to="/" style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+                            <img src={logo} alt="Thunder Bay Home Services" style={{ height: '40px', width: 'auto' }} />
+                        </Link>
                         <p style={{ color: 'var(--color-text-dim)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                             Thunder Bay Home Services is a local platform offering service comparisons, expert guides, and homeowner resources across Thunder Bay. Our mission is to help residents make informed decisions when hiring home service professionals.
                         </p>
