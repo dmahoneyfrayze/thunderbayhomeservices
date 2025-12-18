@@ -33,7 +33,7 @@ export const blogPosts: BlogPost[] = [
         readTime: '5 min read',
         imageUrl: snowHero,
         content: `
-            <p>Thunder Bay winters are long, unpredictable, and often severe. For homeowners and property managers, snow removal is not optional—it’s essential. One of the most common questions residents face is whether to choose one-time snow removal or commit to a seasonal contract.</p>
+            <p>Thunder Bay winters are long, unpredictable, and often severe. For homeowners and property managers, <a href="/snow-removal" class="text-brand-primary hover:underline font-medium">snow removal</a> is not optional—it’s essential. One of the most common questions residents face is whether to choose one-time snow removal or commit to a seasonal contract.</p>
             <p>Both options serve different needs, and understanding the differences can help you choose the right solution for your property.</p>
 
             <h2>One-Time Snow Removal</h2>
@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
             <h2>Choosing the Right Option in Thunder Bay</h2>
             <p>Because Thunder Bay experiences frequent snow accumulation, many homeowners prefer seasonal coverage. Others opt for one-time service but accept the risk of delayed response during storms.</p>
             <p>Comparing local snow removal providers helps clarify pricing, availability, and service guarantees before winter conditions escalate.</p>
-            <p>Homeowners often combine snow removal planning with landscaping services to prepare properties for seasonal transitions.</p>
+            <p>Homeowners often combine snow removal planning with <a href="/landscaping" class="text-brand-primary hover:underline font-medium">landscaping services</a> to prepare properties for seasonal transitions.</p>
 
             <div class="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-lg font-bold mb-3">Related Services</h3>
@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
         readTime: '4 min read',
         imageUrl: plumbingHero,
         content: `
-            <p>Plumbing issues range from minor inconveniences to situations that require immediate attention. Knowing when a problem qualifies as an emergency can help Thunder Bay homeowners avoid property damage, safety risks, and costly repairs.</p>
+            <p><a href="/plumbing" class="text-brand-primary hover:underline font-medium">Plumbing issues</a> range from minor inconveniences to situations that require immediate attention. Knowing when a problem qualifies as an emergency can help Thunder Bay homeowners avoid property damage, safety risks, and costly repairs.</p>
 
             <h2>Common Plumbing Emergencies</h2>
             <p>A plumbing issue is typically considered an emergency when it threatens health, safety, or property integrity.</p>
@@ -107,7 +107,7 @@ export const blogPosts: BlogPost[] = [
 
             <h2>Why Local Availability Matters</h2>
             <p>Emergency plumbing situations often occur outside regular business hours. Comparing local plumbing providers helps homeowners identify which companies offer after-hours or same-day service.</p>
-            <p>Water-related issues often require post-repair cleaning, particularly in cases involving flooding or backups.</p>
+            <p>Water-related issues often require post-repair <a href="/cleaning" class="text-brand-primary hover:underline font-medium">cleaning</a>, particularly in cases involving flooding or backups.</p>
 
             <div class="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-lg font-bold mb-3">Related Services</h3>
@@ -132,13 +132,13 @@ export const blogPosts: BlogPost[] = [
             <p>Preparing a home for winter in Thunder Bay goes beyond snow shovels and warm clothing. Proactive maintenance can reduce emergency repairs, improve energy efficiency, and protect your property throughout the colder months.</p>
 
             <h2>Heating System Readiness</h2>
-            <p>Before winter sets in, homeowners should ensure their heating systems are functioning properly. Furnace inspections and filter replacements help prevent mid-winter breakdowns when service demand is highest.</p>
+            <p>Before winter sets in, homeowners should ensure their <a href="/hvac" class="text-brand-primary hover:underline font-medium">heating systems</a> are functioning properly. Furnace inspections and filter replacements help prevent mid-winter breakdowns when service demand is highest.</p>
 
             <h2>Snow Management Planning</h2>
             <p>Planning ahead for snow accumulation is critical. Driveways, walkways, and emergency exits must remain accessible during heavy snowfall. Many homeowners arrange snow removal services before winter to avoid last-minute availability issues.</p>
 
             <h2>Roof and Exterior Checks</h2>
-            <p>Snow and ice place significant stress on roofing systems. Addressing loose shingles, drainage issues, and insulation gaps helps prevent ice dams and leaks during freeze-thaw cycles.</p>
+            <p>Snow and ice place significant stress on <a href="/roofing" class="text-brand-primary hover:underline font-medium">roofing systems</a>. Addressing loose shingles, drainage issues, and insulation gaps helps prevent ice dams and leaks during freeze-thaw cycles.</p>
 
             <h2>Winter Preparation Is a System</h2>
             <p>Winter readiness is most effective when approached holistically. Heating, snow removal, and exterior maintenance all play interconnected roles in protecting your home.</p>
@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
         readTime: '5 min read',
         imageUrl: defaultHero,
         content: `
-            <p>When clearing out clutter or preparing for a move, homeowners often choose between junk removal services and dumpster rentals. Each option suits different project types, timelines, and budgets.</p>
+            <p>When clearing out clutter or preparing for a move, homeowners often choose between <a href="/junk-removal" class="text-brand-primary hover:underline font-medium">junk removal services</a> and dumpster rentals. Each option suits different project types, timelines, and budgets.</p>
 
             <h2>Junk Removal Services</h2>
             <p>Junk removal involves a team arriving on-site to load and haul away unwanted items. This option is ideal for:</p>
@@ -186,7 +186,7 @@ export const blogPosts: BlogPost[] = [
 
             <h2>Choosing the Right Option</h2>
             <p>The best choice depends on project size, urgency, and available time. Comparing local junk removal providers helps clarify costs and service availability.</p>
-            <p>Many homeowners coordinate junk removal with moving services during relocations or downsizing.</p>
+            <p>Many homeowners coordinate junk removal with <a href="/moving" class="text-brand-primary hover:underline font-medium">moving services</a> during relocations or downsizing.</p>
 
             <div class="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-lg font-bold mb-3">Related Services</h3>
@@ -248,7 +248,7 @@ export const blogPosts: BlogPost[] = [
             <p>Homeowners often use “HVAC” and “heating repair” interchangeably, but the two terms cover different scopes of service. Understanding the distinction helps Thunder Bay residents request the right type of service—especially during colder months.</p>
 
             <h2>What HVAC Services Include</h2>
-            <p>HVAC stands for heating, ventilation, and air conditioning. HVAC services typically involve:</p>
+            <p>HVAC stands for heating, ventilation, and air conditioning. <a href="/hvac" class="text-brand-primary hover:underline font-medium">HVAC services</a> typically involve:</p>
             <ul>
                 <li>Furnace installation and repair</li>
                 <li>Air conditioning maintenance</li>
@@ -269,7 +269,7 @@ export const blogPosts: BlogPost[] = [
 
             <h2>When to Request Each Service</h2>
             <p>If a system is malfunctioning but still operating, HVAC service may be appropriate. If heating has stopped entirely, emergency heating repair is typically required.</p>
-            <p>Electrical components are often involved in heating system failures, making coordination with electrical services common.</p>
+            <p>Electrical components are often involved in heating system failures, making coordination with <a href="/electrical" class="text-brand-primary hover:underline font-medium">electrical services</a> common.</p>
 
             <div class="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-lg font-bold mb-3">Related Services</h3>
@@ -291,7 +291,7 @@ export const blogPosts: BlogPost[] = [
         readTime: '4 min read',
         imageUrl: electricalHero,
         content: `
-            <p>Electrical work plays a critical role in home safety and functionality. Whether addressing an urgent issue or planning upgrades, understanding what to expect when hiring an electrician helps Thunder Bay homeowners prepare effectively.</p>
+            <p><a href="/electrical" class="text-brand-primary hover:underline font-medium">Electrical work</a> plays a critical role in home safety and functionality. Whether addressing an urgent issue or planning upgrades, understanding what to expect when hiring an electrician helps Thunder Bay homeowners prepare effectively.</p>
 
             <h2>Common Electrical Services</h2>
             <p>Electricians commonly assist with:</p>
@@ -308,7 +308,7 @@ export const blogPosts: BlogPost[] = [
             <p>Electrical issues involving sparks, burning smells, or frequent breaker trips should be addressed promptly. Non-urgent upgrades, such as lighting improvements, are typically scheduled in advance.</p>
 
             <h2>Coordination with Other Services</h2>
-            <p>Electrical work often precedes or follows interior updates. Homeowners frequently coordinate electrical projects with painting services to complete renovations efficiently.</p>
+            <p>Electrical work often precedes or follows interior updates. Homeowners frequently coordinate electrical projects with <a href="/painting" class="text-brand-primary hover:underline font-medium">painting services</a> to complete renovations efficiently.</p>
 
             <div class="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-lg font-bold mb-3">Related Services</h3>
@@ -369,7 +369,7 @@ export const blogPosts: BlogPost[] = [
         readTime: '5 min read',
         imageUrl: defaultHero,
         content: `
-            <p>Roofing issues range from minor repairs to full replacements. Knowing which option is appropriate helps Thunder Bay homeowners manage costs and prevent further damage.</p>
+            <p><a href="/roofing" class="text-brand-primary hover:underline font-medium">Roofing issues</a> range from minor repairs to full replacements. Knowing which option is appropriate helps Thunder Bay homeowners manage costs and prevent further damage.</p>
 
             <h2>When Repairs Are Enough</h2>
             <p>Roof repairs may be suitable when damage is limited to:</p>
@@ -390,7 +390,7 @@ export const blogPosts: BlogPost[] = [
             <p>Severe weather and heavy snow loads can accelerate deterioration in Thunder Bay.</p>
 
             <h2>Interior Impact</h2>
-            <p>Roof issues often lead to water intrusion, which may affect plumbing fixtures, insulation, and interior spaces. Coordinating with plumbing services helps address secondary damage.</p>
+            <p>Roof issues often lead to water intrusion, which may affect plumbing fixtures, insulation, and interior spaces. Coordinating with <a href="/plumbing" class="text-brand-primary hover:underline font-medium">plumbing services</a> helps address secondary damage.</p>
 
             <div class="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-lg font-bold mb-3">Related Services</h3>
@@ -412,7 +412,7 @@ export const blogPosts: BlogPost[] = [
         readTime: '4 min read',
         imageUrl: defaultHero,
         content: `
-            <p>Move-in and move-out cleaning services are designed to prepare properties for occupancy or handover. These services differ from routine cleaning and often follow specific checklists.</p>
+            <p><a href="/cleaning" class="text-brand-primary hover:underline font-medium">Move-in and move-out cleaning services</a> are designed to prepare properties for occupancy or handover. These services differ from routine cleaning and often follow specific checklists.</p>
 
             <h2>Move-Out Cleaning</h2>
             <p>Move-out cleaning focuses on restoring a property to a presentable condition. This typically includes:</p>
@@ -428,7 +428,7 @@ export const blogPosts: BlogPost[] = [
             <p>Move-in cleaning prepares a space before occupancy. This helps ensure cleanliness, hygiene, and comfort for new residents.</p>
 
             <h2>Coordinating Services</h2>
-            <p>Cleaning services are frequently scheduled alongside moving services to streamline transitions and reduce downtime.</p>
+            <p>Cleaning services are frequently scheduled alongside <a href="/moving" class="text-brand-primary hover:underline font-medium">moving services</a> to streamline transitions and reduce downtime.</p>
 
             <div class="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-lg font-bold mb-3">Related Services</h3>
