@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { servicesConfig } from '../config/servicesConfig';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, Facebook } from 'lucide-react';
 import logo from '../assets/images/logo.png';
 
 const Footer: React.FC = () => {
@@ -28,8 +28,11 @@ const Footer: React.FC = () => {
                                 <Phone size={16} /> <span>(807) 555-0123</span>
                             </div>
                             <div className="flex gap-2" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>
-                                <Mail size={16} /> <span>hello@tbayhomeservices.com</span>
+                                <Mail size={16} /> <span>hello@thunderbayhomeservices.com</span>
                             </div>
+                            <a href="https://www.facebook.com/tbayhomeservices/" target="_blank" rel="noopener noreferrer" className="flex gap-2" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none', alignItems: 'center', marginTop: '0.5rem' }}>
+                                <Facebook size={16} /> <span>Follow us on Facebook</span>
+                            </a>
                         </div>
                     </div>
 
