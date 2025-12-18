@@ -258,7 +258,7 @@ const Home: React.FC = () => {
                     <p style={{ color: 'var(--color-text-dim)', maxWidth: '700px', margin: '0 auto 2rem', fontSize: '1.1rem' }}>
                         Thunder Bay Home Services partners with local service providers to connect them with homeowner requests across the city. Our platform is designed to deliver qualified, service-specific inquiries while reducing time spent on advertising and lead follow-up.
                     </p>
-                    <Link to="/pro" className="btn-outline">
+                    <Link to="/for-contractors" className="btn-outline">
                         Learn More for Contractors
                     </Link>
                 </div>

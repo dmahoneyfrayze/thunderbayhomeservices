@@ -1,16 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { CheckCircle, ShieldCheck, DollarSign, Users, ArrowRight, LayoutDashboard, Star, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import contractorsHero from '../assets/images/For_Contractors_Background_Thunder_Bay.jpg';
+import SEO from '../components/SEO';
 
 const ForContractors: React.FC = () => {
     return (
         <div className="for-contractors-page overflow-hidden">
-            <Helmet>
-                <title>Get Local Home Service Leads in Thunder Bay | For Contractors</title>
-                <meta name="description" content="Thunder Bay Home Services connects local contractors with homeowner service requests across the city. Pay per lead. No long-term contracts." />
-            </Helmet>
+            <SEO
+                title="Get Local Home Service Leads in Thunder Bay | For Contractors"
+                description="Thunder Bay Home Services connects local contractors with homeowner service requests across the city. Pay per lead. No long-term contracts."
+                canonical="https://thunderbayhomeservices.com/for-contractors"
+            />
 
             {/* HERO SECTION */}
             <section style={{
@@ -32,7 +33,7 @@ const ForContractors: React.FC = () => {
                         <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-200 border border-blue-400/30 text-sm font-bold tracking-wide mb-6">
                             PARTNER PROGRAM
                         </span>
-                        <h1 style={{ fontSize: '3.5rem', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+                        <h1 style={{ fontSize: '3.5rem', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.1, letterSpacing: '-0.02em', color: 'white' }}>
                             Grow Your Business with<br /><span className="text-accent bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-200">Qualified Local Leads</span>
                         </h1>
                         <p style={{ fontSize: '1.25rem', color: '#cbd5e1', maxWidth: '700px', margin: '0 auto 3rem', lineHeight: 1.6 }}>
@@ -170,7 +171,7 @@ const ForContractors: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 style={{ fontSize: '2.5rem', marginBottom: '5rem', fontWeight: 800 }}>Simple 4-Step Process</h2>
+                        <h2 style={{ fontSize: '2.5rem', marginBottom: '5rem', fontWeight: 800, color: 'white' }}>Simple 4-Step Process</h2>
                     </motion.div>
 
                     <div className="grid md:grid-cols-4 gap-8 relative">
@@ -194,7 +195,7 @@ const ForContractors: React.FC = () => {
                                 <div className="w-16 h-16 bg-blue-600 text-white rounded-2xl mx-auto mb-6 flex items-center justify-center text-xl font-bold shadow-lg shadow-blue-900/50 transform rotate-3 hover:rotate-0 transition-transform duration-300">
                                     {idx + 1}
                                 </div>
-                                <h3 className="text-xl font-bold mb-3 opacity-90">{step.title}</h3>
+                                <h3 className="text-xl font-bold mb-3 opacity-90 text-white">{step.title}</h3>
                                 <p className="text-slate-400 text-sm leading-relaxed px-4">{step.desc}</p>
                             </motion.div>
                         ))}
@@ -255,7 +256,7 @@ const ForContractors: React.FC = () => {
                     <div className="grid lg:grid-cols-5 gap-12">
                         {/* Left Content */}
                         <div className="lg:col-span-2 text-white pt-10">
-                            <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1 }}>Start Growing Today</h2>
+                            <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1, color: 'white' }}>Start Growing Today</h2>
                             <p className="text-slate-400 text-lg mb-8 leading-relaxed">
                                 Join Thunder Bay's fastest growing home service network. It takes less than 2 minutes to apply.
                             </p>
