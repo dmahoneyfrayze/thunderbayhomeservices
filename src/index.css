@@ -3,25 +3,48 @@
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  /* Colors - Luxury Light Mode (Lean & Clean) */
-  --color-brand-primary: #0F172A;
-  /* Deep Navy for trust */
-  --color-accent: #2563EB;
-  /* Trust Blue */
+  /* Colors - Luxury Light Mode (High Contrast & Premium) */
+  --color-brand-primary: #0F172A; /* Deep Navy - Authority */
+  --color-brand-light: #E0F2FE;
+  
+  --color-accent: #2563EB; /* Trust Blue - vivid but professional */
   --color-accent-hover: #1D4ED8;
+  --color-accent-secondary: #0D9488; /* Emerald Teal - distinctive */
 
-  --color-text-main: #1E293B;
-  --color-text-dim: #475569;
-  /* Darkened from #64748B for AA compliance */
+  --color-text-main: #1E293B; /* Slate 800 - softer than pure black */
+  --color-text-dim: #475569; /* Slate 600 */
+  
   --color-bg-main: #FFFFFF;
-  --color-bg-secondary: #F8FAFC;
-
+  --color-bg-secondary: #F8FAFC; /* Slate 50 */
+  
   --color-white: #FFFFFF;
 
   /* Spacing */
-  --container-max-width: 1000px;
-  /* Tighter for conversion focus */
-  --transition-smooth: all 0.3s ease;
+  --container-max-width: 1200px; /* Wider for modern feel */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Professional easing */
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 * {

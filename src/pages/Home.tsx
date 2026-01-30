@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import DemoForm from '../components/DemoForm';
 import Features from '../components/Features';
 import Pricing from '../components/Pricing';
+import LocalAdvantage from '../components/LocalAdvantage';
 import heroBg from '../assets/images/guides_hero.png';
 
 const Home: React.FC = () => {
@@ -20,47 +21,76 @@ const Home: React.FC = () => {
   return (
     <div className="home-page">
       <SEO
-        title="AI-Powered Lead Capture & Booking Engine | Frayze"
-        description="Get your own 24/7 quote bot, scheduling system, and follow-up automation—self-deploy in 5 minutes, no developer needed."
+        title="Thunder Bay & NWO's Premier AI Lead Capture Engine | Frayze"
+        description="The only local AI platform for Northwestern Ontario contractors. 24/7 quote bot, scheduling, and automation—built to help you scale."
         canonical="/"
       />
 
       {/* Hero Section */}
       <section
         style={{
-          padding: '8rem 0 6rem',
+          position: 'relative',
+          padding: '10rem 0 8rem',
           textAlign: 'center',
-          backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.95)), url(${heroBg})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.95)), url(${heroBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          overflow: 'hidden'
         }}
       >
-        <div className="container">
-          <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', lineHeight: 1.2, color: 'var(--color-text-main)' }}>
-            AI‑Powered Lead Capture & Booking Engine for <span style={{ color: 'var(--color-brand-primary)' }}>Home‑Service Contractors</span>
+        {/* Subtle animated background accent */}
+        <div style={{ position: 'absolute', top: '-50%', left: '50%', transform: 'translate(-50%, 0)', width: '100%', height: '100%', background: 'radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, rgba(255,255,255,0) 60%)', zIndex: 0 }}></div>
+
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'inline-block', padding: '0.5rem 1rem', background: 'rgba(255,255,255,0.8)', borderRadius: '50px', border: '1px solid #E2E8F0', marginBottom: '1.5rem', backdropFilter: 'blur(4px)' }}>
+            <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--color-accent)' }}>✨ Built locally for NWO Contractors</span>
+          </div>
+
+          <h1 style={{ fontSize: '4rem', marginBottom: '1.5rem', lineHeight: 1.1, color: 'var(--color-text-main)', letterSpacing: '-0.02em' }}>
+            Thunder Bay's Premier <br /> <span className="gradient-text">AI Lead Engine</span>
           </h1>
-          <p className="subhead" style={{ fontSize: '1.25rem', color: 'var(--color-text-dim)', maxWidth: '700px', margin: '0 auto 2.5rem', lineHeight: 1.6 }}>
-            Get your own 24/7 quote bot, scheduling system, and follow‑up automation—self‑deploy in 5 minutes, no developer needed.
+
+          <p className="subhead" style={{ fontSize: '1.35rem', color: 'var(--color-text-dim)', maxWidth: '750px', margin: '0 auto 3rem', lineHeight: 1.6 }}>
+            The enterprise-grade AI tool built specifically for Northwestern Ontario home service businesses. Stop losing leads to voicemail and start booking jobs 24/7.
           </p>
-          <a
-            href="#demo"
-            className="btn-primary btn-xl"
-            style={{
-              padding: '1rem 2rem',
-              fontSize: '1.25rem',
-              background: 'var(--color-brand-primary)',
-              color: 'white',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontWeight: 600,
-              display: 'inline-block',
-              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
-            }}
-          >
-            Start Free Trial
-          </a>
+
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+            <a
+              href="#demo"
+              className="btn-primary"
+              style={{
+                padding: '1rem 2.5rem',
+                fontSize: '1.125rem',
+                background: 'var(--color-brand-primary)',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: 600,
+                boxShadow: '0 10px 15px -3px rgba(15, 23, 42, 0.2)'
+              }}
+            >
+              Start Free Trial
+            </a>
+            <a
+              href="#how-it-works"
+              className="btn-outline glass"
+              style={{
+                padding: '1rem 2.5rem',
+                fontSize: '1.125rem',
+                color: 'var(--color-text-main)',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: 600,
+              }}
+            >
+              See How It Works
+            </a>
+          </div>
         </div>
       </section>
+
+      {/* Local Advantage Section (Why We Built This) */}
+      <LocalAdvantage />
 
       {/* How It Works & Features */}
       <Features />
