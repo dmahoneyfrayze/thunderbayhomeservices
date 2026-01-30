@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                             <a href="/#features" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Features</a>
                             <a href="/#pricing" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Pricing</a>
                             <Link to="/tools" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Lead Gen Tools</Link>
-                            <a href="https://app.frayze.ai/login" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Login</a>
+                            <a href="https://app.frayze.ca/login" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Login</a>
                         </nav>
                     </div>
 
