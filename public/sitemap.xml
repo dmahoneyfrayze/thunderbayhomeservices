@@ -180,65 +180,6 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- Blog Posts -->
-    <url>
-        <loc>https://thunderbayhomeservices.com/blog/snow-removal-one-time-vs-seasonal</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://thunderbayhomeservices.com/blog/emergency-plumbing-issue-guide</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://thunderbayhomeservices.com/blog/prepare-home-thunder-bay-winter</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://thunderbayhomeservices.com/blog/junk-removal-vs-dumpster-rental</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://thunderbayhomeservices.com/blog/hiring-providers-thunder-bay-guide</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://thunderbayhomeservices.com/blog/hvac-vs-heating-repair</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://thunderbayhomeservices.com/blog/hiring-electrician-expectations</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://thunderbayhomeservices.com/blog/interior-vs-exterior-painting-timing</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://thunderbayhomeservices.com/blog/roof-repairs-vs-replacement</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://thunderbayhomeservices.com/blog/move-in-move-out-cleaning-guide</loc>
-        <lastmod>2025-12-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+    <!-- Blog Posts - Dynamic (Fetched via RSS) -->
+    <!-- The main /blog page is indexed, and individual posts are discovered via internal linking -->
 </urlset>
