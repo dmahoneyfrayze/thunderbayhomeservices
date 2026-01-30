@@ -37,10 +37,10 @@ const Home: React.FC = () => {
       >
         <div className="container">
           <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', lineHeight: 1.2 }}>
-            AI-Powered Quotes for <br /> Home Services Businesses
+            Self-Deploy Lead Generation Tools for <br /> Home Services Businesses
           </h1>
           <p style={{ fontSize: '1.25rem', color: 'var(--color-text-dim)', maxWidth: '700px', margin: '0 auto 2.5rem' }}>
-            Generate accurate, professional estimates in seconds. Reduce turnaround time, improve win rates, and scale your quoting workflow effortlessly.
+            Instantly drive more leads, calls-to-action, and visibility for your business with our AI-enabled quoting and booking engine—no coding required, self-deploy in minutes.
           </p>
           <a
             href="https://app.frayze.ai/signup"
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
             className="btn-solid"
             style={{ padding: '0.75rem 1.5rem', fontSize: '1rem' }}
           >
-            Start Free Trial
+            Get Started Free
           </a>
         </div>
       </section>
@@ -77,7 +77,7 @@ const Home: React.FC = () => {
             className="btn-solid"
             style={{ padding: '0.75rem 1.5rem', fontSize: '1rem' }}
           >
-            Start Free Trial
+            Get Started Free
           </a>
         </div>
       </section>
