@@ -21,20 +21,47 @@ const Tools: React.FC = () => {
     const [contactSent, setContactSent] = useState(false);
 
     // Handlers
-    const handleMagnetSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Simulate API call
-        setTimeout(() => setMagnetSent(true), 1000);
+    const submitLead = async (data: any) => {
+        try {
+            const res = await fetch('/.netlify/functions/submit-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (!res.ok) throw new Error('Submission failed');
+            return true;
+        } catch (e) {
+            console.error(e);
+            alert('Something went wrong. Please try again.');
+            return false;
+        }
     };
 
-    const handleCalcSubmit = (e: React.FormEvent) => {
+    const handleMagnetSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setTimeout(() => setCalcSent(true), 1000);
+        const success = await submitLead({ email: magnetEmail, source: 'Lead Magnet: 2026 Checklist' });
+        if (success) setMagnetSent(true);
     };
 
-    const handleContactSubmit = (e: React.FormEvent) => {
+    const handleCalcSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setTimeout(() => setContactSent(true), 1000);
+        const success = await submitLead({
+            email: calcEmail,
+            source: 'ROI Calculator',
+            message: `Leads: ${leads}, Rate: ${closeRate}%, Ticket: $${avgTicket}, Rev: $${revenue}`
+        });
+        if (success) setCalcSent(true);
+    };
+
+    const handleContactSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        const success = await submitLead({
+            name: contactName,
+            email: contactEmail,
+            message: contactMsg,
+            source: 'Tools Contact Form'
+        });
+        if (success) setContactSent(true);
     };
 
     const revenue = leads * (closeRate / 100) * avgTicket;
