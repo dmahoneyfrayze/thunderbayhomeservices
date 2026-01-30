@@ -36,7 +36,7 @@ const Header: React.FC = () => {
 
                 {/* DESKTOP NAV */}
                 <nav className="hidden-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                    <Link to="/" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Home</Link>
+
                     <a href="#how-it-works" onClick={() => scrollToHash('#how-it-works')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>How It Works</a>
                     <a href="#features" onClick={() => scrollToHash('#features')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>Platform</a>
                     <Link to="/blog" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Blog</Link>
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
                         className="mobile-nav-overlay hidden-desktop"
                     >
                         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center', fontSize: '1.25rem', fontWeight: 600 }}>
-                            <Link to="/" onClick={closeMenu}>Home</Link>
+
                             <a href="#how-it-works" onClick={() => scrollToHash('#how-it-works')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>How It Works</a>
                             <a href="#features" onClick={() => scrollToHash('#features')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Platform</a>
                             <Link to="/blog" onClick={closeMenu} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Blog</Link>
