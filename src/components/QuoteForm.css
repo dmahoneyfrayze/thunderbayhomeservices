@@ -7,6 +7,10 @@
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 2rem;
 }
 .quote-form h2 {
   font-size: 2rem;
