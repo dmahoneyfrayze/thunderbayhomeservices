@@ -12,6 +12,8 @@ const services = [
   'Moving Services'
 ];
 
+import './QuoteForm.css';
+
 const QuoteForm: React.FC = () => {
   const [form, setForm] = useState({
     name: '', email: '', phone: '', service: '', address: '', details: '', datetime: ''
@@ -39,21 +41,28 @@ const QuoteForm: React.FC = () => {
   };
 
   return (
-    <section id="get-quote" style={{ padding: '4rem 0', background: '#fff' }}>
-      <div className="container" style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <section id="get-quote" className="quote-form">
+      <div className="container">
         <h2>Get Your Instant Quote</h2>
         <form onSubmit={handleSubmit}>
-          <label>Name<input name="name" onChange={handleChange} required /></label>
-          <label>Email<input type="email" name="email" onChange={handleChange} required /></label>
-          <label>Phone<input name="phone" onChange={handleChange} required /></label>
-          <label>Service<select name="service" onChange={handleChange} required>
+          <label htmlFor="name">Name</label>
+          <input id="name" name="name" onChange={handleChange} required />
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" onChange={handleChange} required />
+          <label htmlFor="phone">Phone</label>
+          <input id="phone" name="phone" onChange={handleChange} required />
+          <label htmlFor="service">Service</label>
+          <select id="service" name="service" onChange={handleChange} required>
             <option value="">Select a service</option>
             {services.map(s => <option key={s} value={s}>{s}</option>)}
           </select></label>
-          <label>Address<input name="address" onChange={handleChange} required /></label>
-          <label>Details<textarea name="details" onChange={handleChange} rows={3} /></label>
-          <label>Preferred Date/Time<input type="datetime-local" name="datetime" onChange={handleChange} /></label>
-          <button type="submit" disabled={status==='sending'}>
+          <label htmlFor="address">Address</label>
+          <input id="address" name="address" onChange={handleChange} required />
+          <label htmlFor="details">Details</label>
+          <textarea id="details" name="details" onChange={handleChange} rows={3} />
+          <label htmlFor="datetime">Preferred Date/Time</label>
+          <input type="datetime-local" id="datetime" name="datetime" onChange={handleChange} />
+          <button type="submit" className="btn-solid" disabled={status==='sending'}>
             {status==='sending'? 'Sending...' : 'Submit Quote'}
           </button>
           {status==='submitted' && <p>Thank you! Your quote request has been sent.</p>}
