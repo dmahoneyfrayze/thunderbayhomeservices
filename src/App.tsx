@@ -5,6 +5,7 @@ import Terms from './pages/Terms';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Setup from './pages/Setup';
+import Tools from './pages/Tools';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -22,6 +23,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/setup" element={<Setup />} />
+            <Route path="/tools" element={<Tools />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
           </Routes>
