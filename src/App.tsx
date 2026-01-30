@@ -4,8 +4,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
-// Lazy load pages for performance
-const Home = lazy(() => import('./pages/Home'));
+// Eager load Home for better LCP
+import Home from './pages/Home';
+
+// Lazy load other pages
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const Setup = lazy(() => import('./pages/Setup'));
@@ -33,15 +35,19 @@ function App() {
       <div className="flex flex-col min-h-screen items-stretch">
         <Header />
         <main className="flex-grow">
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              <Route path="/setup" element={<Setup />} />
-              <Route path="/tools" element={<Tools />} />
-            </Routes>
-          </Suspense>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={
+              <Suspense fallback={<PageLoader />}>
+                <Routes>
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/:slug" element={<BlogPost />} />
+                  <Route path="/setup" element={<Setup />} />
+                  <Route path="/tools" element={<Tools />} />
+                </Routes>
+              </Suspense>
+            } />
+          </Routes>
         </main>
         <Footer />
       </div>
