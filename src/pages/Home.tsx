@@ -24,6 +24,7 @@ const Home: React.FC = () => {
         title="Thunder Bay & NWO's Premier AI Lead Capture Engine | Frayze"
         description="The only local AI platform for Northwestern Ontario contractors. 24/7 quote bot, scheduling, and automation—built to help you scale."
         canonical="/"
+        image="https://thunderbayhomeservices.com/assets/guides_hero-CcOUGRcY.png"
       />
 
       {/* Hero Section */}

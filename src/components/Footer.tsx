@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
 
                 <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem', textAlign: 'center' }}>
                     <p style={{ color: 'var(--color-text-dim)', fontSize: '0.875rem' }}>
-                        © 2026 Thunder Bay Home Services. Operated by <a href="https://frayze.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-primary)', textDecoration: 'underline' }}>Frayze Technologies Inc</a>. All rights reserved.
+                        © 2026 <a href="https://frayze.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-primary)', textDecoration: 'none', fontWeight: 600 }}>Frayze Technologies Inc</a>. All rights reserved.
                     </p>
                 </div>
             </div>
