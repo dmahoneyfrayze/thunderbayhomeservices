@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './QuoteForm.css'; // Re-using QuoteForm styles for now as base
+
 
 const DemoForm: React.FC = () => {
     const [form, setForm] = useState({
@@ -31,7 +31,7 @@ const DemoForm: React.FC = () => {
                 <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                     <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Get Your Free Trial</h2>
                     <p style={{ color: 'var(--color-text-dim)' }}>
-                       No credit card required. Live on your site in under 5 minutes.
+                        No credit card required. Live on your site in under 5 minutes.
                     </p>
                 </div>
 

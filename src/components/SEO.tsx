@@ -13,7 +13,7 @@ const SEO: React.FC<SEOProps> = ({
     title,
     description,
     canonical,
-    image = 'https://thunderbayhomeservices.com/og-image.jpg', // Default fallback if hosted there
+    image = '/og-image.png', // Default fallback using public static file
     type = 'website',
     children
 }) => {
