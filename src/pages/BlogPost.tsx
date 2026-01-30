@@ -1,16 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { blogPosts } from '../data/blogPosts';
+import { useBlogPosts } from '../hooks/useBlogPosts';
 import SEO from '../components/SEO';
 import { ArrowLeft } from 'lucide-react';
 
 const BlogPost: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
-    const post = blogPosts.find(p => p.id === slug);
+    const { posts, loading } = useBlogPosts();
+    const [post, setPost] = useState<any>(null);
+
+    useEffect(() => {
+        if (!loading && posts.length > 0) {
+            const foundPost = posts.find(p => p.id === slug);
+            setPost(foundPost);
+        }
+    }, [slug, posts, loading]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [slug]);
+
+    if (loading) {
+        return <div className="container" style={{ padding: '8rem 0', textAlign: 'center' }}>
+            <p>Loading post...</p>
+        </div>;
+    }
 
     if (!post) {
         return <div className="container" style={{ padding: '8rem 0', textAlign: 'center' }}>
