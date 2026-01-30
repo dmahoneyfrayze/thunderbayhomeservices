@@ -39,6 +39,19 @@ const Footer: React.FC = () => {
                         </nav>
                     </div>
 
+                    {/* Micro SaaS Column */}
+                    <div>
+                        <h3 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Micro SaaS <span style={{ fontSize: '0.7rem', color: 'var(--color-brand-primary)', verticalAlign: 'middle', marginLeft: '4px' }}>SOON</span></h3>
+                        <nav className="footer-nav" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Local SEO Engine</span>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Listings Management</span>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Social Media Planner</span>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Reputation Manager</span>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>AI Voice Reception</span>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>B2B Lead Gen</span>
+                        </nav>
+                    </div>
+
                     {/* Legal Column */}
                     <div>
                         <h3 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Legal</h3>

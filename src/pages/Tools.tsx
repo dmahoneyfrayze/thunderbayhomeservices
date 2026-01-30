@@ -210,6 +210,34 @@ const Tools: React.FC = () => {
                     )}
                 </div>
 
+                {/* 4. Future Tools Section (Coming Soon) */}
+                <div style={{ marginTop: '6rem' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                        <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-brand-primary)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Roadmap</span>
+                        <h2 style={{ fontSize: '2.25rem', marginTop: '0.5rem' }}>Upcoming Micro-SaaS Tools</h2>
+                        <p style={{ color: 'var(--color-text-dim)', maxWidth: '600px', margin: '1rem auto 0' }}>
+                            We're building the ultimate automation suite for NWO contractors. These tools are currently in private beta for our main site and coming soon to the Frayze Micro platform.
+                        </p>
+                    </div>
+
+                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+                        {[
+                            { title: 'Local SEO Engine', desc: 'Auto-optimize your site for "near me" searches in Thunder Bay & NWO.' },
+                            { title: 'Listings Management', desc: 'Keep your business info consistent across Google, Bing, and local directories.' },
+                            { title: 'Social Media Planner', desc: 'AI-generated posts that showcase your recent jobs and local expertise.' },
+                            { title: 'Reputation Manager', desc: 'Automatic review requests and AI-drafted responses to build trust.' },
+                            { title: 'AI Voice Reception', desc: 'A local-sounding AI that answers your phone and books jobs when you can\'t.' },
+                            { title: 'B2B Lead Generation', desc: 'Target local businesses and property managers for commercial contracts.' }
+                        ].map((item, i) => (
+                            <div key={i} className="card" style={{ padding: '2rem', background: '#F8FAFC', border: '1px solid #E2E8F0', position: 'relative', overflow: 'hidden' }}>
+                                <div style={{ position: 'absolute', top: '1rem', right: '-2rem', background: '#DBEAFE', color: '#1E40AF', padding: '0.25rem 2.5rem', fontSize: '0.7rem', fontWeight: 700, transform: 'rotate(45deg)' }}>SOON</div>
+                                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', color: 'var(--color-text-main)' }}>{item.title}</h3>
+                                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-dim)', lineHeight: 1.5 }}>{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </div>
     );
