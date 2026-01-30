@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
 import QuoteForm from '../components/QuoteForm';
-import FrayzeWidget from '../components/FrayzeWidget';
 import Features from '../components/Features';
 import Pricing from '../components/Pricing';
 import heroBg from '../assets/images/guides_hero.png';
@@ -57,14 +56,6 @@ const Home: React.FC = () => {
 
       {/* Quote Form Demo */}
       <QuoteForm />
-      <section id="demo" style={{ padding: '6rem 0' }}>
-        <div className="container">
-          <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1.5rem' }}>
-            Try Our AI Quote Widget
-          </h2>
-          <FrayzeWidget widgetKey="YOUR_WIDGET_KEY_HERE" />
-        </div>
-      </section>
 
       {/* Features */}
       <Features />
