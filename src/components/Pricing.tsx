@@ -30,7 +30,7 @@ const Pricing: React.FC = () => (
               <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Basic analytics
             </li>
           </ul>
-          <a href="#demo" className="btn-solid" style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', textDecoration: 'none', fontWeight: 600 }}>Start Free Trial</a>
+          <a href="https://link.thunderbayhomeservices.com/payment-link/697c671f3533388501bad331" target="_blank" rel="noopener noreferrer" className="btn-solid" style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', textDecoration: 'none', fontWeight: 600 }}>Start Free Trial</a>
         </div>
 
         {/* Basic Plan */}
@@ -46,7 +46,7 @@ const Pricing: React.FC = () => (
               <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Priority email support
             </li>
           </ul>
-          <a href="#demo" className="btn-primary" style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', background: 'var(--color-brand-primary)', color: 'white', textDecoration: 'none', fontWeight: 600 }}>Start Free Trial</a>
+          <a href="https://link.thunderbayhomeservices.com/payment-link/697c676358b49c90adab4b08" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', background: 'var(--color-brand-primary)', color: 'white', textDecoration: 'none', fontWeight: 600 }}>Start Free Trial</a>
         </div>
 
         {/* Pro Plan */}
@@ -67,7 +67,7 @@ const Pricing: React.FC = () => (
               <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Onboarding assistance
             </li>
           </ul>
-          <a href="#demo" className="btn-solid" style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', textDecoration: 'none', fontWeight: 600 }}>Start Free Trial</a>
+          <a href="https://link.thunderbayhomeservices.com/payment-link/697c67826503ca3744797572" target="_blank" rel="noopener noreferrer" className="btn-solid" style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', textDecoration: 'none', fontWeight: 600 }}>Start Free Trial</a>
         </div>
 
       </div>
