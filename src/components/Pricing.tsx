@@ -56,7 +56,7 @@ const Pricing: React.FC = () => {
           </p>
 
           {/* Quick Join Waitlist */}
-          <div style={{ maxWidth: '400px', margin: '2rem auto', background: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)', border: '1px solid #E2E8F0' }}>
+          <div style={{ maxWidth: '400px', width: '95%', margin: '2rem auto', background: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)', border: '1px solid #E2E8F0' }}>
             {/* Changed from h4 to h3 for correct heading hierarchy */}
             <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>Get Early Access</h3>
             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '1rem' }}>Join the waitlist to get notified when we launch.</p>
@@ -90,7 +90,7 @@ const Pricing: React.FC = () => {
                   }
                 }
               }}
-              style={{ display: 'flex', gap: '0.5rem' }}
+              style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}
             >
               <input
                 type="email"
@@ -102,7 +102,7 @@ const Pricing: React.FC = () => {
               <button
                 type="submit"
                 className="btn-solid"
-                style={{ padding: '0.6rem 1rem', fontSize: '0.9rem', whiteSpace: 'nowrap', cursor: 'pointer' }}
+                style={{ padding: '0.6rem 1rem', fontSize: '0.9rem', whiteSpace: 'nowrap', cursor: 'pointer', flex: '1 0 auto' }}
               >
                 Join Waitlist
               </button>
