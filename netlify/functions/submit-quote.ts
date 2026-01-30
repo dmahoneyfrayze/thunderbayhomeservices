@@ -11,14 +11,17 @@ type QuoteRequest = {
   datetime: string;
 };
 
-const GHL_WEBHOOK_URL = process.env.GHL_WEBHOOK_URL as string;
+// Model Context Protocol endpoint & auth
+const MCP_URL = 'https://services.leadconnectorhq.com/mcp/';
+const PIT_TOKEN = process.env.PIT_TOKEN as string;       // pit‑774ff74d‑2679‑4806‑b8ec‑5d6222967dd7
+const LOCATION_ID = process.env.LOCATION_ID as string;  // k2aNHMKb5hD0nNzq3kHp
 
-const handler: Handler = async (event: HandlerEvent) => {
+export const handler: Handler = async (event: HandlerEvent) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
-  if (!GHL_WEBHOOK_URL) {
-    return { statusCode: 500, body: 'Webhook URL not configured' };
+  if (!PIT_TOKEN || !LOCATION_ID) {
+    return { statusCode: 500, body: 'MCP token or location ID not configured' };
   }
   let data: QuoteRequest;
   try {
@@ -27,19 +30,21 @@ const handler: Handler = async (event: HandlerEvent) => {
     return { statusCode: 400, body: 'Invalid JSON' };
   }
 
-  // Post to GoHighLevel webhook
+  // Forward to GoHighLevel MCP to create a lead
   try {
-    await fetch(GHL_WEBHOOK_URL, {
+    await fetch(MCP_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        Authorization: `Bearer ${PIT_TOKEN}`,
+        'Content-Type': 'application/json',
+        locationId: LOCATION_ID,
+      },
       body: JSON.stringify(data),
     });
   } catch (err) {
-    console.error('Error forwarding to GHL webhook:', err);
-    return { statusCode: 502, body: 'Failed to forward to webhook' };
+    console.error('Error calling MCP endpoint:', err);
+    return { statusCode: 502, body: 'Failed to forward to MCP endpoint' };
   }
 
   return { statusCode: 200, body: 'OK' };
 };
-
-export { handler };

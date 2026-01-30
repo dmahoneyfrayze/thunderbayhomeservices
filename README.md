@@ -1,18 +1,27 @@
 
-## Frayze AI Chat & Quote Widget Setup
+## Onboarding for ThunderBayHomeServices SaaS
 
-To enable the 24/7 AI chatbot and instant-quote engine on your site, add the following snippet just above the closing `</body>` tag in `index.html`:
-
-```html
-<!-- Frayze HomeServices AI Widget -->
-<script src="https://cdn.thunderbayhomeservices.com/widget.js"
-        data-customer="YOUR_GHL_PIPELINE_ID"
-        data-api-key="YOUR_PUBLIC_WIDGET_KEY">
-</script>
+### 1. Environment Variables (Netlify)
+```bash
+env set PIT_TOKEN "pit-774ff74d-2679-4806-b8ec-5d6222967dd7"
+env set LOCATION_ID "k2aNHMKb5hD0nNzq3kHp"
 ```
 
-1. **Replace** `YOUR_GHL_PIPELINE_ID` with your Go High Level pipeline/webhook ID.
-2. **Replace** `YOUR_PUBLIC_WIDGET_KEY` with your Frayze public widget key.
-3. **Deploy** the updated site (`npm run build` then deploy via Netlify or your CI/CD).
+### 2. Deploy the Function
+Your Netlify pipeline will build the new serverless function automatically on push:
+```bash
+npm ci && npm run build
+git push origin main
+```
 
-Once live, the chatbot will automatically load your configured services (from `src/config/servicesConfig.tsx`) and start capturing qualified leads.
+### 3. Embed the Quote Form
+In your `Home.tsx` (already wired), the `<QuoteForm />` component posts to `/.netlify/functions/submit-quote`.
+
+### 4. Map GHL MCP in Go High Level
+No widget setup per customer required—MCP & PIT handle multi-tenant lead routing. Log into GHL → see leads under your configured pipeline.
+
+### 5. Visual Flow
+```
+Browser → QuoteForm → submit-quote serverless → GHL MCP endpoint (MCP_URL)
+→ Go High Level pipeline & workflows → SMS/Email/Calendar → Dashboard
+```
