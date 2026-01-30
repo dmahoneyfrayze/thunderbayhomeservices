@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { Download, Calculator, Send, CheckCircle } from 'lucide-react';
+import LazyWidget from '../components/LazyWidget';
 import { submitLead } from '../utils/submitLead';
 
 const Tools: React.FC = () => {
@@ -153,6 +154,21 @@ const Tools: React.FC = () => {
                             <button type="submit" className="btn-outline">Send Report</button>
                         </form>
                     )}
+                </div>
+
+                {/* Digital Audit Widget Section (New CTA) */}
+                <div style={{ maxWidth: '800px', margin: '4rem auto', textAlign: 'center' }}>
+                    <div style={{ marginBottom: '2.5rem' }}>
+                        <h2 style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>Get a Free Digital Audit</h2>
+                        <p style={{ color: 'var(--color-text-dim)', maxWidth: '600px', margin: '0 auto' }}>
+                            We'll scan your SEO, local listings, and speed to see how you rank against other Northwestern Ontario contractors.
+                        </p>
+                    </div>
+                    <LazyWidget
+                        scriptSrc="https://services.leadconnectorhq.com/prospecting/client/widget-embed.js"
+                        scriptAttrs={{ 'data-widget-id': '68c07d48e7ddf0206a00dc98' }}
+                        height="500px"
+                    />
                 </div>
 
                 {/* 3. General Contact Form */}

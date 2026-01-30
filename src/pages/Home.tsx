@@ -11,6 +11,7 @@ const LocalAdvantage = lazy(() => import('../components/LocalAdvantage'));
 const TargetAudience = lazy(() => import('../components/TargetAudience'));
 const AfterInstall = lazy(() => import('../components/AfterInstall'));
 const FAQ = lazy(() => import('../components/FAQ'));
+const LazyWidget = lazy(() => import('../components/LazyWidget'));
 
 // Lightweight placeholder for suspended components
 const SectionLoader = () => <div style={{ height: '100px', background: '#F8FAFC' }} />;
@@ -148,6 +149,33 @@ const Home: React.FC = () => {
       <Suspense fallback={<SectionLoader />}>
         <Pricing />
       </Suspense>
+
+      <section className="reviews-section" style={{ padding: '6rem 0', background: 'white' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>Trusted by NWO Contractors</h2>
+            <p style={{ color: 'var(--color-text-dim)', maxWidth: '600px', margin: '0 auto' }}>
+              See what your neighbors in Thunder Bay, Kenora, and across NWO are saying about Frayze.
+            </p>
+          </div>
+          <Suspense fallback={<SectionLoader />}>
+            <LazyWidget
+              scriptSrc="https://api.frayze.ca/reputation/assets/review-widget.js"
+              height="600px"
+              renderContent={() => (
+                <iframe
+                  className="lc_reviews_widget"
+                  src="https://api.frayze.ca/reputation/widgets/review_widget/9A5cW9ju0zoGXbGIDmyW"
+                  frameBorder="0"
+                  scrolling="no"
+                  style={{ minWidth: '100%', width: '100%' }}
+                  title="Frayze Reviews"
+                />
+              )}
+            />
+          </Suspense>
+        </div>
+      </section>
 
       <Suspense fallback={<SectionLoader />}>
         <FAQ />
