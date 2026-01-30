@@ -62,14 +62,11 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* How It Works (Conceptual placeholder or just Features/Demo flow) */}
-      <div id="how-it-works"></div>
+      {/* How It Works & Features */}
+      <Features />
 
       {/* Demo Form Section */}
       <DemoForm />
-
-      {/* Features */}
-      <Features />
 
       {/* Pricing */}
       <Pricing />
@@ -78,8 +75,8 @@ const Home: React.FC = () => {
       {/* Keeping a simple footer CTA area just in case, but simplifying it */}
       <section style={{ padding: '4rem 0', background: 'var(--color-brand-primary)', color: 'white', textAlign: 'center' }}>
         <div className="container">
-          <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Ready to Automate Your Business?</h2>
-          <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
+          <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'white' }}>Ready to Automate Your Business?</h2>
+          <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9, color: 'white' }}>
             Join hundreds of contractors saving 20+ hours a week.
           </p>
           <a

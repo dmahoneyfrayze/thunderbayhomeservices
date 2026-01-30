@@ -38,11 +38,14 @@ const Header: React.FC = () => {
                 <nav className="hidden-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                     <Link to="/" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Home</Link>
                     <a href="#how-it-works" onClick={() => scrollToHash('#how-it-works')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>How It Works</a>
-                    <a href="#features" onClick={() => scrollToHash('#features')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>Features</a>
+                    <a href="#features" onClick={() => scrollToHash('#features')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>Platform</a>
                     <a href="#pricing" onClick={() => scrollToHash('#pricing')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>Pricing</a>
                 </nav>
 
-                <div className="hidden-mobile">
+                <div className="hidden-mobile" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                    <a href="https://app.frayze.ai/login" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', textDecoration: 'none' }}>
+                        Sign In
+                    </a>
                     <a href="#demo" onClick={() => scrollToHash('#demo')} className="btn-solid" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem', textDecoration: 'none' }}>
                         Start Free Trial
                     </a>
@@ -70,8 +73,9 @@ const Header: React.FC = () => {
                         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center', fontSize: '1.25rem', fontWeight: 600 }}>
                             <Link to="/" onClick={closeMenu}>Home</Link>
                             <a href="#how-it-works" onClick={() => scrollToHash('#how-it-works')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>How It Works</a>
-                            <a href="#features" onClick={() => scrollToHash('#features')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Features</a>
+                            <a href="#features" onClick={() => scrollToHash('#features')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Platform</a>
                             <a href="#pricing" onClick={() => scrollToHash('#pricing')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Pricing</a>
+                            <a href="https://app.frayze.ai/login" target="_blank" style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Sign In</a>
                             <hr style={{ borderColor: '#E2E8F0', margin: '0.5rem 0' }} />
                             <a href="#demo" onClick={() => scrollToHash('#demo')} className="btn-solid" style={{ width: '100%', textDecoration: 'none' }}>
                                 Start Free Trial

@@ -37,6 +37,9 @@ const Footer: React.FC = () => {
                             <div className="flex gap-2" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>
                                 <Mail size={16} /> <span>hello@thunderbayhomeservices.com</span>
                             </div>
+                            <div className="flex gap-2" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>
+                                <span>📞</span> <span>807 700 0079</span>
+                            </div>
                         </div>
                     </div>
 
@@ -45,7 +48,7 @@ const Footer: React.FC = () => {
                         <h4 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Navigate</h4>
                         <nav className="footer-nav" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <a href="#how-it-works" onClick={() => scrollToHash('#how-it-works')} style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>How It Works</a>
-                            <a href="#features" onClick={() => scrollToHash('#features')} style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Features</a>
+                            <a href="#features" onClick={() => scrollToHash('#features')} style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Platform</a>
                             <a href="#pricing" onClick={() => scrollToHash('#pricing')} style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Pricing</a>
                             <Link to="/resources" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Resources Hub</Link>
                         </nav>
@@ -63,7 +66,7 @@ const Footer: React.FC = () => {
 
                 <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem', textAlign: 'center' }}>
                     <p style={{ color: 'var(--color-text-dim)', fontSize: '0.875rem' }}>
-                        © 2026 Thunder Bay Home Services (Frayze AI). All rights reserved.
+                        © 2026 Thunder Bay Home Services. Operated by <a href="https://frayze.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-primary)', textDecoration: 'underline' }}>Frayze Technologies Inc</a>. All rights reserved.
                     </p>
                 </div>
             </div>
