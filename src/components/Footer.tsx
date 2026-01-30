@@ -60,6 +60,7 @@ const Footer: React.FC = () => {
                         <nav className="footer-nav" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <Link to="/privacy" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Privacy Policy</Link>
                             <Link to="/terms" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Terms of Service</Link>
+                            <Link to="/setup" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>New Customer Setup</Link>
                         </nav>
                     </div>
                 </div>

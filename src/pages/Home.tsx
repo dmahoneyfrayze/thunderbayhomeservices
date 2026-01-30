@@ -5,6 +5,9 @@ import DemoForm from '../components/DemoForm';
 import Features from '../components/Features';
 import Pricing from '../components/Pricing';
 import LocalAdvantage from '../components/LocalAdvantage';
+import TargetAudience from '../components/TargetAudience';
+import AfterInstall from '../components/AfterInstall';
+import FAQ from '../components/FAQ';
 import heroBg from '../assets/images/guides_hero.png';
 
 const Home: React.FC = () => {
@@ -93,14 +96,23 @@ const Home: React.FC = () => {
       {/* Local Advantage Section (Why We Built This) */}
       <LocalAdvantage />
 
+      {/* Who It's For */}
+      <TargetAudience />
+
       {/* How It Works & Features */}
       <Features />
+
+      {/* What Happens After Install */}
+      <AfterInstall />
 
       {/* Demo Form Section */}
       <DemoForm />
 
       {/* Pricing */}
       <Pricing />
+
+      {/* FAQ */}
+      <FAQ />
 
       {/* Final CTA / Contact - optionally kept or removed since we have the DemoForm */}
       {/* Keeping a simple footer CTA area just in case, but simplifying it */}
