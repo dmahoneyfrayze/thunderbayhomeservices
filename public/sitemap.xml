@@ -43,6 +43,18 @@
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/tools</loc>
+        <lastmod>2026-01-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thunderbayhomeservices.com/setup</loc>
+        <lastmod>2026-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
 
     <!-- Service Pages -->
     <url>

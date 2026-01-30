@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const faqs = [
@@ -28,8 +29,31 @@ const faqs = [
 const FAQ: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
     return (
         <section id="faq" style={{ padding: '6rem 0', background: '#F8FAFC' }}>
+            {/* Inject FAQ Schema via SEO component (or Helmet directly if SEO component isn't mounted here, but better to use SEO if page level) */}
+            {/* Since FAQ is a section, we might need a Helmet wrapper if not on a main page, but Home.tsx renders this. */}
+            {/* Wait, Home.tsx renders FAQ. Home.tsx uses SEO. We should pass this schema up or use Helmet here. */}
+            {/* Using Helmet directly for the schema to avoid prop drilling complex data through Home.tsx */}
+            <Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify(faqSchema)}
+                </script>
+            </Helmet>
+
             <div className="container" style={{ maxWidth: '800px' }}>
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
                     <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Frequently Asked Questions</h2>

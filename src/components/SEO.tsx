@@ -6,6 +6,7 @@ interface SEOProps {
     canonical?: string;
     image?: string;
     type?: string;
+    schemas?: object[]; // Allow passing additional schema objects
     children?: React.ReactNode;
 }
 
@@ -13,14 +14,15 @@ const SEO: React.FC<SEOProps> = ({
     title,
     description,
     canonical,
-    image = '/og-image.png', // Default fallback using public static file
+    image = '/og-image.png',
     type = 'website',
+    schemas = [],
     children
 }) => {
     const siteUrl = 'https://thunderbayhomeservices.com';
     const fullUrl = canonical ? (canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`) : siteUrl;
 
-    const schemaData = {
+    const baseSchema = {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Frayze",
@@ -60,13 +62,23 @@ const SEO: React.FC<SEOProps> = ({
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={image} />
 
-            {/* Structured Data */}
+            {/* Base Schema */}
             <script type="application/ld+json">
-                {JSON.stringify(schemaData)}
+                {JSON.stringify(baseSchema)}
             </script>
+
+            {/* Additional Schemas (e.g., FAQ, Breadcrumbs) */}
+            {schemas.map((schema, index) => (
+                <script key={index} type="application/ld+json">
+                    {JSON.stringify(schema)}
+                </script>
+            ))}
 
             {children}
         </Helmet>
+    );
+};
+
     );
 };
 
