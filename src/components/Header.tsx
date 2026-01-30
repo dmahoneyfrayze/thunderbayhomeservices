@@ -27,15 +27,15 @@ const Header: React.FC = () => {
 
                 {/* DESKTOP NAV */}
                 <nav className="hidden-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                    <Link to="/#services" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Find a Pro</Link>
-                    <Link to="/blog" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Expert Guides</Link>
-                    <Link to="/#how-it-works" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>How it Works</Link>
-                    <Link to="/for-contractors" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>For Contractors</Link>
+                    <Link to="/" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Home</Link>
+                    <Link to="/#features" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Features</Link>
+                    <Link to="/#pricing" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Pricing</Link>
+                    <Link to="/#contact" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Contact</Link>
                 </nav>
 
                 <div className="hidden-mobile">
-                    <Link to="/get-quote" className="btn-solid" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
-                        Get Quotes
+                    <Link to="/#contact" className="btn-solid" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
+                        Start Free Trial
                     </Link>
                 </div>
 
@@ -59,13 +59,13 @@ const Header: React.FC = () => {
                         className="mobile-nav-overlay hidden-desktop"
                     >
                         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center', fontSize: '1.25rem', fontWeight: 600 }}>
-                            <Link to="/#services" onClick={closeMenu}>Find a Pro</Link>
-                            <Link to="/blog" onClick={closeMenu}>Expert Guides</Link>
-                            <Link to="/#how-it-works" onClick={closeMenu}>How it Works</Link>
-                            <Link to="/for-contractors" onClick={closeMenu}>For Contractors</Link>
+                            <Link to="/" onClick={closeMenu}>Home</Link>
+                            <Link to="/#features" onClick={closeMenu}>Features</Link>
+                            <Link to="/#pricing" onClick={closeMenu}>Pricing</Link>
+                            <Link to="/#contact" onClick={closeMenu}>Contact</Link>
                             <hr style={{ borderColor: '#E2E8F0', margin: '0.5rem 0' }} />
-                            <Link to="/get-quote" onClick={closeMenu} className="btn-solid" style={{ width: '100%' }}>
-                                Get Quotes
+                            <Link to="/#contact" onClick={closeMenu} className="btn-solid" style={{ width: '100%' }}>
+                                Start Free Trial
                             </Link>
                         </nav>
                     </motion.div>
