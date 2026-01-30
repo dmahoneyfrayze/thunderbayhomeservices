@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
                             <Link to="/blog" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Blog</Link>
                             <a href="https://frayze.ca/resources/" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Growth Guides</a>
                             <a href="https://thunderbayai.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>NWO AI Insights</a>
-                            <a href="mailto:support@frayze.ca" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Contact</a>
+                            <Link to="/support" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Support</Link>
                         </nav>
                     </div>
 
@@ -45,6 +45,7 @@ const Footer: React.FC = () => {
                         <nav className="footer-nav" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <a href="https://frayze.ca/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Privacy Policy</a>
                             <a href="https://frayze.ca/terms" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Terms of Service</a>
+                            <Link to="/support#cancel-section" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Cancellations</Link>
                             <Link to="/setup" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>New Customer Setup</Link>
                         </nav>
                     </div>

@@ -12,6 +12,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const Setup = lazy(() => import('./pages/Setup'));
 const Tools = lazy(() => import('./pages/Tools'));
+const Support = lazy(() => import('./pages/Support'));
 
 // Simple loading fallback
 const PageLoader = () => (
@@ -44,6 +45,7 @@ function App() {
                   <Route path="/blog/:slug" element={<BlogPost />} />
                   <Route path="/setup" element={<Setup />} />
                   <Route path="/tools" element={<Tools />} />
+                  <Route path="/support" element={<Support />} />
                 </Routes>
               </Suspense>
             } />
