@@ -30,8 +30,8 @@ const Header: React.FC = () => {
             zIndex: 100
         }}>
             <div className="container" style={{ padding: '0 1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Link to="/" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={logo} alt="Thunder Bay Home Services" style={{ height: '64px', width: 'auto' }} />
+                <Link to="/" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center' }} aria-label="Go to Home">
+                    <img src={logo} alt="Thunder Bay Home Services" width="180" height="64" style={{ height: '64px', width: 'auto' }} />
                 </Link>
 
                 {/* DESKTOP NAV */}
@@ -56,6 +56,7 @@ const Header: React.FC = () => {
                 <button
                     className="hidden-desktop"
                     onClick={toggleMenu}
+                    aria-label="Toggle Menu"
                     style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-brand-primary)' }}
                 >
                     {isMenuOpen ? <X size={28} /> : <Menu size={28} />}

@@ -8,7 +8,7 @@ import LocalAdvantage from '../components/LocalAdvantage';
 import TargetAudience from '../components/TargetAudience';
 import AfterInstall from '../components/AfterInstall';
 import FAQ from '../components/FAQ';
-import heroBg from '../assets/images/guides_hero.png';
+import heroBg from '../assets/images/thunder-bay-hero.webp';
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -36,12 +36,39 @@ const Home: React.FC = () => {
           position: 'relative',
           padding: '10rem 0 8rem',
           textAlign: 'center',
-          backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.95)), url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          backgroundColor: '#F1F5F9' /* Fallback color */
         }}
       >
+        {/* LCP Optimized Image */}
+        <img
+          src={heroBg}
+          alt="Thunder Bay Home Services AI"
+          width="1920"
+          height="1080"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+            filter: 'brightness(1.1)'
+          }}
+          // @ts-ignore
+          fetchpriority="high"
+        />
+
+        {/* White Gradient Overlay for Text Readability */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.95))',
+            zIndex: 0
+          }}
+        ></div>
+
         {/* Subtle animated background accent */}
         <div style={{ position: 'absolute', top: '-50%', left: '50%', transform: 'translate(-50%, 0)', width: '100%', height: '100%', background: 'radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, rgba(255,255,255,0) 60%)', zIndex: 0 }}></div>
 
