@@ -45,10 +45,28 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
-  <script src="https://widgets.leadconnectorhq.com/loader.js"
-    data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-    data-widget-id="6943a1a0cd15178187e76727" defer>
-    </script>
+  <script>
+    // Lazy load Chat Widget on interaction or delay
+    function loadChatWidget() {
+      if (window.chatWidgetLoaded) return;
+      window.chatWidgetLoaded = true;
+
+      const script = document.createElement('script');
+      script.src = "https://widgets.leadconnectorhq.com/loader.js";
+      script.dataset.resourcesUrl = "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
+      script.dataset.widgetId = "6943a1a0cd15178187e76727";
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+
+    // Load on user activity
+    ['mouseover', 'scroll', 'touchstart', 'click', 'keydown'].forEach(event => {
+      window.addEventListener(event, loadChatWidget, { once: true, passive: true });
+    });
+
+    // Fallback: load after 5 seconds if no interaction
+    setTimeout(loadChatWidget, 5000);
+  </script>
 
 </body>
 
