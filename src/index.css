@@ -4,24 +4,32 @@
   --font-body: 'Inter', sans-serif;
 
   /* Colors - Luxury Light Mode (High Contrast & Premium) */
-  --color-brand-primary: #0F172A; /* Deep Navy - Authority */
+  --color-brand-primary: #0F172A;
+  /* Deep Navy - Authority */
   --color-brand-light: #E0F2FE;
-  
-  --color-accent: #2563EB; /* Trust Blue - vivid but professional */
-  --color-accent-hover: #1D4ED8;
-  --color-accent-secondary: #0D9488; /* Emerald Teal - distinctive */
 
-  --color-text-main: #1E293B; /* Slate 800 - softer than pure black */
-  --color-text-dim: #475569; /* Slate 600 */
-  
+  --color-accent: #2563EB;
+  /* Trust Blue - vivid but professional */
+  --color-accent-hover: #1D4ED8;
+  --color-accent-secondary: #0D9488;
+  /* Emerald Teal - distinctive */
+
+  --color-text-main: #1E293B;
+  /* Slate 800 - softer than pure black */
+  --color-text-dim: #475569;
+  /* Slate 600 */
+
   --color-bg-main: #FFFFFF;
-  --color-bg-secondary: #F8FAFC; /* Slate 50 */
-  
+  --color-bg-secondary: #F8FAFC;
+  /* Slate 50 */
+
   --color-white: #FFFFFF;
 
   /* Spacing */
-  --container-max-width: 1200px; /* Wider for modern feel */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Professional easing */
+  --container-max-width: 1200px;
+  /* Wider for modern feel */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Professional easing */
 }
 
 /* Glassmorphism Utilities */
@@ -168,6 +176,24 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+}
+
+/* Flex Utilities */
+.flex-col {
+  flex-direction: column;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+/* Fix for the global .flex having align-items: center */
+.items-stretch {
+  align-items: stretch;
 }
 
 .badge {
