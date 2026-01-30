@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { submitLead } from '../utils/submitLead';
 
 
 const DemoForm: React.FC = () => {
@@ -18,11 +19,29 @@ const DemoForm: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('sending');
-        // TODO: Replace with actual submission logic/endpoint
-        // For now simulating a successful submission
-        setTimeout(() => {
+
+        const success = await submitLead({
+            name: form.contactName,
+            email: form.email,
+            phone: form.phone,
+            companyName: form.companyName,
+            businessType: form.businessType,
+            source: 'Free Trial Form'
+        });
+
+        if (success) {
             setStatus('submitted');
-        }, 1000);
+            setForm({
+                companyName: '',
+                contactName: '',
+                email: '',
+                phone: '',
+                businessType: ''
+            });
+        } else {
+            setStatus('error');
+            alert('Something went wrong. Please try again.');
+        }
     };
 
     return (

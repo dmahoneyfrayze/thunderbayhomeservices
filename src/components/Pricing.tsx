@@ -1,4 +1,6 @@
+
 import React, { useState } from 'react';
+import { submitLead } from '../utils/submitLead';
 
 const Pricing: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
@@ -73,21 +75,22 @@ const Pricing: React.FC = () => {
                   btn.innerText = 'Joining...';
                 }
 
-                try {
-                  await fetch('/.netlify/functions/submit-lead', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, source: 'Waitlist', name: 'Waitlist User' })
-                  });
+                const success = await submitLead({
+                  email,
+                  source: 'Waitlist',
+                  name: 'Waitlist User'
+                });
+
+                if (success) {
                   alert('You have been added to the waitlist!');
-                  form.reset();
-                } catch (err) {
+                  (e.target as HTMLFormElement).reset();
+                } else {
                   alert('Something went wrong. Please try again.');
-                } finally {
-                  if (btn) {
-                    btn.disabled = false;
-                    btn.innerText = 'Join Waitlist';
-                  }
+                }
+
+                if (btn) {
+                  btn.disabled = false;
+                  btn.innerText = 'Join Waitlist';
                 }
               }}
               style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}

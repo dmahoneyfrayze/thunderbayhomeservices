@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { Download, Calculator, Send, CheckCircle } from 'lucide-react';
+import { submitLead } from '../utils/submitLead';
 
 const Tools: React.FC = () => {
     // Lead Magnet State
@@ -21,21 +22,7 @@ const Tools: React.FC = () => {
     const [contactSent, setContactSent] = useState(false);
 
     // Handlers
-    const submitLead = async (data: any) => {
-        try {
-            const res = await fetch('/.netlify/functions/submit-lead', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            if (!res.ok) throw new Error('Submission failed');
-            return true;
-        } catch (e) {
-            console.error(e);
-            alert('Something went wrong. Please try again.');
-            return false;
-        }
-    };
+    // submitLead imported from utils
 
     const handleMagnetSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
