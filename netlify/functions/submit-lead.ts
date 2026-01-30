@@ -28,20 +28,20 @@ export const handler: Handler = async (event: HandlerEvent) => {
         const lastName = nameParts.slice(1).join(' ') || '';
 
         // Construct JSON-RPC 2.0 Payload for MCP
-        // Tool: contacts_upsert-contact (as per GHL docs)
+        // Tool: contacts_upsert-contact (requires body_ prefix for args)
         const payload = {
             jsonrpc: "2.0",
             method: "tools/call",
             params: {
                 name: "contacts_upsert-contact",
                 arguments: {
-                    email: email,
-                    firstName: firstName,
-                    lastName: lastName,
-                    tags: ["MCP Lead", source],
-                    customFields: [
-                        { key: "message_content", value: message || "No message" }
-                    ]
+                    body_email: email,
+                    body_firstName: firstName,
+                    body_lastName: lastName,
+                    body_tags: ["MCP Lead", source],
+                    body_source: source
+                    // Omitting customFields for now as schema suggests strings but API usually needs objects.
+                    // keeping it simple to ensure basic lead capture works first.
                 }
             },
             id: Date.now()
@@ -54,7 +54,8 @@ export const handler: Handler = async (event: HandlerEvent) => {
             headers: {
                 'Authorization': `Bearer ${PIT_TOKEN}`,
                 'locationId': LOCATION_ID,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json, text/event-stream'
             },
             body: JSON.stringify(payload)
         });

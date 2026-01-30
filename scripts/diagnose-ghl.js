@@ -54,7 +54,8 @@ async function listTools() {
             headers: {
                 'Authorization': `Bearer ${PIT_TOKEN}`,
                 'locationId': LOCATION_ID,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json, text/event-stream'
             },
             body: JSON.stringify(payload)
         });
@@ -63,15 +64,52 @@ async function listTools() {
             throw new Error(`HTTP Error: ${response.status} ${await response.text()}`);
         }
 
-        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status} ${await response.text()}`);
+        }
 
-        if (data.error) {
-            console.error('❌ MCP Error:', data.error);
+        const text = await response.text();
+        console.log('📡 Use Raw Response:', text.substring(0, 100) + '...');
+
+        // Parse SSE - look for lines starting with "data: "
+        const lines = text.split('\n');
+        let jsonData = null;
+
+        for (const line of lines) {
+            if (line.startsWith('data: ')) {
+                try {
+                    const content = line.substring(6); // Remove "data: "
+                    if (content.trim() === '[DONE]') continue;
+
+                    const parsed = JSON.parse(content);
+                    // Check if this is a response to our ID
+                    if (parsed.id === payload.id || parsed.result) {
+                        jsonData = parsed;
+                        break;
+                    }
+                } catch (e) {
+                    console.log('⚠️ Failed to parse line:', line);
+                }
+            }
+        }
+
+        if (!jsonData) {
+            // Fallback: try parsing the whole body if it wasn't SSE
+            try {
+                jsonData = JSON.parse(text);
+            } catch (e) {
+                console.error('❌ Could not parse response as SSE or JSON');
+                return;
+            }
+        }
+
+        if (jsonData.error) {
+            console.error('❌ MCP Error:', jsonData.error);
             return;
         }
 
-        const tools = data.result?.tools || [];
-        console.log(`✅ Found ${tools.length} tools:\n`);
+        const tools = jsonData.result?.tools || [];
+        console.log(`✅ Found ${tools.length} total tools:\n`);
 
         tools.forEach(tool => {
             console.log(`🛠️  Tool: ${tool.name}`);
