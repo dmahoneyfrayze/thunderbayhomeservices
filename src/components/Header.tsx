@@ -10,6 +10,15 @@ const Header: React.FC = () => {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const closeMenu = () => setIsMenuOpen(false);
 
+    // Helper to scroll to hash if on same page, or just link
+    const scrollToHash = (hash: string) => {
+        closeMenu();
+        const element = document.querySelector(hash);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <header style={{
             padding: '1rem 0',
@@ -28,15 +37,15 @@ const Header: React.FC = () => {
                 {/* DESKTOP NAV */}
                 <nav className="hidden-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                     <Link to="/" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Home</Link>
-                    <Link to="/#features" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Features</Link>
-                    <Link to="/#pricing" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Pricing</Link>
-                    <Link to="/#contact" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Contact</Link>
+                    <a href="#how-it-works" onClick={() => scrollToHash('#how-it-works')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>How It Works</a>
+                    <a href="#features" onClick={() => scrollToHash('#features')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>Features</a>
+                    <a href="#pricing" onClick={() => scrollToHash('#pricing')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>Pricing</a>
                 </nav>
 
                 <div className="hidden-mobile">
-                    <Link to="/#contact" className="btn-solid" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
+                    <a href="#demo" onClick={() => scrollToHash('#demo')} className="btn-solid" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem', textDecoration: 'none' }}>
                         Start Free Trial
-                    </Link>
+                    </a>
                 </div>
 
                 {/* MOBILE MENU TOGGLE */}
@@ -60,13 +69,13 @@ const Header: React.FC = () => {
                     >
                         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center', fontSize: '1.25rem', fontWeight: 600 }}>
                             <Link to="/" onClick={closeMenu}>Home</Link>
-                            <Link to="/#features" onClick={closeMenu}>Features</Link>
-                            <Link to="/#pricing" onClick={closeMenu}>Pricing</Link>
-                            <Link to="/#contact" onClick={closeMenu}>Contact</Link>
+                            <a href="#how-it-works" onClick={() => scrollToHash('#how-it-works')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>How It Works</a>
+                            <a href="#features" onClick={() => scrollToHash('#features')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Features</a>
+                            <a href="#pricing" onClick={() => scrollToHash('#pricing')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Pricing</a>
                             <hr style={{ borderColor: '#E2E8F0', margin: '0.5rem 0' }} />
-                            <Link to="/#contact" onClick={closeMenu} className="btn-solid" style={{ width: '100%' }}>
+                            <a href="#demo" onClick={() => scrollToHash('#demo')} className="btn-solid" style={{ width: '100%', textDecoration: 'none' }}>
                                 Start Free Trial
-                            </Link>
+                            </a>
                         </nav>
                     </motion.div>
                 )}
