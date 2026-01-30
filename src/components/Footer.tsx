@@ -33,6 +33,8 @@ const Footer: React.FC = () => {
                         <nav className="footer-nav" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <a href="/#how-it-works" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>About Us</a>
                             <Link to="/blog" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Blog</Link>
+                            <a href="https://frayze.ca/resources/" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Growth Guides</a>
+                            <a href="https://thunderbayai.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>NWO AI Insights</a>
                             <a href="mailto:support@frayze.ca" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Contact</a>
                         </nav>
                     </div>
