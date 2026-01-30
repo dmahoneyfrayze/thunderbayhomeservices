@@ -1,15 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import { useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
-import DemoForm from '../components/DemoForm';
-import Features from '../components/Features';
-import Pricing from '../components/Pricing';
-import LocalAdvantage from '../components/LocalAdvantage';
-import TargetAudience from '../components/TargetAudience';
-import AfterInstall from '../components/AfterInstall';
-import FAQ from '../components/FAQ';
-// Removed import heroBg from '../assets/images/thunder-bay-hero.webp';
-const heroBg = '/images/thunder-bay-hero.webp';
+import heroBg from '/images/thunder-bay-hero.webp';
+
+// Lazy load below-the-fold components to reduce initial LCP/TBT
+const DemoForm = lazy(() => import('../components/DemoForm'));
+const Features = lazy(() => import('../components/Features'));
+const Pricing = lazy(() => import('../components/Pricing'));
+const LocalAdvantage = lazy(() => import('../components/LocalAdvantage'));
+const TargetAudience = lazy(() => import('../components/TargetAudience'));
+const AfterInstall = lazy(() => import('../components/AfterInstall'));
+const FAQ = lazy(() => import('../components/FAQ'));
+
+// Lightweight placeholder for suspended components
+const SectionLoader = () => <div style={{ height: '100px', background: '#F8FAFC' }} />;
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -31,7 +35,7 @@ const Home: React.FC = () => {
         image="https://thunderbayhomeservices.com/assets/guides_hero-CcOUGRcY.png"
       />
 
-      {/* Hero Section */}
+      {/* Hero Section - Kept Eager for LCP */}
       <section
         style={{
           position: 'relative',
@@ -120,29 +124,36 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Local Advantage Section (Why We Built This) */}
-      <LocalAdvantage />
+      {/* Lazy Loaded Sections */}
+      <Suspense fallback={<SectionLoader />}>
+        <LocalAdvantage />
+      </Suspense>
 
-      {/* Who It's For */}
-      <TargetAudience />
+      <Suspense fallback={<SectionLoader />}>
+        <TargetAudience />
+      </Suspense>
 
-      {/* How It Works & Features */}
-      <Features />
+      <Suspense fallback={<SectionLoader />}>
+        <Features />
+      </Suspense>
 
-      {/* What Happens After Install */}
-      <AfterInstall />
+      <Suspense fallback={<SectionLoader />}>
+        <AfterInstall />
+      </Suspense>
 
-      {/* Demo Form Section */}
-      <DemoForm />
+      <Suspense fallback={<SectionLoader />}>
+        <DemoForm />
+      </Suspense>
 
-      {/* Pricing */}
-      <Pricing />
+      <Suspense fallback={<SectionLoader />}>
+        <Pricing />
+      </Suspense>
 
-      {/* FAQ */}
-      <FAQ />
+      <Suspense fallback={<SectionLoader />}>
+        <FAQ />
+      </Suspense>
 
-      {/* Final CTA / Contact - optionally kept or removed since we have the DemoForm */}
-      {/* Keeping a simple footer CTA area just in case, but simplifying it */}
+      {/* Final CTA / Contact */}
       <section style={{ padding: '4rem 0', background: 'var(--color-brand-primary)', color: 'white', textAlign: 'center' }}>
         <div className="container">
           <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'white' }}>Ready to Automate Your Business?</h2>
