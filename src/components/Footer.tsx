@@ -48,6 +48,10 @@ const Footer: React.FC = () => {
                             <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Social Media Planner</span>
                             <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Reputation Manager</span>
                             <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>AI Voice Reception</span>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Inventory Management</span>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>HR & Recruiting</span>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Digital Merchandising</span>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Feed Distribution</span>
                             <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>B2B Lead Gen</span>
                         </nav>
                     </div>

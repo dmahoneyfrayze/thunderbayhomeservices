@@ -227,7 +227,11 @@ const Tools: React.FC = () => {
                             { title: 'Social Media Planner', desc: 'AI-generated posts that showcase your recent jobs and local expertise.' },
                             { title: 'Reputation Manager', desc: 'Automatic review requests and AI-drafted responses to build trust.' },
                             { title: 'AI Voice Reception', desc: 'A local-sounding AI that answers your phone and books jobs when you can\'t.' },
-                            { title: 'B2B Lead Generation', desc: 'Target local businesses and property managers for commercial contracts.' }
+                            { title: 'Inventory Management', desc: 'Track local stock levels and sync with your sales engine in real-time.' },
+                            { title: 'HR & Recruiting', desc: 'Automated job postings and AI-driven candidate screening for local trades.' },
+                            { title: 'Digital Merchandising', desc: 'Auto-enhance site images and create lifestyle shots for your products.' },
+                            { title: 'B2B Lead Generation', desc: 'Target local businesses and property managers for commercial contracts.' },
+                            { title: 'Feed Distribution', desc: 'Sync your product catalog directly to Google Merchant Center and Facebook.' }
                         ].map((item, i) => (
                             <div key={i} className="card" style={{ padding: '2rem', background: '#F8FAFC', border: '1px solid #E2E8F0', position: 'relative', overflow: 'hidden' }}>
                                 <div style={{ position: 'absolute', top: '1rem', right: '-2rem', background: '#DBEAFE', color: '#1E40AF', padding: '0.25rem 2.5rem', fontSize: '0.7rem', fontWeight: 700, transform: 'rotate(45deg)' }}>SOON</div>
