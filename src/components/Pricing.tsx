@@ -18,7 +18,8 @@ const Pricing: React.FC = () => (
         {/* Starter Plan */}
         <div className="tier" style={{ background: '#fff', padding: '2rem', borderRadius: '8px', border: '1px solid #E2E8F0', textAlign: 'center' }}>
           <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Starter</h3>
-          <p className="price" style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--color-text-main)' }}>$29<span style={{ fontSize: '1rem', fontWeight: 400 }}>/mo</span></p>
+          <p className="price" style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--color-text-main)' }}>$29<span style={{ fontSize: '1rem', fontWeight: 400 }}>/mo</span></p>
+          <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>+ $25.00 Setup Fee</p>
           <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', textAlign: 'left', display: 'inline-block' }}>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
               <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Up to 50 leads per month
@@ -37,7 +38,8 @@ const Pricing: React.FC = () => (
         <div className="tier featured" style={{ background: '#fff', padding: '2rem', borderRadius: '8px', border: '2px solid var(--color-brand-primary)', textAlign: 'center', position: 'relative' }}>
           <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: 'var(--color-brand-primary)', color: 'white', padding: '0.25rem 1rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600 }}>MOST POPULAR</div>
           <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Basic</h3>
-          <p className="price" style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--color-text-main)' }}>$79<span style={{ fontSize: '1rem', fontWeight: 400 }}>/mo</span></p>
+          <p className="price" style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--color-text-main)' }}>$79<span style={{ fontSize: '1rem', fontWeight: 400 }}>/mo</span></p>
+          <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>+ $25.00 Setup Fee</p>
           <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', textAlign: 'left', display: 'inline-block' }}>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
               <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Up to 200 leads per month
@@ -52,7 +54,8 @@ const Pricing: React.FC = () => (
         {/* Pro Plan */}
         <div className="tier" style={{ background: '#fff', padding: '2rem', borderRadius: '8px', border: '1px solid #E2E8F0', textAlign: 'center' }}>
           <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Pro</h3>
-          <p style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--color-text-main)' }}>$149<span style={{ fontSize: '1rem', fontWeight: 400 }}>/mo</span></p>
+          <p style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--color-text-main)' }}>$149<span style={{ fontSize: '1rem', fontWeight: 400 }}>/mo</span></p>
+          <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>+ $25.00 Setup Fee</p>
           <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', textAlign: 'left', display: 'inline-block' }}>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
               <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Unlimited leads
