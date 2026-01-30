@@ -35,16 +35,85 @@ const Pricing: React.FC = () => {
     <section id="pricing" style={{ padding: '6rem 0' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <div style={{
+            display: 'inline-block',
+            background: '#FEF3C7',
+            color: '#D97706',
+            padding: '0.5rem 1rem',
+            borderRadius: '999px',
+            fontSize: '0.85rem',
+            fontWeight: 700,
+            marginBottom: '1rem',
+            letterSpacing: '0.05em',
+            textTransform: 'uppercase'
+          }}>
+            🚀 Launching Soon
+          </div>
+
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Pricing Plans</h2>
           <p style={{ fontSize: '1.1rem', color: 'var(--color-text-dim)', maxWidth: '600px', margin: '0 auto' }}>
             Simple, transparent pricing to grow with your business.
           </p>
-          <p style={{ fontSize: '1rem', color: 'var(--color-brand-primary)', fontWeight: 600, marginTop: '1rem' }}>
+
+          {/* Quick Join Waitlist */}
+          <div style={{ maxWidth: '400px', margin: '2rem auto', background: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)', border: '1px solid #E2E8F0' }}>
+            <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>Get Early Access</h4>
+            <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '1rem' }}>Join the waitlist to get notified when we launch.</p>
+
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.target as HTMLFormElement;
+                const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+                const btn = form.querySelector('button');
+
+                if (btn) {
+                  btn.disabled = true;
+                  btn.innerText = 'Joining...';
+                }
+
+                try {
+                  await fetch('/.netlify/functions/submit-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, source: 'Waitlist', name: 'Waitlist User' })
+                  });
+                  alert('You have been added to the waitlist!');
+                  form.reset();
+                } catch (err) {
+                  alert('Something went wrong. Please try again.');
+                } finally {
+                  if (btn) {
+                    btn.disabled = false;
+                    btn.innerText = 'Join Waitlist';
+                  }
+                }
+              }}
+              style={{ display: 'flex', gap: '0.5rem' }}
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                style={{ flex: 1, padding: '0.6rem', borderRadius: '6px', border: '1px solid #CBD5E1', fontSize: '0.9rem' }}
+              />
+              <button
+                type="submit"
+                className="btn-solid"
+                style={{ padding: '0.6rem 1rem', fontSize: '0.9rem', whiteSpace: 'nowrap', cursor: 'pointer' }}
+              >
+                Join Waitlist
+              </button>
+            </form>
+          </div>
+
+          <p style={{ fontSize: '1rem', color: 'var(--color-brand-primary)', fontWeight: 600, marginTop: '2rem' }}>
             14 days free at all levels
           </p>
 
           {/* Toggle Switch */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginTop: '2rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
             <span style={{
               fontWeight: billingCycle === 'monthly' ? 700 : 400,
               color: billingCycle === 'monthly' ? 'var(--color-brand-primary)' : 'var(--color-text-dim)',
