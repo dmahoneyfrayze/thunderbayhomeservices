@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
-import logo from '../assets/images/logo.png';
+// import logo from '../assets/images/logo.png';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +31,7 @@ const Header: React.FC = () => {
         }}>
             <div className="container" style={{ padding: '0 1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Link to="/" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center' }} aria-label="Go to Home">
-                    <img src={logo} alt="Thunder Bay Home Services" width="180" height="64" style={{ height: '64px', width: 'auto' }} />
+                    <img src="/images/logo.png" alt="Thunder Bay Home Services" width="180" height="64" style={{ height: '64px', width: 'auto' }} />
                 </Link>
 
                 {/* DESKTOP NAV */}

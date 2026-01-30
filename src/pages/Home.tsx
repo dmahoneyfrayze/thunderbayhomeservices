@@ -8,7 +8,8 @@ import LocalAdvantage from '../components/LocalAdvantage';
 import TargetAudience from '../components/TargetAudience';
 import AfterInstall from '../components/AfterInstall';
 import FAQ from '../components/FAQ';
-import heroBg from '../assets/images/thunder-bay-hero.webp';
+// Removed import heroBg from '../assets/images/thunder-bay-hero.webp';
+const heroBg = '/images/thunder-bay-hero.webp';
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -55,8 +56,7 @@ const Home: React.FC = () => {
             zIndex: 0,
             filter: 'brightness(1.1)'
           }}
-          // @ts-ignore
-          fetchpriority="high"
+          fetchPriority="high"
         />
 
         {/* White Gradient Overlay for Text Readability */}

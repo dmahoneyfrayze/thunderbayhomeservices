@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo.png';
+// import logo from '../assets/images/logo.png';
 
 const Footer: React.FC = () => {
     return (
@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
 
                     {/* Brand Column */}
                     <div style={{ maxWidth: '300px' }}>
-                        <img src={logo} alt="Thunder Bay Home Services" style={{ height: '48px', marginBottom: '1.5rem' }} />
+                        <img src="/images/logo.png" alt="Thunder Bay Home Services" width="180" height="48" style={{ height: '48px', width: 'auto', marginBottom: '1.5rem' }} />
                         <p style={{ color: 'var(--color-text-dim)', fontSize: '0.95rem', lineHeight: 1.6 }}>
                             The AI quoting and scheduling engine built specifically for Northwestern Ontario contractors.
                         </p>
