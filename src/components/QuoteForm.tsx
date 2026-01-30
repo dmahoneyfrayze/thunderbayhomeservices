@@ -55,7 +55,7 @@ const QuoteForm: React.FC = () => {
           <select id="service" name="service" onChange={handleChange} required>
             <option value="">Select a service</option>
             {services.map(s => <option key={s} value={s}>{s}</option>)}
-          </select></label>
+          </select>
           <label htmlFor="address">Address</label>
           <input id="address" name="address" onChange={handleChange} required />
           <label htmlFor="details">Details</label>
