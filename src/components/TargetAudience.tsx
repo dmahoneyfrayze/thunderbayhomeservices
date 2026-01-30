@@ -18,7 +18,10 @@ const TargetAudience: React.FC = () => {
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                     <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Who is Frayze For?</h2>
                     <p style={{ fontSize: '1.25rem', color: 'var(--color-text-dim)', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>
-                        We are built for <strong>growth-minded</strong> home service business owners in Thunder Bay who want to scale their operations but hate the administrative busywork.
+                        We are built for <strong>growth-minded</strong> businesses. While we specialize in home services, our AI engine is perfect for <strong>anyone</strong> with lead or appointment-based needs.
+                    </p>
+                    <p style={{ fontSize: '1rem', color: 'var(--color-text-dim)', marginTop: '1rem', maxWidth: '600px', margin: '1rem auto 0' }}>
+                        From contractors to consultants, if your business relies on booking clients and capturing leads, Frayze automates the busywork so you can scale.
                     </p>
                 </div>
 
