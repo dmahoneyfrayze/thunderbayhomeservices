@@ -9,8 +9,8 @@ const Blog: React.FC = () => {
     return (
         <div style={{ padding: '8rem 0 6rem', background: '#F8FAFC', minHeight: '100vh' }}>
             <SEO
-                title="Thunder Bay Contractor Resources | Frayze Blog"
-                description="Tips, trends, and strategies for growing your home service business in Northwestern Ontario."
+                title="Growth Insights for Thunder Bay Contractors | Frayze Blog"
+                description="Actionable marketing and automation strategies specifically for Northwestern Ontario home service businesses. Read the latest from Frayze."
                 canonical="/blog"
             />
             <div className="container">

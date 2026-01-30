@@ -6,7 +6,7 @@ const Setup: React.FC = () => {
     return (
         <div className="setup-page" style={{ paddingTop: '6rem', minHeight: '80vh', background: '#F8FAFC' }}>
             <SEO
-                title="Setup Your Account | Frayze"
+                title="Welcome to Frayze | Account Setup"
                 description="Welcome to Frayze. Follow these steps to get your AI up and running."
             />
 

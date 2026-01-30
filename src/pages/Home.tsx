@@ -29,8 +29,8 @@ const Home: React.FC = () => {
   return (
     <div className="home-page">
       <SEO
-        title="Thunder Bay & NWO's Premier AI Lead Capture Engine | Frayze"
-        description="The only local AI platform for Northwestern Ontario contractors. 24/7 quote bot, scheduling, and automation—built to help you scale."
+        title="Frayze | The AI Lead Engine for Thunder Bay Contractors"
+        description="Stop losing jobs to voicemail. Frayze is the local AI sales agent for Thunder Bay & NWO contractors that books leads 24/7. Start your free trial."
         canonical="/"
         image="https://thunderbayhomeservices.com/assets/guides_hero-CcOUGRcY.png"
       />

@@ -69,8 +69,8 @@ const Tools: React.FC = () => {
     return (
         <div style={{ padding: '8rem 0 6rem', background: '#F8FAFC', minHeight: '100vh' }}>
             <SEO
-                title="Lead Gen Tools Demo | Frayze"
-                description="Interactive examples of lead magnets, value calculators, and contact forms."
+                title="Free HVAC & Contractor Marketing Tools | Frayze"
+                description="Free ROI calculators, marketing checklists, and lead magnet templates for Thunder Bay contractors. Try our tools to see how AI can grow your business."
                 canonical="/tools"
             />
 
