@@ -21,7 +21,7 @@ const Pricing: React.FC = () => (
           <p className="price" style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--color-text-main)' }}>$29<span style={{ fontSize: '1rem', fontWeight: 400 }}>/mo</span></p>
           <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', textAlign: 'left', display: 'inline-block' }}>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Up to 50 quotes/month
+              <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Up to 50 leads per month
             </li>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
               <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Email support
@@ -40,7 +40,7 @@ const Pricing: React.FC = () => (
           <p className="price" style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--color-text-main)' }}>$79<span style={{ fontSize: '1rem', fontWeight: 400 }}>/mo</span></p>
           <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', textAlign: 'left', display: 'inline-block' }}>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Up to 200 quotes/month
+              <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Up to 200 leads per month
             </li>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
               <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Priority email support
@@ -55,7 +55,7 @@ const Pricing: React.FC = () => (
           <p style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--color-text-main)' }}>$149<span style={{ fontSize: '1rem', fontWeight: 400 }}>/mo</span></p>
           <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', textAlign: 'left', display: 'inline-block' }}>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Unlimited quotes
+              <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Unlimited leads
             </li>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
               <span style={{ color: 'var(--color-brand-primary)', marginRight: '0.5rem' }}>✓</span> Dedicated support
