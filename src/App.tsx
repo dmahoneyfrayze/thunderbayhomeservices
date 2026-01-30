@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Setup from './pages/Setup';
@@ -24,8 +22,6 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/setup" element={<Setup />} />
             <Route path="/tools" element={<Tools />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
           </Routes>
         </main>
         <Footer />

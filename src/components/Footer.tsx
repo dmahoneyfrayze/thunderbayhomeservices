@@ -41,8 +41,8 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Legal</h4>
                         <nav className="footer-nav" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                            <Link to="/privacy" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Privacy Policy</Link>
-                            <Link to="/terms" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Terms of Service</Link>
+                            <a href="https://frayze.ca/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Privacy Policy</a>
+                            <a href="https://frayze.ca/terms" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Terms of Service</a>
                             <Link to="/setup" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>New Customer Setup</Link>
                         </nav>
                     </div>
