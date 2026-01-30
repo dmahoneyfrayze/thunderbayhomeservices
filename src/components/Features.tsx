@@ -47,7 +47,7 @@ const Features: React.FC = () => (
           </p>
         </div>
 
-        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
 
           {/* Feature 1: Calendar */}
           <motion.div

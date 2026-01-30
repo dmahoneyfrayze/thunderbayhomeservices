@@ -11,11 +11,14 @@ const Header: React.FC = () => {
     const closeMenu = () => setIsMenuOpen(false);
 
     // Helper to scroll to hash if on same page, or just link
-    const scrollToHash = (hash: string) => {
+    const scrollToHash = (e: React.MouseEvent, hash: string) => {
+        e.preventDefault();
         closeMenu();
         const element = document.querySelector(hash);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
+            // Update URL hash without scrolling
+            window.history.pushState(null, '', hash);
         }
     };
 
@@ -37,11 +40,11 @@ const Header: React.FC = () => {
                 {/* DESKTOP NAV */}
                 <nav className="hidden-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
 
-                    <a href="#how-it-works" onClick={() => scrollToHash('#how-it-works')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>How It Works</a>
-                    <a href="#features" onClick={() => scrollToHash('#features')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>Platform</a>
+                    <a href="#how-it-works" onClick={(e) => scrollToHash(e, '#how-it-works')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>How It Works</a>
+                    <a href="#features" onClick={(e) => scrollToHash(e, '#features')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>Platform</a>
                     <Link to="/blog" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Blog</Link>
                     <Link to="/tools" style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)' }}>Free Tools</Link>
-                    <a href="#pricing" onClick={() => scrollToHash('#pricing')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>Pricing</a>
+                    <a href="#pricing" onClick={(e) => scrollToHash(e, '#pricing')} style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text-main)', cursor: 'pointer', textDecoration: 'none' }}>Pricing</a>
                 </nav>
 
                 <div className="hidden-mobile" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
@@ -71,14 +74,14 @@ const Header: React.FC = () => {
                     >
                         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center', fontSize: '1.25rem', fontWeight: 600 }}>
 
-                            <a href="#how-it-works" onClick={() => scrollToHash('#how-it-works')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>How It Works</a>
-                            <a href="#features" onClick={() => scrollToHash('#features')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Platform</a>
+                            <a href="#how-it-works" onClick={(e) => scrollToHash(e, '#how-it-works')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>How It Works</a>
+                            <a href="#features" onClick={(e) => scrollToHash(e, '#features')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Platform</a>
                             <Link to="/blog" onClick={closeMenu} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Blog</Link>
                             <Link to="/tools" onClick={closeMenu} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Free Tools</Link>
-                            <a href="#pricing" onClick={() => scrollToHash('#pricing')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Pricing</a>
+                            <a href="#pricing" onClick={(e) => scrollToHash(e, '#pricing')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Pricing</a>
                             <a href="https://app.frayze.ca/login" target="_blank" style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Sign In</a>
                             <hr style={{ borderColor: '#E2E8F0', margin: '0.5rem 0' }} />
-                            <a href="#demo" onClick={() => scrollToHash('#demo')} className="btn-solid" style={{ width: '100%', textDecoration: 'none' }}>
+                            <a href="#demo" onClick={(e) => scrollToHash(e, '#demo')} className="btn-solid" style={{ width: '100%', textDecoration: 'none' }}>
                                 Start Free Trial
                             </a>
                         </nav>

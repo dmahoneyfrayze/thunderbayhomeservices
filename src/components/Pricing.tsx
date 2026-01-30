@@ -158,7 +158,7 @@ const Pricing: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', maxWidth: '1200px', margin: '0 auto 4rem' }}>
+        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '1200px', margin: '0 auto 4rem' }}>
 
           {/* Starter Plan */}
           <div className="tier" style={{ background: '#fff', padding: '2rem', borderRadius: '8px', border: '1px solid #E2E8F0', textAlign: 'center' }}>

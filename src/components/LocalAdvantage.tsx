@@ -25,7 +25,7 @@ const LocalAdvantage: React.FC = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+                <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
                     {/* Card 1 */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
