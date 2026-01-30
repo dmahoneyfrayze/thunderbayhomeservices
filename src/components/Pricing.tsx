@@ -38,7 +38,7 @@ const Pricing: React.FC = () => {
           <div style={{
             display: 'inline-block',
             background: '#FEF3C7',
-            color: '#D97706',
+            color: '#92400E', // Darker amber for WCAG AA contrast
             padding: '0.5rem 1rem',
             borderRadius: '999px',
             fontSize: '0.85rem',
@@ -57,7 +57,8 @@ const Pricing: React.FC = () => {
 
           {/* Quick Join Waitlist */}
           <div style={{ maxWidth: '400px', margin: '2rem auto', background: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)', border: '1px solid #E2E8F0' }}>
-            <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>Get Early Access</h4>
+            {/* Changed from h4 to h3 for correct heading hierarchy */}
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>Get Early Access</h3>
             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '1rem' }}>Join the waitlist to get notified when we launch.</p>
 
             <form

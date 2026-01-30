@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
 
                     {/* Platform Column */}
                     <div>
-                        <h4 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Platform</h4>
+                        <h3 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Platform</h3>
                         <nav className="footer-nav" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <a href="/#features" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Features</a>
                             <a href="/#pricing" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Pricing</a>
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
 
                     {/* Company Column */}
                     <div>
-                        <h4 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Company</h4>
+                        <h3 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Company</h3>
                         <nav className="footer-nav" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <a href="/#how-it-works" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>About Us</a>
                             <Link to="/blog" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Blog</Link>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
 
                     {/* Legal Column */}
                     <div>
-                        <h4 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Legal</h4>
+                        <h3 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Legal</h3>
                         <nav className="footer-nav" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <a href="https://frayze.ca/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Privacy Policy</a>
                             <a href="https://frayze.ca/terms" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none' }}>Terms of Service</a>
