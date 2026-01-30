@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import React from 'react';
 
 const features = [
-  { title: 'AI-Powered Estimates', description: 'Generate accurate quotes in seconds using advanced machine learning algorithms.' },
-  { title: 'Customizable Templates', description: 'Tailor quotes to match your brand and service offerings.' },
-  { title: 'Real-Time Analytics', description: 'Gain insights into quoting performance and customer engagement.' },
-  { title: 'Seamless Integrations', description: 'Connect easily with your CRM, accounting, and scheduling tools.' },
+  { title: 'AI‑Powered Quote Bot', description: 'Instantly qualify jobs and generate professional quotes 24/7—no coding needed.' },
+  { title: 'Self‑Deploy Widget', description: 'Copy‑paste our smart form snippet to your site and start capturing leads in minutes.' },
+  { title: 'Automated Lead Routing', description: 'Push qualified leads via API or webhook directly into your CRM or Go High Level pipeline.' },
+  { title: 'Built‑In Analytics & Alerts', description: 'Track lead volume, conversion rates, and get SMS/email notifications for every request.' },
 ];
 
 const Features: React.FC = () => (

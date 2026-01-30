@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { servicesConfig } from '../config/servicesConfig';
 import { Mail, Facebook } from 'lucide-react';
 import logo from '../assets/images/logo.png';
 
@@ -18,58 +17,29 @@ const Footer: React.FC = () => {
                     {/* Brand Column */}
                     <div>
                         <Link to="/" style={{ display: 'flex', alignItems: 'center', marginBottom: '1.5rem' }}>
-                            <img src={logo} alt="Thunder Bay Home Services" style={{ height: '120px', width: 'auto' }} />
+                            <img src={logo} alt="Frayze Home-Services" style={{ height: '120px', width: 'auto' }} />
                         </Link>
                         <p style={{ color: 'var(--color-text-dim)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                            Thunder Bay Home Services is a local platform offering service comparisons, expert guides, and homeowner resources across Thunder Bay. Our mission is to help residents make informed decisions when hiring home service professionals.
+                            Frayze Home-Services SaaS empowers businesses with a self-deploy lead generation and quoting engine—24/7, AI-powered, no coding required.
                         </p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                            <div style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '0.25rem' }}>
-                                Questions? Contact us online.
+                            <div style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>
+                                Questions? Contact us:
                             </div>
                             <div className="flex gap-2" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>
-                                <Mail size={16} /> <span>hello@thunderbayhomeservices.com</span>
+                                <Mail size={16} /> <span>support@thunderbayhomeservices.com</span>
                             </div>
-                            <a href="https://www.facebook.com/tbayhomeservices/" target="_blank" rel="noopener noreferrer" className="flex gap-2" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none', alignItems: 'center', marginTop: '0.5rem' }}>
-                                <Facebook size={16} /> <span>Follow us on Facebook</span>
+                            <a href="https://www.facebook.com/tbayhomeservices/" target="_blank" rel="noopener noreferrer" className="flex gap-2" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', textDecoration: 'none', alignItems: 'center' }}>
+                                <Facebook size={16} /> <span>Follow us</span>
                             </a>
                         </div>
-                    </div>
-
-                    {/* Services Column */}
-                    <div>
-                        <h4 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Popular Services</h4>
-                        <ul style={{ listStyle: 'none', display: 'grid', gap: '0.75rem' }}>
-                            {servicesConfig.slice(0, 5).map(service => (
-                                <li key={service.slug}>
-                                    <Link to={`/${service.slug}`} style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>
-                                        {service.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* More Services Column */}
-                    <div>
-                        <h4 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>More Services</h4>
-                        <ul style={{ listStyle: 'none', display: 'grid', gap: '0.75rem' }}>
-                            {servicesConfig.slice(5).map(service => (
-                                <li key={service.slug}>
-                                    <Link to={`/${service.slug}`} style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>
-                                        {service.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
                     </div>
 
                     {/* Company Column */}
                     <div>
                         <h4 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Company</h4>
                         <ul style={{ listStyle: 'none', display: 'grid', gap: '0.75rem' }}>
-                            <li><Link to="/about" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>About Us</Link></li>
-                            <li><Link to="/for-contractors" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>For Contractors</Link></li>
+                            <li><Link to="/resources" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Resources</Link></li>
                             <li><Link to="/privacy" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Privacy Policy</Link></li>
                             <li><Link to="/terms" style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)' }}>Terms of Service</Link></li>
                         </ul>
@@ -78,7 +48,7 @@ const Footer: React.FC = () => {
 
                 <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem', textAlign: 'center' }}>
                     <p style={{ color: 'var(--color-text-dim)', fontSize: '0.875rem' }}>
-                        © {new Date().getFullYear()} Thunder Bay Home Services. <span style={{ opacity: 0.7 }}>Operated by <a href="https://frayze.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Frayze Technologies Inc.</a></span>
+                        © {new Date().getFullYear()} Frayze Home-Services SaaS
                     </p>
                 </div>
             </div>

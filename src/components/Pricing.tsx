@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import React from 'react';
 
 const tiers = [
-  { name: 'Basic', price: '$29/mo', features: ['Up to 50 quotes/month', 'Email support', 'Basic analytics'] },
-  { name: 'Pro', price: '$79/mo', features: ['Up to 200 quotes/month', 'Priority email support', 'Advanced analytics', 'Custom templates'] },
-  { name: 'Enterprise', price: 'Contact Us', features: ['Unlimited quotes', 'Dedicated support', 'Custom integrations', 'Onboarding assistance'] },
+  { name: 'Basic', price: '$29/mo', features: ['Up to 50 leads/month', 'Email only support', 'Basic analytics'] },
+  { name: 'Pro', price: '$79/mo', features: ['Up to 200 leads/month', 'Priority email & SMS support', 'Advanced analytics', 'Custom templates'] },
+  { name: 'Enterprise', price: 'Contact Us', features: ['Unlimited leads', 'Dedicated support', 'Custom integrations', 'Onboarding assistance'] },
 ];
 
 const Pricing: React.FC = () => (
