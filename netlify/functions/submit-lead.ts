@@ -39,7 +39,8 @@ export const handler: Handler = async (event: HandlerEvent) => {
                     body_firstName: firstName,
                     body_lastName: lastName,
                     body_tags: ["MCP Lead", source],
-                    body_source: source
+                    body_source: source,
+                    body_locationId: LOCATION_ID
                     // Omitting customFields for now as schema suggests strings but API usually needs objects.
                     // keeping it simple to ensure basic lead capture works first.
                 }
