@@ -1,1 +1,4 @@
-/*  /index.html  200
+/*    /index.html   200
+/about             /resources     301
+/for-contractors   /resources     301
+/blog/*            /resources/blog/:splat   301
