@@ -39,9 +39,9 @@ const Footer: React.FC = () => {
                         </nav>
                     </div>
 
-                    {/* Micro SaaS Column */}
+                    {/* Future Tools Column */}
                     <div>
-                        <h3 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Micro SaaS <span style={{ fontSize: '0.7rem', color: 'var(--color-brand-primary)', verticalAlign: 'middle', marginLeft: '4px' }}>SOON</span></h3>
+                        <h3 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>Future Tools <span style={{ fontSize: '0.7rem', color: 'var(--color-brand-primary)', verticalAlign: 'middle', marginLeft: '4px' }}>SOON</span></h3>
                         <nav className="footer-nav" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Local SEO Engine</span>
                             <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Listings Management</span>
@@ -53,6 +53,11 @@ const Footer: React.FC = () => {
                             <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Digital Merchandising</span>
                             <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>Feed Distribution</span>
                             <span style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>B2B Lead Gen</span>
+                            <div style={{ marginTop: '0.5rem', paddingTop: '0.5rem', borderTop: '1px solid #E2E8F0' }}>
+                                <a href="https://frayze.ca" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', color: 'var(--color-brand-primary)', textDecoration: 'none', fontWeight: 600 }}>
+                                    All-in-one system ready now at Frayze.ca →
+                                </a>
+                            </div>
                         </nav>
                     </div>
 

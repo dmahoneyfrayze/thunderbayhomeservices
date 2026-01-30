@@ -214,9 +214,9 @@ const Tools: React.FC = () => {
                 <div style={{ marginTop: '6rem' }}>
                     <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
                         <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-brand-primary)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Roadmap</span>
-                        <h2 style={{ fontSize: '2.25rem', marginTop: '0.5rem' }}>Upcoming Micro-SaaS Tools</h2>
+                        <h2 style={{ fontSize: '2.25rem', marginTop: '0.5rem' }}>Future Tools</h2>
                         <p style={{ color: 'var(--color-text-dim)', maxWidth: '600px', margin: '1rem auto 0' }}>
-                            We're building the ultimate automation suite for NWO contractors. These tools are currently in private beta for our main site and coming soon to the Frayze Micro platform.
+                            We're scaleable. While these micro-tools are coming soon to this platform, a <strong>comprehensive, all-in-one system</strong> including all these features is ready for deployment today at <a href="https://frayze.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-brand-primary)', fontWeight: 600 }}>Frayze.ca</a>.
                         </p>
                     </div>
 
