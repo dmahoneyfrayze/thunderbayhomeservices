@@ -78,7 +78,7 @@ const Home: React.FC = () => {
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'inline-block', padding: '0.5rem 1rem', background: 'rgba(255,255,255,0.8)', borderRadius: '50px', border: '1px solid #E2E8F0', marginBottom: '1.5rem', backdropFilter: 'blur(4px)' }}>
-            <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--color-accent)' }}>✨ Built locally for NWO Contractors</span>
+            <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--color-accent)' }}>✨ Built for Thunder Bay, Kenora, Dryden & NWO Contractors</span>
           </div>
 
           <h1 style={{ fontSize: '4rem', marginBottom: '1.5rem', lineHeight: 1.1, color: 'var(--color-text-main)', letterSpacing: '-0.02em' }}>
@@ -86,7 +86,7 @@ const Home: React.FC = () => {
           </h1>
 
           <p className="subhead" style={{ fontSize: '1.35rem', color: 'var(--color-text-dim)', maxWidth: '750px', margin: '0 auto 3rem', lineHeight: 1.6 }}>
-            The enterprise-grade AI tool built specifically for Northwestern Ontario home service businesses. Stop losing leads to voicemail and start booking jobs 24/7.
+            The enterprise-grade AI tool built specifically for home service businesses in Thunder Bay, Kenora, Dryden, Fort Frances, and across NWO. Stop losing leads to voicemail and start booking jobs 24/7.
           </p>
 
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
