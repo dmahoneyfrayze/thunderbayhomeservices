@@ -1,5 +1,5 @@
 import type { Handler, HandlerEvent } from '@netlify/functions';
-import fetch from 'node-fetch';
+// Using native fetch in Node 18+
 
 const MCP_URL = 'https://services.leadconnectorhq.com/mcp/';
 const PIT_TOKEN = process.env.PIT_TOKEN;
@@ -48,8 +48,9 @@ export const handler: Handler = async (event: HandlerEvent) => {
             id: Date.now()
         };
 
-        console.log('Sending MCP Request:', JSON.stringify(payload, null, 2));
+        console.log(`Sending MCP Request to ${MCP_URL} with LocationID: ${LOCATION_ID}`);
 
+        // Use global fetch
         const response = await fetch(MCP_URL, {
             method: 'POST',
             headers: {
