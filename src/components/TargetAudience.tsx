@@ -3,12 +3,12 @@ import { Wrench, TreePine, Droplets, Home, BatteryCharging, Truck } from 'lucide
 import { motion } from 'framer-motion';
 
 const trades = [
-    { icon: Droplets, name: "Plumbing", desc: "Instantly route emergency calls vs. quote requests." },
-    { icon: Home, name: "HVAC & Heating", desc: "Book seasonal tune-ups automatically." },
-    { icon: BatteryCharging, name: "Electrical", desc: "Schedule service calls 24/7 without answering the phone." },
-    { icon: TreePine, name: "Landscaping", desc: "Capture leads during projected busy seasons effortlessly." },
-    { icon: Wrench, name: "General Contractors", desc: "Filter serious renovation inquiries from price shoppers." },
-    { icon: Truck, name: "Moving & Junk", desc: "Give instant standardized quotes based on volume." },
+    { icon: Droplets, name: "Plumbing", desc: "Automatically separate emergency calls from quote requests." },
+    { icon: Home, name: "HVAC & Heating", desc: "Fill your schedule with seasonal tune-ups automatically." },
+    { icon: BatteryCharging, name: "Electrical", desc: "Dispatch 24/7 service calls without picking up the phone." },
+    { icon: TreePine, name: "Landscaping", desc: "Secure contracts for the busy season while you're on site." },
+    { icon: Wrench, name: "General Contractors", desc: "Identify serious renovation projects from tire-kickers instantly." },
+    { icon: Truck, name: "Moving & Junk", desc: "Approve quotes instantly based on volume." },
 ];
 
 const TargetAudience: React.FC = () => {

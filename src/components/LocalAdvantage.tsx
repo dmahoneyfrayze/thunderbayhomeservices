@@ -76,7 +76,7 @@ const LocalAdvantage: React.FC = () => {
                         </div>
                         <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Future-Proofing</h3>
                         <p style={{ color: 'var(--color-text-dim)', lineHeight: 1.6 }}>
-                            As AI capabilities grow, so does your business. We continuously update our platform with the latest tools (Voice AI, Predictive Analytics) so you stay ahead.
+                            As AI capabilities grow, so does your business. We continuously update our platform with the latest tools so you stay ahead.
                         </p>
                     </motion.div>
                 </div>

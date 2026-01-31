@@ -141,7 +141,7 @@ const Features: React.FC = () => (
                 <LayoutDashboard className="text-accent" size={24} />
                 <h3 style={{ fontSize: '1.5rem' }}>Lead Inbox</h3>
               </div>
-              <p style={{ color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>Your command center. Manage all leads, quotes, bookings, and customer communications from one simple dashboard.</p>
+              <p style={{ color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>All your inquiries in one place. Manage leads, quotes, bookings, and customer communications from one simple dashboard.</p>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 <li style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--color-text-dim)' }}><CheckCircle size={16} color="var(--color-brand-primary)" /> Lead status tracking</li>
                 <li style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--color-text-dim)' }}><CheckCircle size={16} color="var(--color-brand-primary)" /> Team collaboration</li>

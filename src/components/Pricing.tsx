@@ -29,7 +29,7 @@ const Pricing: React.FC = () => {
       annual: 1499,
       monthlyLink: 'https://link.thunderbayhomeservices.com/payment-link/697c67826503ca3744797572',
       annualLink: 'https://link.thunderbayhomeservices.com/payment-link/697c67826503ca3744797572',
-      features: ['Unlimited leads', 'Email & SMS notifications', '3 User Accounts', 'Custom integrations', 'Onboarding assistance']
+      features: ['Unlimited leads', 'Email & SMS notifications', '3 User Accounts', 'Priority Support']
     }
   };
 
