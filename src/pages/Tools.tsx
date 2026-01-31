@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { Download, Calculator, Send, CheckCircle } from 'lucide-react';
 import LazyWidget from '../components/LazyWidget';
+import Breadcrumbs from '../components/Breadcrumbs';
 import { submitLead } from '../utils/submitLead';
 
 const Tools: React.FC = () => {
@@ -63,6 +64,7 @@ const Tools: React.FC = () => {
             />
 
             <div className="container">
+                <Breadcrumbs items={[{ label: 'Free Tools', path: '/tools' }]} />
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                     <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--color-brand-primary)' }}>Lead Generation Tools</h1>
                     <p style={{ fontSize: '1.25rem', color: 'var(--color-text-dim)' }}>

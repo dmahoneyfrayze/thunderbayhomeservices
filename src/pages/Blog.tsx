@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useBlogPosts } from '../hooks/useBlogPosts';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const Blog: React.FC = () => {
     const { posts, loading } = useBlogPosts();
@@ -14,6 +15,7 @@ const Blog: React.FC = () => {
                 canonical="/blog"
             />
             <div className="container">
+                <Breadcrumbs items={[{ label: 'Blog', path: '/blog' }]} />
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                     <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--color-brand-primary)' }}>Latest Insights</h1>
                     <p style={{ fontSize: '1.25rem', color: 'var(--color-text-dim)' }}>

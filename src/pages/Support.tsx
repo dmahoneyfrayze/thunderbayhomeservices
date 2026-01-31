@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import { submitLead } from '../utils/submitLead';
 import { MessageSquare, AlertTriangle, CheckCircle } from 'lucide-react';
 
@@ -37,6 +38,7 @@ const Support: React.FC = () => {
             />
 
             <div className="container" style={{ maxWidth: '800px' }}>
+                <Breadcrumbs items={[{ label: 'Support', path: '/support' }]} />
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
                     <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--color-brand-primary)' }}>Support Center</h1>
                     <p style={{ fontSize: '1.1rem', color: 'var(--color-text-dim)' }}>
