@@ -60,7 +60,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
             id: Date.now()
         };
 
-        console.log(`Sending MCP Request to ${MCP_URL} with LocationID: ${LOCATION_ID}`);
+        // console.log(`Sending MCP Request to ${MCP_URL} with LocationID: ${LOCATION_ID}`);
 
         // Use global fetch
         const response = await fetch(MCP_URL, {
@@ -75,7 +75,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
         });
 
         const responseText = await response.text();
-        console.log('MCP Response:', response.status, responseText.substring(0, 500)); // Log first 500 chars
+        // console.log('MCP Response:', response.status, responseText.substring(0, 500)); // Log first 500 chars
 
         if (!response.ok) {
             throw new Error(`MCP Error: ${response.status} ${responseText}`);
@@ -89,7 +89,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
             responseData = JSON.parse(responseText);
         } catch (e) {
             // If failed, try parsing as SSE
-            console.log('Parsing as SSE...');
+            // console.log('Parsing as SSE...');
             const lines = responseText.split('\n');
             for (const line of lines) {
                 if (line.startsWith('data: ')) {
