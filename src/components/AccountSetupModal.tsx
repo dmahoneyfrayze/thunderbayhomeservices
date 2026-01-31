@@ -15,7 +15,8 @@ const AccountSetupModal: React.FC<AccountSetupModalProps> = ({ isOpen, onClose, 
         lastName: '',
         companyName: '',
         website: '',
-        phone: '',
+        cellPhone: '',
+        businessPhone: '',
         email: '',
         address1: '',
         city: '',
@@ -43,7 +44,8 @@ const AccountSetupModal: React.FC<AccountSetupModalProps> = ({ isOpen, onClose, 
             firstName: form.firstName, // Backend doesn't use these explicitly yet but good to pass if we update later
             lastName: form.lastName,
             email: form.email,
-            phone: form.phone,
+            phone: form.cellPhone,         // Standard Phone Field (SMS/Contact)
+            businessPhone: form.businessPhone, // Custom Field
             companyName: form.companyName,
             website: form.website,
             address1: form.address1,
@@ -65,7 +67,8 @@ const AccountSetupModal: React.FC<AccountSetupModalProps> = ({ isOpen, onClose, 
                         url.searchParams.append('email', form.email);
                         url.searchParams.append('first_name', form.firstName);
                         url.searchParams.append('last_name', form.lastName);
-                        url.searchParams.append('phone', form.phone);
+                        url.searchParams.append('phone', form.cellPhone);
+                        url.searchParams.append('business_phone', form.businessPhone);
                         url.searchParams.append('company_name', form.companyName);
                         url.searchParams.append('website', form.website);
                         url.searchParams.append('address_1', form.address1);
@@ -149,14 +152,19 @@ const AccountSetupModal: React.FC<AccountSetupModalProps> = ({ isOpen, onClose, 
                         {/* Contact Info */}
                         <div style={{ display: 'flex', gap: '1rem' }}>
                             <label style={{ flex: 1 }}>
-                                <span style={labelStyle}>Business Phone*</span>
-                                <input name="phone" required value={form.phone} onChange={handleChange} style={inputStyle} placeholder="(555) 123-4567" />
+                                <span style={labelStyle}>Cell Phone* <span style={{ fontWeight: 400, color: '#64748b' }}>(For Account)</span></span>
+                                <input name="cellPhone" required value={form.cellPhone} onChange={handleChange} style={inputStyle} placeholder="(555) 123-4567" />
                             </label>
                             <label style={{ flex: 1 }}>
-                                <span style={labelStyle}>Email*</span>
-                                <input name="email" type="email" required value={form.email} onChange={handleChange} style={inputStyle} placeholder="you@company.com" />
+                                <span style={labelStyle}>Business Phone*</span>
+                                <input name="businessPhone" required value={form.businessPhone} onChange={handleChange} style={inputStyle} placeholder="(555) 987-6543" />
                             </label>
                         </div>
+
+                        <label>
+                            <span style={labelStyle}>Email*</span>
+                            <input name="email" type="email" required value={form.email} onChange={handleChange} style={inputStyle} placeholder="you@company.com" />
+                        </label>
 
                         {/* Address Section */}
                         <div style={{ borderTop: '1px solid #e2e8f0', margin: '0.5rem 0' }}></div>

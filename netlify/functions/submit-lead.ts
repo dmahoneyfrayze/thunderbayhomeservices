@@ -17,7 +17,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
 
     try {
         const {
-            name, email, phone, companyName, businessType, website,
+            name, email, phone, businessPhone, companyName, businessType, website,
             address1, city, state, country, postalCode,
             message, source = 'Tools Page'
         } = JSON.parse(event.body || '{}');
@@ -52,9 +52,10 @@ export const handler: Handler = async (event: HandlerEvent) => {
                     body_state: state,
                     body_country: country,
                     body_postalCode: postalCode,
-                    body_locationId: LOCATION_ID
-                    // Omitting customFields for now as schema suggests strings but API usually needs objects.
-                    // keeping it simple to ensure basic lead capture works first.
+                    body_locationId: LOCATION_ID,
+                    body_customFields: [
+                        { id: 'lbwAlKSbmrWTFvUzfqX5', value: businessPhone }
+                    ]
                 }
             },
             id: Date.now()
