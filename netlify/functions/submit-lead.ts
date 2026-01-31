@@ -63,14 +63,44 @@ export const handler: Handler = async (event: HandlerEvent) => {
         });
 
         const responseText = await response.text();
-        console.log('MCP Response:', response.status, responseText);
+        console.log('MCP Response:', response.status, responseText.substring(0, 500)); // Log first 500 chars
 
         if (!response.ok) {
             throw new Error(`MCP Error: ${response.status} ${responseText}`);
         }
 
-        // Parse response to check for application-level errors
-        const responseData: any = JSON.parse(responseText);
+        // Parse response (Handle SSE stream)
+        let responseData: any = null;
+
+        // Try parsing as plain JSON first
+        try {
+            responseData = JSON.parse(responseText);
+        } catch (e) {
+            // If failed, try parsing as SSE
+            console.log('Parsing as SSE...');
+            const lines = responseText.split('\n');
+            for (const line of lines) {
+                if (line.startsWith('data: ')) {
+                    const content = line.substring(6).trim();
+                    if (content === '[DONE]') continue;
+                    try {
+                        const parsed = JSON.parse(content);
+                        // We look for the message that has the result
+                        if (parsed.result) {
+                            responseData = parsed;
+                            break;
+                        }
+                    } catch (err) {
+                        // ignore parse errors for individual lines
+                    }
+                }
+            }
+        }
+
+        if (!responseData) {
+            throw new Error('Could not parse MCP response (Not JSON or valid SSE)');
+        }
+
         if (responseData.error) {
             throw new Error(`MCP Application Error: ${JSON.stringify(responseData.error)}`);
         }
