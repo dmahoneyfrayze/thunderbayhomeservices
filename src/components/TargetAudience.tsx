@@ -3,11 +3,11 @@ import { Wrench, TreePine, Droplets, Home, BatteryCharging, Truck } from 'lucide
 import { motion } from 'framer-motion';
 
 const trades = [
-    { icon: Droplets, name: "Plumbing", desc: "Qualify emergency leaks vs. renovations instantly." },
+    { icon: Droplets, name: "Plumbing", desc: "Instantly route emergency calls vs. quote requests." },
     { icon: Home, name: "HVAC & Heating", desc: "Book seasonal tune-ups automatically." },
     { icon: BatteryCharging, name: "Electrical", desc: "Schedule service calls 24/7 without answering the phone." },
     { icon: TreePine, name: "Landscaping", desc: "Capture leads during projected busy seasons effortlessly." },
-    { icon: Wrench, name: "General Contractors", desc: "Filter tire-kickers from serious renovation projects." },
+    { icon: Wrench, name: "General Contractors", desc: "Filter serious renovation inquiries from price shoppers." },
     { icon: Truck, name: "Moving & Junk", desc: "Give instant standardized quotes based on volume." },
 ];
 
@@ -16,12 +16,12 @@ const TargetAudience: React.FC = () => {
         <section style={{ padding: '6rem 0', background: 'white' }}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Who is Frayze For?</h2>
+                    <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Who This Is For</h2>
                     <p style={{ fontSize: '1.25rem', color: 'var(--color-text-dim)', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>
-                        We are built for <strong>growth-minded</strong> businesses. While we specialize in home services, our AI engine is perfect for <strong>anyone</strong> with lead or appointment-based needs.
+                        This product is built for <strong>home service businesses</strong> that rely on calls, quotes, and appointments.
                     </p>
                     <p style={{ fontSize: '1rem', color: 'var(--color-text-dim)', marginTop: '1rem', maxWidth: '600px', margin: '1rem auto 0' }}>
-                        From contractors to consultants, if your business relies on booking clients and capturing leads, Frayze automates the busywork so you can scale.
+                        Used by contractors across plumbing, HVAC, electrical, landscaping, and more. If you book jobs, our system captures the lead before it’s lost.
                     </p>
                 </div>
 

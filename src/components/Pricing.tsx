@@ -12,7 +12,7 @@ const Pricing: React.FC = () => {
       annual: 299,
       monthlyLink: 'https://link.thunderbayhomeservices.com/payment-link/697c671f3533388501bad331',
       annualLink: 'https://link.thunderbayhomeservices.com/payment-link/697c671f3533388501bad331',
-      features: ['Up to 50 leads per month', 'Email notifications only', '1 User Account', 'Basic analytics']
+      features: ['Designed for up to 50 leads/mo', 'Email notifications only', '1 User Account', 'Basic analytics']
     },
     basic: {
       name: 'Basic',
@@ -20,7 +20,7 @@ const Pricing: React.FC = () => {
       annual: 799,
       monthlyLink: 'https://link.thunderbayhomeservices.com/payment-link/697c676358b49c90adab4b08',
       annualLink: 'https://link.thunderbayhomeservices.com/payment-link/697c676358b49c90adab4b08',
-      features: ['Up to 200 leads per month', 'Email & SMS notifications', '1 User Account', 'Priority email support'],
+      features: ['Designed for up to 200 leads/mo', 'Email & SMS notifications', '1 User Account', 'Priority email support'],
       isPopular: true
     },
     pro: {
@@ -52,9 +52,9 @@ const Pricing: React.FC = () => {
             🚀 Launching Soon
           </div>
 
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Pricing Plans</h2>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>One Core Product — Scales With You</h2>
           <p style={{ fontSize: '1.1rem', color: 'var(--color-text-dim)', maxWidth: '600px', margin: '0 auto' }}>
-            Simple, transparent pricing to grow with your business.
+            Choose the plan that fits your current volume. Upgrade or downgrade anytime.
           </p>
 
           {/* Quick Join Waitlist */}
@@ -237,57 +237,7 @@ const Pricing: React.FC = () => {
         </div>
 
         {/* Level Up Upsell Section */}
-        <div style={{
-          background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
-          borderRadius: '12px',
-          padding: '3rem 2rem',
-          textAlign: 'center',
-          maxWidth: '900px',
-          margin: '0 auto'
-        }}>
-          <h3 style={{ fontSize: '1.75rem', marginBottom: '1rem', color: 'var(--color-text-main)' }}>Want to level up?</h3>
-          <p style={{ fontSize: '1.1rem', color: 'var(--color-text-dim)', marginBottom: '2rem' }}>
-            Take your business to the next level with our comprehensive agency solutions.
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
-            <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>Website Remake & SEO</h4>
-            </div>
-            <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>CRM & Automation</h4>
-            </div>
-            <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>Social Media & Ads</h4>
-            </div>
-            <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>Custom AI Solutions</h4>
-            </div>
-            <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>Reputation & Analytics</h4>
-            </div>
-            <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>Pipelines & AI Voice</h4>
-            </div>
-          </div>
-
-          <a
-            href="https://frayze.ca/solutions/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-            style={{
-              background: 'var(--color-text-main)',
-              color: 'white',
-              padding: '0.75rem 2rem',
-              borderRadius: '6px',
-              textDecoration: 'none',
-              fontWeight: 600
-            }}
-          >
-            Explore Agency Solutions
-          </a>
-        </div>
+        {/* Level Up Section Removed */}
 
       </div>
     </section>

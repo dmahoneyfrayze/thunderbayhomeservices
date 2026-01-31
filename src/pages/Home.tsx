@@ -80,15 +80,15 @@ const Home: React.FC = () => {
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'inline-block', padding: '0.5rem 1rem', background: 'rgba(255,255,255,0.8)', borderRadius: '50px', border: '1px solid #E2E8F0', marginBottom: '1.5rem', backdropFilter: 'blur(4px)' }}>
-            <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--color-accent)' }}>✨ Built for Thunder Bay, Kenora, Dryden & NWO Contractors</span>
+            <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--color-accent)' }}>✨ Built for Thunder Bay & Northwestern Ontario</span>
           </div>
 
-          <h1 style={{ fontSize: '4rem', marginBottom: '1.5rem', lineHeight: 1.1, color: 'var(--color-text-main)', letterSpacing: '-0.02em' }}>
-            Thunder Bay's Premier <br /> <span className="gradient-text">AI Lead Engine</span>
+          <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', lineHeight: 1.1, color: 'var(--color-text-main)', letterSpacing: '-0.02em' }}>
+            Never Miss Another Job Inquiry — <span className="gradient-text">Even After Hours</span>
           </h1>
 
           <p className="subhead" style={{ fontSize: '1.35rem', color: 'var(--color-text-dim)', maxWidth: '750px', margin: '0 auto 3rem', lineHeight: 1.6 }}>
-            The enterprise-grade AI tool built specifically for home service businesses in Thunder Bay, Kenora, Dryden, Fort Frances, and across NWO. Stop losing leads to voicemail and start booking jobs 24/7.
+            An AI receptionist for Thunder Bay & NWO contractors that answers questions, captures leads, and books jobs automatically — 24/7.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
@@ -111,14 +111,15 @@ const Home: React.FC = () => {
               </a>
               <a
                 href="#how-it-works"
-                className="btn-outline glass"
+                className="btn-outline"
                 style={{
-                  padding: '1rem 2.5rem',
-                  fontSize: '1.125rem',
-                  color: 'var(--color-text-main)',
+                  padding: '1rem 2rem',
+                  fontSize: '1rem',
+                  color: 'var(--color-text-dim)',
                   textDecoration: 'none',
                   borderRadius: '8px',
                   fontWeight: 600,
+                  border: 'none'
                 }}
               >
                 See How It Works

@@ -34,7 +34,7 @@ const AfterInstall: React.FC = () => {
                         <div style={{ background: 'rgba(255,255,255,0.1)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.2)' }}>
                             <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'white' }}>What Happens After I Sign Up?</h2>
                             <p style={{ fontSize: '1.25rem', opacity: 0.9, marginBottom: '2rem', lineHeight: 1.6 }}>
-                                We've made the process incredibly simple. You can be live in under 15 minutes.
+                                We've made the process incredibly simple. Live on your site in under 5 minutes.
                             </p>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                 {steps.map((step, index) => (

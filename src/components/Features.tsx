@@ -1,4 +1,4 @@
-import { CheckCircle, Calendar, MessageSquare, FileText, LayoutDashboard, Copy, Play, TrendingUp } from 'lucide-react';
+import { CheckCircle, Calendar, MessageSquare, LayoutDashboard, Copy, Play, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import React from 'react';
 
@@ -47,7 +47,7 @@ const Features: React.FC = () => (
                 <TrendingUp size={32} />
                 <div className="tooltip">Close more sales</div>
               </div>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>3. Grow</h3>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>3. Book Jobs</h3>
               <p style={{ color: 'var(--color-text-dim)', fontSize: '1.1rem' }}>Receive pre-qualified leads directly to your dashboard or CRM. Book more jobs with less effort.</p>
             </a>
           </div>
@@ -59,7 +59,7 @@ const Features: React.FC = () => (
     <section id="features" className="section-padding" style={{ background: '#F8FAFC' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Everything You Need to Scale</h2>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>What You Get on Day One</h2>
           <p style={{ fontSize: '1.1rem', color: 'var(--color-text-dim)', maxWidth: '600px', margin: '0 auto' }}>
             A complete suite of tools designed specifically for home service contractors.
           </p>
@@ -110,7 +110,7 @@ const Features: React.FC = () => (
             <div style={{ padding: '2rem', flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
                 <MessageSquare className="text-accent" size={24} />
-                <h3 style={{ fontSize: '1.5rem' }}>24/7 AI Chatbot</h3>
+                <h3 style={{ fontSize: '1.5rem' }}>AI Chat + Lead Capture</h3>
               </div>
               <p style={{ color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>Instant engagement for every visitor. Answers FAQs, qualifies leads, and captures contact info while you sleep.</p>
               <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -127,8 +127,9 @@ const Features: React.FC = () => (
           </motion.div>
 
           {/* Feature 3: Lead Magnets */}
+          {/* Feature 4: Lead Inbox */}
           <motion.div
-            id="lead-magnets"
+            id="lead-inbox"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -137,37 +138,8 @@ const Features: React.FC = () => (
           >
             <div style={{ padding: '2rem', flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                <FileText className="text-accent" size={24} />
-                <h3 style={{ fontSize: '1.5rem' }}>Lead Magnets & Forms</h3>
-              </div>
-              <p style={{ color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>High-converting forms designed to capture more volume. Embed standard quote forms or "Instant Estimate" calculators.</p>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
-                <li style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--color-text-dim)' }}><CheckCircle size={16} color="var(--color-brand-primary)" /> Customizable fields</li>
-                <li style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--color-text-dim)' }}><CheckCircle size={16} color="var(--color-brand-primary)" /> Mobile-optimized</li>
-              </ul>
-            </div>
-            <div style={{ background: '#f1f5f9', padding: '1.5rem', borderTop: '1px solid #E2E8F0', minHeight: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{ background: 'white', padding: '1rem', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', width: '80%', textAlign: 'left' }}>
-                <div style={{ height: '8px', width: '40%', background: '#cbd5e1', marginBottom: '8px', borderRadius: '4px' }}></div>
-                <div style={{ height: '30px', width: '100%', border: '1px solid #e2e8f0', borderRadius: '4px', marginBottom: '8px' }}></div>
-                <div style={{ height: '30px', width: '100%', background: '#0f172a', borderRadius: '4px' }}></div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Feature 4: Client Portal */}
-          <motion.div
-            id="client-portal"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            style={{ background: '#fff', borderRadius: '12px', border: '1px solid #E2E8F0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
-          >
-            <div style={{ padding: '2rem', flex: 1 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
                 <LayoutDashboard className="text-accent" size={24} />
-                <h3 style={{ fontSize: '1.5rem' }}>Client Portal</h3>
+                <h3 style={{ fontSize: '1.5rem' }}>Lead Inbox</h3>
               </div>
               <p style={{ color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>Your command center. Manage all leads, quotes, bookings, and customer communications from one simple dashboard.</p>
               <ul style={{ listStyle: 'none', padding: 0 }}>

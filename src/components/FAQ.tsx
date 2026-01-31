@@ -23,6 +23,14 @@ const faqs = [
     {
         question: "Is there a long-term contract?",
         answer: "No. All our plans are month-to-month. We believe you should stay because you're making money, not because you're locked in a contract. You can cancel anytime."
+    },
+    {
+        question: "What happens if I outgrow this?",
+        answer: "Frayze is designed to scale with you. If you need more complex automations, CRM integrations, or custom workflows, you can upgrade to Frayze’s full growth system at any time without losing your data."
+    },
+    {
+        question: "Do I need to change my website?",
+        answer: "No. This works with your existing website regardless of platform (WordPress, Wix, Squarespace, etc.). You simply paste one line of code and it starts working immediately."
     }
 ];
 

@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem', textAlign: 'center', color: 'var(--color-text-dim)', fontSize: '0.9rem' }}>
-                    <p>&copy; {new Date().getFullYear()} Frayze Technologies Inc. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Thunder Bay Home Services. Powered by <a href="https://frayze.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Frayze Technologies Inc.</a></p>
                 </div>
             </div>
         </footer>

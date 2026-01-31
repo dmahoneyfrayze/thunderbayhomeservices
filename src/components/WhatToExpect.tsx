@@ -5,19 +5,15 @@ import { motion } from 'framer-motion';
 const benefits = [
     {
         icon: TrendingUp,
-        text: "Higher lead capture on your website"
+        text: "Capture every website visitor automatically"
     },
     {
         icon: CalendarCheck,
-        text: "Higher appointment show rate"
-    },
-    {
-        icon: CalendarCheck,
-        text: "Autonomous appointments booked"
+        text: "Book qualified jobs directly to your calendar"
     },
     {
         icon: MessageSquare,
-        text: "FAQs instantly answered 24/7"
+        text: "Answer customer questions instantly, day or night"
     }
 ];
 
@@ -38,10 +34,7 @@ const WhatToExpect: React.FC = () => {
                     }}>
                         EARLY ACCESS
                     </div>
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Your Intro to AI Services</h2>
-                    <p style={{ fontSize: '1.2rem', color: 'var(--color-text-dim)', maxWidth: '600px', margin: '0 auto' }}>
-                        Get ahead of the competition with the first AI agent built specifically for Northwestern Ontario contractors.
-                    </p>
+                    <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Your First AI Employee (Without the Overhead)</h2>
                 </div>
 
                 <div style={{

@@ -17,10 +17,10 @@ const LocalAdvantage: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>
-                            Built for <span style={{ color: 'var(--color-brand-primary)' }}>Thunder Bay</span> & Northwestern Ontario
+                            Built for <span style={{ color: 'var(--color-brand-primary)' }}>Northwestern Ontario Contractors</span>
                         </h2>
                         <p style={{ fontSize: '1.25rem', color: 'var(--color-text-dim)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
-                            We aren't just a software company; we are a local partner. Our mission is to democratize enterprise-grade AI for local contractors, helping you compete, scale, and deliver exceptional service right here at home.
+                            We understand seasonality, service areas, and local customer expectations. This AI is tuned for how your customers actually book work — not Silicon Valley assumptions.
                         </p>
                     </motion.div>
                 </div>
