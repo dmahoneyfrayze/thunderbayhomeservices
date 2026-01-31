@@ -8,6 +8,7 @@ interface SEOProps {
     type?: string;
     schemas?: object[]; // Allow passing additional schema objects
     children?: React.ReactNode;
+    noindex?: boolean;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -17,7 +18,8 @@ const SEO: React.FC<SEOProps> = ({
     image = '/og-image.png',
     type = 'website',
     schemas = [],
-    children
+    children,
+    noindex = false
 }) => {
     const siteUrl = 'https://thunderbayhomeservices.com';
     const fullUrl = canonical ? (canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`) : siteUrl;
@@ -46,7 +48,8 @@ const SEO: React.FC<SEOProps> = ({
             {/* Basic Meta */}
             <title>{title}</title>
             <meta name="description" content={description} />
-            {canonical && <link rel="canonical" href={fullUrl} />}
+            {noindex && <meta name="robots" content="noindex, nofollow" />}
+            {canonical && !noindex && <link rel="canonical" href={fullUrl} />}
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={type} />

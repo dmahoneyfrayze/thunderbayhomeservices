@@ -36,11 +36,26 @@ const Blog: React.FC = () => {
                                 style={{ textDecoration: 'none' }}
                                 className="card"
                             >
-                                <div style={{ height: '200px', overflow: 'hidden', borderRadius: '8px 8px 0 0', marginBottom: '1.5rem', margin: '-2rem -2rem 1.5rem -2rem' }}>
+                                <div style={{ height: '200px', overflow: 'hidden', borderRadius: '8px 8px 0 0', marginBottom: '1.5rem', margin: '-2rem -2rem 1.5rem -2rem', position: 'relative' }}>
                                     <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }} />
+                                    {/* Category Overlay */}
+                                    <div style={{
+                                        position: 'absolute',
+                                        bottom: '10px',
+                                        right: '10px',
+                                        background: 'rgba(255, 255, 255, 0.9)',
+                                        padding: '0.25rem 0.75rem',
+                                        borderRadius: '50px',
+                                        fontSize: '0.75rem',
+                                        fontWeight: 600,
+                                        color: 'var(--color-brand-primary)',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                                    }}>
+                                        {post.category}
+                                    </div>
                                 </div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', fontSize: '0.875rem' }}>
-                                    <span style={{ color: 'var(--color-accent)', fontWeight: 600 }}>{post.category}</span>
+                                    {/* Category moved to overlay, kept date here */}
                                     <span style={{ color: 'var(--color-text-dim)' }}>{post.date}</span>
                                 </div>
                                 <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem', lineHeight: 1.3 }}>{post.title}</h2>

@@ -11,13 +11,13 @@ const Features: React.FC = () => (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
           {/* Step 1 */}
           <div style={{ padding: '2rem', position: 'relative' }} className="step-card">
-            <a href="#lead-magnets" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <a href="/tools" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
               <div
                 className="step-icon-wrapper"
                 style={{ width: '80px', height: '80px', background: 'var(--color-brand-light, #e0f2fe)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: 'var(--color-brand-primary)', position: 'relative' }}
               >
                 <Copy size={32} />
-                <div className="tooltip">Copy code snippet</div>
+                <div className="tooltip">View Tools</div>
               </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>1. Embed</h3>
               <p style={{ color: 'var(--color-text-dim)', fontSize: '1.1rem' }}>Copy one line of code to your existing website. Compatible with WordPress, Wix, Squarespace, and more.</p>

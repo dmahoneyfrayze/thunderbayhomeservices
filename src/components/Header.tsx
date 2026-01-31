@@ -81,7 +81,7 @@ const Header: React.FC = () => {
                             <a href="#pricing" onClick={(e) => scrollToHash(e, '#pricing')} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Pricing</a>
                             <a href="https://app.frayze.ca/login" target="_blank" style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>Sign In</a>
                             <hr style={{ borderColor: '#E2E8F0', margin: '0.5rem 0' }} />
-                            <a href="#demo" onClick={(e) => scrollToHash(e, '#demo')} className="btn-solid" style={{ width: '100%', textDecoration: 'none' }}>
+                            <a href="#pricing" onClick={(e) => scrollToHash(e, '#pricing')} className="btn-solid" style={{ width: '100%', textDecoration: 'none' }}>
                                 Start Free Trial
                             </a>
                         </nav>

@@ -57,8 +57,8 @@ const Tools: React.FC = () => {
     return (
         <div style={{ padding: '8rem 0 6rem', background: '#F8FAFC', minHeight: '100vh' }}>
             <SEO
-                title="Free HVAC & Contractor Marketing Tools | Frayze"
-                description="Free ROI calculators, marketing checklists, and lead magnet templates for Thunder Bay contractors. Try our tools to see how AI can grow your business."
+                title="Free Local Business Marketing Tools & ROI Calculator | Frayze"
+                description="Download free 2026 marketing checklists and calculate your AI revenue potential. Built for Thunder Bay Local Businesses. Get free tools to grow your business."
                 canonical="/tools"
             />
 

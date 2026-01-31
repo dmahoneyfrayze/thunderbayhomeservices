@@ -5,7 +5,6 @@ import heroBg from '/images/thunder-bay-hero.webp';
 
 // Lazy load below-the-fold components to reduce initial LCP/TBT
 const WhatToExpect = lazy(() => import('../components/WhatToExpect'));
-const DemoForm = lazy(() => import('../components/DemoForm'));
 const Features = lazy(() => import('../components/Features'));
 const Pricing = lazy(() => import('../components/Pricing'));
 const LocalAdvantage = lazy(() => import('../components/LocalAdvantage'));
@@ -31,8 +30,8 @@ const Home: React.FC = () => {
   return (
     <div className="home-page">
       <SEO
-        title="Frayze | The AI Lead Engine for Thunder Bay Contractors"
-        description="Stop losing jobs to voicemail. Frayze is the local AI sales agent for Thunder Bay & NWO contractors that books leads 24/7. Start your free trial."
+        title="Thunder Bay AI Answering Service & Lead Gen | Frayze"
+        description="Stop losing leads! Frayze is the 24/7 AI receptionist for Thunder Bay & NWO Local Businesses. Books jobs automatically. Start your 14-day free trial today - plans from just $29 USD/mo."
         canonical="/"
         image="https://thunderbayhomeservices.com/assets/guides_hero-CcOUGRcY.png"
       />
@@ -94,7 +93,7 @@ const Home: React.FC = () => {
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
               <a
-                href="#demo"
+                href="#pricing"
                 className="btn-primary"
                 style={{
                   padding: '1rem 2.5rem',
@@ -153,9 +152,7 @@ const Home: React.FC = () => {
         <AfterInstall />
       </Suspense>
 
-      <Suspense fallback={<SectionLoader />}>
-        <DemoForm />
-      </Suspense>
+
 
       <Suspense fallback={<SectionLoader />}>
         <Pricing />
@@ -200,7 +197,7 @@ const Home: React.FC = () => {
             Join hundreds of contractors saving 20+ hours a week.
           </p>
           <a
-            href="#demo"
+            href="#pricing"
             className="btn-solid"
             style={{
               background: 'white',

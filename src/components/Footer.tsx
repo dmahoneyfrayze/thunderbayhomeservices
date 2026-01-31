@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
                     <div style={{ maxWidth: '300px' }}>
                         <img src="/images/logo.png" alt="Thunder Bay Home Services" width="180" height="48" style={{ height: '48px', width: 'auto', marginBottom: '1.5rem' }} />
                         <p style={{ color: 'var(--color-text-dim)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                            The AI quoting and scheduling engine built specifically for Northwestern Ontario contractors.
+                            The AI quoting and scheduling engine built specifically for Northwestern Ontario local businesses.
                         </p>
                     </div>
 

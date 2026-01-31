@@ -35,13 +35,25 @@ export const useBlogPosts = () => {
                     // Image Extraction Logic
                     let image = "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"; // Default fallback
 
-                    // 1. Check for media:content or media:thumbnail
-                    const mediaContent = item.getElementsByTagNameNS("*", "content")[0]?.getAttribute("url") ||
-                        item.getElementsByTagNameNS("*", "thumbnail")[0]?.getAttribute("url");
-                    if (mediaContent) image = mediaContent;
+                    // 1. Check for enclosure (Standard RSS)
+                    const enclosure = item.querySelector("enclosure")?.getAttribute("url");
+                    if (enclosure) image = enclosure;
 
-                    // 2. Fallback: Parse descriptive HTML for first img tag
-                    if (!mediaContent && contentEncoded) {
+                    // 2. Check for media:content (GHL sometimes puts URL in text node, sometimes in url attr)
+                    if (!enclosure) {
+                        const mediaContentNode = item.getElementsByTagNameNS("*", "content")[0];
+                        const mediaContent = mediaContentNode?.getAttribute("url") || mediaContentNode?.textContent;
+                        if (mediaContent) image = mediaContent;
+                    }
+
+                    // 3. Check for media:thumbnail
+                    if (!enclosure && !image.includes("msgsndr")) { // simple check to see if we already found a GHL image
+                        const mediaThumbnail = item.getElementsByTagNameNS("*", "thumbnail")[0]?.getAttribute("url");
+                        if (mediaThumbnail) image = mediaThumbnail;
+                    }
+
+                    // 4. Fallback: Parse descriptive HTML for first img tag
+                    if (image.includes("unsplash") && contentEncoded) {
                         const imgMatch = contentEncoded.match(/<img[^>]+src="([^">]+)"/);
                         if (imgMatch) image = imgMatch[1];
                     }

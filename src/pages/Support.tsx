@@ -31,8 +31,8 @@ const Support: React.FC = () => {
     return (
         <div style={{ padding: '8rem 0 6rem', background: '#F8FAFC', minHeight: '100vh' }}>
             <SEO
-                title="Support & Cancellations | Frayze Thunder Bay"
-                description="Need help with your Frayze account or looking to cancel your service? Our local support team is here to help."
+                title="Frayze Support | Local Help for Thunder Bay Local Businesses"
+                description="Need help with your Frayze AI agent? Contact our Thunder Bay support team or manage your account settings. We're here to help you succeed."
                 canonical="/support"
             />
 

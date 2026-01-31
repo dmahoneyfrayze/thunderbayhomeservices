@@ -178,7 +178,7 @@ const Pricing: React.FC = () => {
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{plans.starter.name}</h3>
             <p className="price" style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--color-text-main)' }}>
               ${billingCycle === 'monthly' ? plans.starter.monthly : plans.starter.annual}
-              <span style={{ fontSize: '1rem', fontWeight: 400 }}>/{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
+              <span style={{ fontSize: '1rem', fontWeight: 400 }}> USD /{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
             </p>
             {billingCycle === 'monthly' && (
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>+ $25.00 Setup Fee</p>
@@ -209,7 +209,7 @@ const Pricing: React.FC = () => {
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{plans.basic.name}</h3>
             <p className="price" style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--color-text-main)' }}>
               ${billingCycle === 'monthly' ? plans.basic.monthly : plans.basic.annual}
-              <span style={{ fontSize: '1rem', fontWeight: 400 }}>/{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
+              <span style={{ fontSize: '1rem', fontWeight: 400 }}> USD /{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
             </p>
             {billingCycle === 'monthly' && (
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>+ $25.00 Setup Fee</p>
@@ -238,7 +238,7 @@ const Pricing: React.FC = () => {
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{plans.pro.name}</h3>
             <p style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--color-text-main)' }}>
               ${billingCycle === 'monthly' ? plans.pro.monthly : plans.pro.annual}
-              <span style={{ fontSize: '1rem', fontWeight: 400 }}>/{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
+              <span style={{ fontSize: '1rem', fontWeight: 400 }}> USD /{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
             </p>
             {billingCycle === 'monthly' && (
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', marginBottom: '1.5rem' }}>+ $25.00 Setup Fee</p>

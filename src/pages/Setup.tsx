@@ -8,6 +8,7 @@ const Setup: React.FC = () => {
             <SEO
                 title="Welcome to Frayze | Account Setup"
                 description="Welcome to Frayze. Follow these steps to get your AI up and running."
+                noindex={true}
             />
 
             <div className="container" style={{ maxWidth: '800px' }}>
