@@ -26,7 +26,7 @@ const steps = [
 
 const AfterInstall: React.FC = () => {
     return (
-        <section style={{ padding: '6rem 0', background: 'var(--color-brand-primary)', color: 'white' }}>
+        <section className="section-padding" style={{ background: 'var(--color-brand-primary)', color: 'white' }}>
             <div className="container">
                 <div className="service-page-grid" style={{ alignItems: 'start' }}>
                     {/* Left Sticky Column */}

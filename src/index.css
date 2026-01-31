@@ -91,7 +91,34 @@ a {
   width: 90%;
   max-width: var(--container-max-width);
   margin: 0 auto;
+  padding: 2rem 0;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 4rem 0;
+  }
+}
+
+/* Responsive Section Padding */
+.section-padding {
   padding: 4rem 0;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 6rem 0;
+  }
+}
+
+.hero-padding {
+  padding: 6rem 0 4rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-padding {
+    padding: 10rem 0 8rem;
+  }
 }
 
 /* Premium Layout Elements */
@@ -309,7 +336,7 @@ a {
   display: grid;
   grid-template-columns: 1fr;
   /* Mobile default */
-  gap: 3rem;
+  gap: 2rem;
   align-items: start;
   padding: 2rem 0 4rem 0;
 }
@@ -337,4 +364,33 @@ a {
     margin-top: -6rem;
     /* Overlap hero only on desktop */
   }
-}.step-icon-wrapper .tooltip { opacity: 0; visibility: hidden; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(-10px); background: #334155; color: white; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.8rem; white-space: nowrap; transition: all 0.2s ease; z-index: 10; pointer-events: none; } .step-icon-wrapper:hover .tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(-5px); } .step-card:hover .step-icon-wrapper { box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); transition: all 0.3s ease; }
+}
+
+.step-icon-wrapper .tooltip {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: #334155;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.step-icon-wrapper:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.step-card:hover .step-icon-wrapper {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  transition: all 0.3s ease;
+}

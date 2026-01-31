@@ -4,7 +4,7 @@ import { MapPin, Zap, Rocket } from 'lucide-react';
 
 const LocalAdvantage: React.FC = () => {
     return (
-        <section id="local-advantage" style={{ padding: '6rem 0', background: 'white', position: 'relative', overflow: 'hidden' }}>
+        <section id="local-advantage" className="section-padding" style={{ background: 'white', position: 'relative', overflow: 'hidden' }}>
             {/* Background Accent */}
             <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '50%', height: '50%', background: 'radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, rgba(255,255,255,0) 70%)', zIndex: 0 }}></div>
             <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '50%', height: '50%', background: 'radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(255,255,255,0) 70%)', zIndex: 0 }}></div>
@@ -25,7 +25,7 @@ const LocalAdvantage: React.FC = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
+                <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
                     {/* Card 1 */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

@@ -34,7 +34,7 @@ const Pricing: React.FC = () => {
   };
 
   return (
-    <section id="pricing" style={{ padding: '6rem 0' }}>
+    <section id="pricing" className="section-padding">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <div style={{

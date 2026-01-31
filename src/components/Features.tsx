@@ -5,7 +5,7 @@ import React from 'react';
 const Features: React.FC = () => (
   <>
     {/* How It Works Section */}
-    <section id="how-it-works" style={{ padding: '6rem 0', background: 'white' }}>
+    <section id="how-it-works" className="section-padding" style={{ background: 'white' }}>
       <div className="container" style={{ textAlign: 'center' }}>
         <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem' }}>How It Works</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
@@ -56,7 +56,7 @@ const Features: React.FC = () => (
     </section>
 
     {/* Platform Tour Section */}
-    <section id="features" style={{ padding: '6rem 0', background: '#F8FAFC' }}>
+    <section id="features" className="section-padding" style={{ background: '#F8FAFC' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Everything You Need to Scale</h2>

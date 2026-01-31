@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import heroBg from '/images/thunder-bay-hero.webp';
 
 // Lazy load below-the-fold components to reduce initial LCP/TBT
+const WhatToExpect = lazy(() => import('../components/WhatToExpect'));
 const DemoForm = lazy(() => import('../components/DemoForm'));
 const Features = lazy(() => import('../components/Features'));
 const Pricing = lazy(() => import('../components/Pricing'));
@@ -38,9 +39,9 @@ const Home: React.FC = () => {
 
       {/* Hero Section - Kept Eager for LCP */}
       <section
+        className="hero-padding"
         style={{
           position: 'relative',
-          padding: '10rem 0 8rem',
           textAlign: 'center',
           overflow: 'hidden',
           backgroundColor: '#F1F5F9' /* Fallback color */
@@ -132,6 +133,10 @@ const Home: React.FC = () => {
 
       {/* Lazy Loaded Sections */}
       <Suspense fallback={<SectionLoader />}>
+        <WhatToExpect />
+      </Suspense>
+
+      <Suspense fallback={<SectionLoader />}>
         <LocalAdvantage />
       </Suspense>
 
@@ -155,7 +160,7 @@ const Home: React.FC = () => {
         <Pricing />
       </Suspense>
 
-      <section className="reviews-section" style={{ padding: '6rem 0', background: 'white' }}>
+      <section className="reviews-section section-padding" style={{ background: 'white' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>Trusted by NWO Contractors</h2>
