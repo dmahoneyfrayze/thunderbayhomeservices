@@ -1,6 +1,6 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import { CheckCircle, Mail, Calendar, Phone } from 'lucide-react';
+import { CheckCircle, Mail } from 'lucide-react';
 
 const Setup: React.FC = () => {
     return (
@@ -51,18 +51,10 @@ const Setup: React.FC = () => {
                     <div style={{ display: 'flex', gap: '1.5rem' }}>
                         <div style={{ minWidth: '50px', height: '50px', background: 'var(--color-brand-light)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-accent)', fontWeight: 'bold', fontSize: '1.25rem' }}>3</div>
                         <div>
-                            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Book Onboarding Call (Optional)</h3>
+                            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Get Started</h3>
                             <p style={{ color: 'var(--color-text-dim)', lineHeight: 1.6, marginBottom: '1rem' }}>
-                                Want a human to walk you through it? Schedule a complimentary 15-minute onboarding session with our local Thunder Bay team.
+                                Once you're signed in, follow the simple onboarding guide to connect your accounts and start automating.
                             </p>
-                            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                                <a href="https://calendly.com/frayze/onboarding" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ padding: '0.75rem 1.5rem', fontSize: '1rem', borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <Calendar size={18} /> Schedule Call
-                                </a>
-                                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-text-dim)' }}>
-                                    <Phone size={18} /> <span>807 700 0079</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
