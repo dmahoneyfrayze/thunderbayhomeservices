@@ -59,7 +59,26 @@ const AccountSetupModal: React.FC<AccountSetupModalProps> = ({ isOpen, onClose, 
             // Short delay to show success before redirecting to payment
             setTimeout(() => {
                 if (redirectUrl) {
-                    window.location.href = redirectUrl;
+                    // specific GHL/Stripe prefill params
+                    try {
+                        const url = new URL(redirectUrl);
+                        url.searchParams.append('email', form.email);
+                        url.searchParams.append('first_name', form.firstName);
+                        url.searchParams.append('last_name', form.lastName);
+                        url.searchParams.append('phone', form.phone);
+                        url.searchParams.append('company_name', form.companyName);
+                        url.searchParams.append('website', form.website);
+                        url.searchParams.append('address_1', form.address1);
+                        url.searchParams.append('city', form.city);
+                        url.searchParams.append('state', form.state);
+                        url.searchParams.append('country', form.country);
+                        url.searchParams.append('postal_code', form.postalCode);
+
+                        window.location.href = url.toString();
+                    } catch (e) {
+                        // Fallback if URL parsing fails
+                        window.location.href = redirectUrl;
+                    }
                 } else {
                     onClose(); // Fallback
                 }
