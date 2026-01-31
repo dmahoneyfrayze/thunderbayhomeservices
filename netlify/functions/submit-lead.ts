@@ -16,7 +16,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
     }
 
     try {
-        const { name, email, message, source = 'Tools Page' } = JSON.parse(event.body || '{}');
+        const { name, email, phone, companyName, businessType, message, source = 'Tools Page' } = JSON.parse(event.body || '{}');
 
         if (!email) {
             return { statusCode: 400, body: 'Email is required' };
@@ -38,8 +38,10 @@ export const handler: Handler = async (event: HandlerEvent) => {
                     body_email: email,
                     body_firstName: firstName,
                     body_lastName: lastName,
-                    body_tags: ["MCP Lead", source],
+                    body_tags: ["MCP Lead", source, businessType].filter(Boolean),
                     body_source: source,
+                    body_phone: phone,
+                    body_companyName: companyName,
                     body_locationId: LOCATION_ID
                     // Omitting customFields for now as schema suggests strings but API usually needs objects.
                     // keeping it simple to ensure basic lead capture works first.
