@@ -10,28 +10,46 @@ const Features: React.FC = () => (
         <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem' }}>How It Works</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
           {/* Step 1 */}
-          <div style={{ padding: '2rem' }}>
-            <div style={{ width: '80px', height: '80px', background: 'var(--color-brand-light, #e0f2fe)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: 'var(--color-brand-primary)' }}>
-              <Copy size={32} />
-            </div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>1. Embed</h3>
-            <p style={{ color: 'var(--color-text-dim)', fontSize: '1.1rem' }}>Copy one line of code to your existing website. Compatible with WordPress, Wix, Squarespace, and more.</p>
+          <div style={{ padding: '2rem', position: 'relative' }} className="step-card">
+            <a href="#lead-magnets" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+              <div
+                className="step-icon-wrapper"
+                style={{ width: '80px', height: '80px', background: 'var(--color-brand-light, #e0f2fe)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: 'var(--color-brand-primary)', position: 'relative' }}
+              >
+                <Copy size={32} />
+                <div className="tooltip">Copy code snippet</div>
+              </div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>1. Embed</h3>
+              <p style={{ color: 'var(--color-text-dim)', fontSize: '1.1rem' }}>Copy one line of code to your existing website. Compatible with WordPress, Wix, Squarespace, and more.</p>
+            </a>
           </div>
           {/* Step 2 */}
-          <div style={{ padding: '2rem' }}>
-            <div style={{ width: '80px', height: '80px', background: 'var(--color-brand-light, #e0f2fe)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: 'var(--color-brand-primary)' }}>
-              <Play size={32} />
-            </div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>2. Automate</h3>
-            <p style={{ color: 'var(--color-text-dim)', fontSize: '1.1rem' }}>Our AI instantly engages visitors, answers questions, and qualifies lead details 24/7.</p>
+          <div style={{ padding: '2rem', position: 'relative' }} className="step-card">
+            <a href="#chatbot" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+              <div
+                className="step-icon-wrapper"
+                style={{ width: '80px', height: '80px', background: 'var(--color-brand-light, #e0f2fe)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: 'var(--color-brand-primary)', position: 'relative' }}
+              >
+                <Play size={32} />
+                <div className="tooltip">Instant replies</div>
+              </div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>2. Automate</h3>
+              <p style={{ color: 'var(--color-text-dim)', fontSize: '1.1rem' }}>Our AI instantly engages visitors, answers questions, and qualifies lead details 24/7.</p>
+            </a>
           </div>
           {/* Step 3 */}
-          <div style={{ padding: '2rem' }}>
-            <div style={{ width: '80px', height: '80px', background: 'var(--color-brand-light, #e0f2fe)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: 'var(--color-brand-primary)' }}>
-              <TrendingUp size={32} />
-            </div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>3. Grow</h3>
-            <p style={{ color: 'var(--color-text-dim)', fontSize: '1.1rem' }}>Receive pre-qualified leads directly to your dashboard or CRM. Book more jobs with less effort.</p>
+          <div style={{ padding: '2rem', position: 'relative' }} className="step-card">
+            <a href="#client-portal" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+              <div
+                className="step-icon-wrapper"
+                style={{ width: '80px', height: '80px', background: 'var(--color-brand-light, #e0f2fe)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: 'var(--color-brand-primary)', position: 'relative' }}
+              >
+                <TrendingUp size={32} />
+                <div className="tooltip">Close more sales</div>
+              </div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>3. Grow</h3>
+              <p style={{ color: 'var(--color-text-dim)', fontSize: '1.1rem' }}>Receive pre-qualified leads directly to your dashboard or CRM. Book more jobs with less effort.</p>
+            </a>
           </div>
         </div>
       </div>
@@ -47,7 +65,7 @@ const Features: React.FC = () => (
           </p>
         </div>
 
-        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
 
           {/* Feature 1: Calendar */}
           <motion.div
@@ -82,6 +100,7 @@ const Features: React.FC = () => (
 
           {/* Feature 2: Chatbot */}
           <motion.div
+            id="chatbot"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -109,6 +128,7 @@ const Features: React.FC = () => (
 
           {/* Feature 3: Lead Magnets */}
           <motion.div
+            id="lead-magnets"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -137,6 +157,7 @@ const Features: React.FC = () => (
 
           {/* Feature 4: Client Portal */}
           <motion.div
+            id="client-portal"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

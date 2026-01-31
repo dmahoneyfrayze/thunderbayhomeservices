@@ -12,7 +12,7 @@ const Pricing: React.FC = () => {
       annual: 299,
       monthlyLink: 'https://link.thunderbayhomeservices.com/payment-link/697c671f3533388501bad331',
       annualLink: 'https://link.thunderbayhomeservices.com/payment-link/697c671f3533388501bad331',
-      features: ['Up to 50 leads per month', 'Email support', 'Basic analytics']
+      features: ['Up to 50 leads per month', 'Email notifications only', '1 User Account', 'Basic analytics']
     },
     basic: {
       name: 'Basic',
@@ -20,7 +20,7 @@ const Pricing: React.FC = () => {
       annual: 799,
       monthlyLink: 'https://link.thunderbayhomeservices.com/payment-link/697c676358b49c90adab4b08',
       annualLink: 'https://link.thunderbayhomeservices.com/payment-link/697c676358b49c90adab4b08',
-      features: ['Up to 200 leads per month', 'Priority email support'],
+      features: ['Up to 200 leads per month', 'Email & SMS notifications', '1 User Account', 'Priority email support'],
       isPopular: true
     },
     pro: {
@@ -29,7 +29,7 @@ const Pricing: React.FC = () => {
       annual: 1499,
       monthlyLink: 'https://link.thunderbayhomeservices.com/payment-link/697c67826503ca3744797572',
       annualLink: 'https://link.thunderbayhomeservices.com/payment-link/697c67826503ca3744797572',
-      features: ['Unlimited leads', 'Dedicated support', 'Custom integrations', 'Onboarding assistance']
+      features: ['Unlimited leads', 'Email & SMS notifications', '3 User Accounts', 'Custom integrations', 'Onboarding assistance']
     }
   };
 

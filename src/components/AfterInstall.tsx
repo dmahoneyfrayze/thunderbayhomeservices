@@ -28,40 +28,48 @@ const AfterInstall: React.FC = () => {
     return (
         <section style={{ padding: '6rem 0', background: 'var(--color-brand-primary)', color: 'white' }}>
             <div className="container">
-                <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'white' }}>What Happens After I Sign Up?</h2>
-                    <p style={{ fontSize: '1.25rem', opacity: 0.9, maxWidth: '700px', margin: '0 auto' }}>
-                        We've made the process incredibly simple. You can be live in under 15 minutes.
-                    </p>
-                </div>
-
-                <div
-                    style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                        gap: '2rem',
-                        position: 'relative'
-                    }}
-                >
-                    {steps.map((step, index) => (
-                        <div key={index} style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-                            <div style={{
-                                width: '70px',
-                                height: '70px',
-                                background: 'rgba(255,255,255,0.1)',
-                                borderRadius: '50%',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                margin: '0 auto 1.5rem',
-                                border: '1px solid rgba(255,255,255,0.2)'
-                            }}>
-                                <step.icon size={32} color="white" />
+                <div className="service-page-grid" style={{ alignItems: 'start' }}>
+                    {/* Left Sticky Column */}
+                    <div className="sticky-sidebar-wrapper">
+                        <div style={{ background: 'rgba(255,255,255,0.1)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.2)' }}>
+                            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'white' }}>What Happens After I Sign Up?</h2>
+                            <p style={{ fontSize: '1.25rem', opacity: 0.9, marginBottom: '2rem', lineHeight: 1.6 }}>
+                                We've made the process incredibly simple. You can be live in under 15 minutes.
+                            </p>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                {steps.map((step, index) => (
+                                    <a href={`#step-${index + 1}`} key={index} style={{ color: 'white', textDecoration: 'none', opacity: 0.8, fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                        <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 600 }}>{index + 1}</div>
+                                        {step.title.split('. ')[1]}
+                                    </a>
+                                ))}
                             </div>
-                            <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'white' }}>{step.title}</h3>
-                            <p style={{ fontSize: '1rem', opacity: 0.8, lineHeight: 1.6, color: 'white' }}>{step.desc}</p>
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Right Steps Column */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                        {steps.map((step, index) => (
+                            <div id={`step-${index + 1}`} key={index} style={{ background: 'white', padding: '2rem', borderRadius: '12px', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                <div style={{
+                                    minWidth: '60px',
+                                    height: '60px',
+                                    background: 'var(--color-brand-light, #e0f2fe)',
+                                    borderRadius: '50%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: 'var(--color-brand-primary)'
+                                }}>
+                                    <step.icon size={28} />
+                                </div>
+                                <div>
+                                    <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--color-brand-primary)' }}>{step.title}</h3>
+                                    <p style={{ fontSize: '1.1rem', color: 'var(--color-text-dim)', lineHeight: 1.6 }}>{step.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

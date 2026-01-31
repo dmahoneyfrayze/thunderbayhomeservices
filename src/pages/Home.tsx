@@ -90,37 +90,42 @@ const Home: React.FC = () => {
             The enterprise-grade AI tool built specifically for home service businesses in Thunder Bay, Kenora, Dryden, Fort Frances, and across NWO. Stop losing leads to voicemail and start booking jobs 24/7.
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-            <a
-              href="#demo"
-              className="btn-primary"
-              style={{
-                padding: '1rem 2.5rem',
-                fontSize: '1.125rem',
-                background: 'var(--color-brand-primary)',
-                color: 'white',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontWeight: 600,
-                boxShadow: '0 10px 15px -3px rgba(15, 23, 42, 0.2)'
-              }}
-            >
-              Start Free Trial
-            </a>
-            <a
-              href="#how-it-works"
-              className="btn-outline glass"
-              style={{
-                padding: '1rem 2.5rem',
-                fontSize: '1.125rem',
-                color: 'var(--color-text-main)',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontWeight: 600,
-              }}
-            >
-              See How It Works
-            </a>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+              <a
+                href="#demo"
+                className="btn-primary"
+                style={{
+                  padding: '1rem 2.5rem',
+                  fontSize: '1.125rem',
+                  background: 'var(--color-brand-primary)',
+                  color: 'white',
+                  textDecoration: 'none',
+                  borderRadius: '8px',
+                  fontWeight: 600,
+                  boxShadow: '0 10px 15px -3px rgba(15, 23, 42, 0.2)'
+                }}
+              >
+                Start Free Trial
+              </a>
+              <a
+                href="#how-it-works"
+                className="btn-outline glass"
+                style={{
+                  padding: '1rem 2.5rem',
+                  fontSize: '1.125rem',
+                  color: 'var(--color-text-main)',
+                  textDecoration: 'none',
+                  borderRadius: '8px',
+                  fontWeight: 600,
+                }}
+              >
+                See How It Works
+              </a>
+            </div>
+            <p style={{ fontSize: '0.9rem', color: 'var(--color-text-dim)', opacity: 0.8 }}>
+              No credit card required
+            </p>
           </div>
         </div>
       </section>
