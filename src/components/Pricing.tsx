@@ -1,9 +1,19 @@
 
 import React, { useState } from 'react';
 import { submitLead } from '../utils/submitLead';
+import AccountSetupModal from './AccountSetupModal';
 
 const Pricing: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
+  const [showSetupModal, setShowSetupModal] = useState(false);
+  const [selectedPlanLink, setSelectedPlanLink] = useState('');
+  const [selectedPlanName, setSelectedPlanName] = useState('');
+
+  const handleStartTrial = (link: string, name: string) => {
+    setSelectedPlanLink(link);
+    setSelectedPlanName(name);
+    setShowSetupModal(true);
+  };
 
   const plans = {
     starter: {
@@ -184,7 +194,13 @@ const Pricing: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <a href={billingCycle === 'monthly' ? plans.starter.monthlyLink : plans.starter.annualLink} target="_blank" rel="noopener noreferrer" className="btn-solid" style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', textDecoration: 'none', fontWeight: 600 }}>Start Free Trial</a>
+            <button
+              onClick={() => handleStartTrial(billingCycle === 'monthly' ? plans.starter.monthlyLink : plans.starter.annualLink, plans.starter.name)}
+              className="btn-solid"
+              style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', textDecoration: 'none', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '1rem' }}
+            >
+              Start Free Trial
+            </button>
           </div>
 
           {/* Basic Plan */}
@@ -208,7 +224,13 @@ const Pricing: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <a href={billingCycle === 'monthly' ? plans.basic.monthlyLink : plans.basic.annualLink} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', background: 'var(--color-brand-primary)', color: 'white', textDecoration: 'none', fontWeight: 600 }}>Start Free Trial</a>
+            <button
+              onClick={() => handleStartTrial(billingCycle === 'monthly' ? plans.basic.monthlyLink : plans.basic.annualLink, plans.basic.name)}
+              className="btn-primary"
+              style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', background: 'var(--color-brand-primary)', color: 'white', textDecoration: 'none', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '1rem' }}
+            >
+              Start Free Trial
+            </button>
           </div>
 
           {/* Pro Plan */}
@@ -231,14 +253,24 @@ const Pricing: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <a href={billingCycle === 'monthly' ? plans.pro.monthlyLink : plans.pro.annualLink} target="_blank" rel="noopener noreferrer" className="btn-solid" style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', textDecoration: 'none', fontWeight: 600 }}>Start Free Trial</a>
+
+            <button
+              onClick={() => handleStartTrial(billingCycle === 'monthly' ? plans.pro.monthlyLink : plans.pro.annualLink, plans.pro.name)}
+              className="btn-solid"
+              style={{ display: 'block', width: '100%', padding: '0.75rem', borderRadius: '4px', textAlign: 'center', textDecoration: 'none', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '1rem' }}
+            >
+              Start Free Trial
+            </button>
           </div>
 
+          <AccountSetupModal
+            isOpen={showSetupModal}
+            onClose={() => setShowSetupModal(false)}
+            redirectUrl={selectedPlanLink}
+            planName={selectedPlanName}
+          />
+
         </div>
-
-        {/* Level Up Upsell Section */}
-        {/* Level Up Section Removed */}
-
       </div>
     </section>
   );

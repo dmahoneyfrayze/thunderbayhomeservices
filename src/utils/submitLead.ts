@@ -1,5 +1,5 @@
 
-export const submitLead = async (data: any) => {
+export const submitLead = async (data: Record<string, any>) => {
     try {
         const res = await fetch('/.netlify/functions/submit-lead', {
             method: 'POST',
